@@ -1,0 +1,48 @@
+.info-section {
+  &--quote {
+    .quote {
+      @include make-col-ready();
+      @include make-col(12);
+
+      margin: auto;
+      text-align: center;
+
+      @media( min-width: $breakpoint-lg-min ) {
+        @include make-col(8);
+        @include make-col-offset(2);
+      }
+
+      p {
+        font-size: 17px;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: 10px;
+        margin-top: 0;
+
+        @media( min-width: $breakpoint-md-min ) {
+          font-size: 22px;
+        }
+      }
+
+      cite {
+        color: $color-primary;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 700;
+        margin-bottom: 0;
+
+        @media( min-width: $breakpoint-md-min ) {
+          font-size: 22px;
+        }
+
+        span {
+          color: darken($color-alt, 30%);
+          display: block;
+          font-size: 14px;
+          font-style: italic;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.video-container {
+  margin: 30px auto;
+  max-width: 800px;
+
+  .responsive-video {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    position: relative;
+
+    iframe {
+      border: none;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+}

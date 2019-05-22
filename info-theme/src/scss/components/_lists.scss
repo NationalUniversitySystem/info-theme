@@ -1,0 +1,42 @@
+
+main {
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      padding: 5px 5px 5px 15px;
+      position: relative;
+
+      &:before {
+        color: $color-accent;
+        content: '\2022';
+        display: inline-block;
+        font-size: 20px;
+        left: 0;
+        padding-right: 8px;
+        position: absolute;
+        top: 2px;
+        transform: translateY(2px);
+      }
+    }
+  }
+
+  ol {
+    margin: 0 0 15px;
+    padding: 0 0 0 15px;
+  }
+
+  .entry-content {
+    ul {
+      margin-bottom: 15px;
+    }
+  }
+
+  li {
+    line-height: 20px;
+    padding: 5px;
+    position: relative;
+  }
+}

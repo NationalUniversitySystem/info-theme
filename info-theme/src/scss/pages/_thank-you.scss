@@ -1,0 +1,61 @@
+.page-template-thank-you,
+.page-template-app-thank-you {
+
+  .hentry {
+    min-height: 78vh;
+  }
+
+  .info-section {
+    &--applite {
+      margin-bottom: 60px;
+
+      .intro-text {
+        color: $color-black;
+        font-size: 14px;
+        font-weight: 700;
+
+        @media( min-width: $breakpoint-md-min ) {
+          font-size: 18px;
+        }
+      }
+
+      h1 {
+        font-size: 24px;
+
+        @media ( min-width: $breakpoint-md-min ) {
+          font-size: 35px;
+        }
+      }
+    }
+
+    &__form {
+      @include make-col(12);
+
+      @media( min-width: $breakpoint-lg-min ) {
+        @include make-col(9);
+      }
+
+      .form {
+        &__inner {
+          background: none;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+
+  .entry-title {
+    color: $color-primary;
+    font-size: 45px;
+    margin-top: 30px;
+
+    .intro-text {
+      margin-bottom: 0;
+    }
+  }
+
+  .button {
+    max-width: 230px;
+  }
+}

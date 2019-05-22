@@ -1,0 +1,48 @@
+// sass-lint:disable no-important
+body {
+  &.modal-open {
+    overflow: inherit;
+    padding-right: 0 !important;
+  }
+}
+
+.modal {
+  // sass-lint:disable no-ids
+  &#thanks-modal {
+    text-align: center;
+
+    // sass-lint:enable no-ids
+    .modal-dialog {
+      max-width: 250px;
+    }
+  }
+
+  .modal-content {
+    border: none;
+    border-radius: 0;
+    font-size: 12px;
+    line-height: 2;
+    padding: 15px;
+
+    P {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    position: absolute;
+    right: -13px;
+    top: -15px;
+  }
+
+  h3 {
+    color: $color-primary;
+    font-size: 22px;
+    font-weight: 700;
+  }
+}

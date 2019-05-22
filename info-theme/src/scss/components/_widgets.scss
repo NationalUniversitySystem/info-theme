@@ -1,0 +1,125 @@
+// sass-lint:disable nesting-depth
+.info-section {
+  &--widgets {
+    .widget {
+      @include make-col-ready();
+      @include make-col(12);
+
+      padding: 0 20px 20px;
+
+      @media( min-width: $breakpoint-sm-min ) {
+        @include make-col(6);
+
+        padding: 0 15px 15px;
+      }
+
+      @media( min-width: $breakpoint-md-min ) {
+        padding: 0 15px;
+      }
+
+      @media( min-width: $breakpoint-lg-min ) {
+        @include make-col(4);
+      }
+
+      h2,
+      h3 {
+        color: $color-secondary;
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: .3em;
+      }
+
+      &--alt {
+        align-items: center;
+        padding-bottom: 0;
+        text-align: center;
+
+        @media( min-width: $breakpoint-sm-min ) {
+          @include make-col(12);
+
+          margin-top: 20px;
+        }
+
+        @media( min-width: $breakpoint-lg-min ) {
+          @include make-col(4);
+
+          margin-top: 0;
+          padding-left: 0;
+        }
+
+        img {
+          display: block;
+          margin: 0 auto 15px;
+
+
+          &[src$='.svg'] {
+            max-width: 90px;
+          }
+
+          @media( min-width: $breakpoint-md-min ) {
+            margin: 0 40px 0 0;
+
+            &[src$='.svg'] {
+              max-width: 115px;
+            }
+
+          }
+
+          @media( min-width: $breakpoint-lg-min ) {
+            float: none;
+            margin: 0 auto 15px;
+
+            &[src$='.svg'] {
+              max-width: 65px;
+            }
+          }
+        }
+
+        h3 {
+          margin-bottom: 5px;
+          width: 100%;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      &__border {
+        border: 2px solid darken($color-alt, 12%);
+        height: 100%;
+        position: relative;
+      }
+
+      &__inner {
+        font-size: 14px;
+        padding: 15px;
+
+        @media( min-width: $breakpoint-md-min ) {
+          align-items: center;
+          display: flex;
+          padding: 20px;
+        }
+
+        @media( min-width: $breakpoint-lg-min ) {
+          display: block;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      &__content {
+        text-align: center;
+
+        @media( min-width: $breakpoint-md-min ) {
+          text-align: left;
+        }
+
+        @media( min-width: $breakpoint-lg-min ) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

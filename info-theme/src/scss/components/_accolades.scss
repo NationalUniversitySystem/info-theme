@@ -1,0 +1,113 @@
+.info-section {
+  &--accolades {
+    position: relative;
+    text-align: center;
+
+    h2 {
+      @include make-col-ready();
+      @include make-col(12);
+
+      color: $color-white;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .accolades {
+      &__nav {
+        background: none;
+        border: none;
+        color: $color-white;
+        font-size: 28px;
+        position: absolute;
+        top: 50%;
+        z-index: 99;
+
+        @media( min-width: $breakpoint-md-min ) {
+          display: none;
+        }
+
+        &--prev {
+          left: 30px;
+
+          @media( min-width: 375px ) {
+            left: 60px;
+          }
+        }
+
+        &--next {
+          right: 30px;
+
+          @media( min-width: 375px ) {
+            right: 60px;
+          }
+        }
+      }
+
+      &__wrap {
+        @include make-col-ready();
+
+        display: block;
+        flex: initial;
+        padding-left: 0;
+
+        @media( min-width: $breakpoint-md-min ) {
+          @include make-col(9.5);
+          @include make-col-offset(1.25);
+
+          display: flex;
+          padding-left: 15px;
+        }
+
+        .accolade {
+          padding: 0;
+
+          @media( min-width: $breakpoint-md-min ) {
+            @include make-col-ready();
+
+            align-items: center;
+            display: flex;
+            justify-content: center;
+          }
+
+          img {
+            max-width: 150px;
+            width: 100%;
+          }
+        }
+
+        &--x4 {
+          .accolade {
+            @media( min-width: $breakpoint-md-min ) {
+              @include make-col(3);
+            }
+          }
+        }
+
+        &--x3 {
+          .accolade {
+            @media( min-width: $breakpoint-md-min ) {
+              @include make-col(4);
+            }
+          }
+        }
+
+        &--x2 {
+          .accolade {
+            @media( min-width: $breakpoint-md-min ) {
+              @include make-col(6);
+            }
+          }
+        }
+
+        &--x1 {
+          .accolade {
+            @media( min-width: $breakpoint-md-min ) {
+              @include make-col(12);
+            }
+          }
+        }
+      }
+    }
+  }
+}

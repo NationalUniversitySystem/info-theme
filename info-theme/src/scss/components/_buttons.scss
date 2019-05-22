@@ -1,0 +1,34 @@
+.button {
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px;
+  text-align: center;
+  transition: .13s ease background;
+  width: 100%;
+
+  &.icon--spin {
+    background: $color-primary;
+    color: $color-white;
+  }
+
+  &--yellow {
+    background: $color-accent;
+    border: $color-accent;
+    color: $color-white;
+
+    &[disabled] {
+      opacity: .5;
+    }
+
+    &:not([disabled]) {
+      &:hover {
+        background: $color-primary;
+        color: $color-white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+

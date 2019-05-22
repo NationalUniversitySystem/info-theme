@@ -1,0 +1,44 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 13px;
+  margin: 30px auto;
+
+  @media( min-width: $breakpoint-sm-min ) {
+    font-size: 14px;
+  }
+
+  td,
+  th {
+    min-height: 20px;
+    padding: 10px 5px;
+
+    @media( min-width: $breakpoint-sm-min ) {
+      padding: 10px;
+    }
+
+    @media( min-width: $breakpoint-md-min ) {
+      padding: 20px 10px;
+    }
+  }
+
+  td {
+    &.icon-ok {
+      color: $color-green;
+      text-align: center;
+    }
+  }
+
+  tr {
+    &:nth-of-type(even) {
+      background: $color-alt;
+    }
+  }
+
+  thead {
+    th {
+      background: $color-primary;
+      color: $color-white;
+    }
+  }
+}
