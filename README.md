@@ -7,6 +7,8 @@ When building a new info site for an affiliate, the first step is to make a **ch
 
 This will let you use the power of the full theme, while allowing customization where needed.
 
+For information on how to setup this theme with node and gulp, see [here](https://github.com/NationalUniversitySystem/nusa-base-wptheme).
+
 ## Legend
 The below numbers correspond to the [Numbered Map](Info-Theme-Numbered-Guide.jpg), explaining what content in the admin changes what on the front end. While we tried to account for as much as possible, each affiliate’s info site will ultimately have its own unique requirements that may need to be added or removed as necessary. Please do not hesitate to ask if you have any questions.
 
