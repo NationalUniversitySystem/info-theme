@@ -36,3 +36,5 @@ The below numbers correspond to the [Numbered Map](Info-Theme-Numbered-Guide.jpg
 17. Sets the form that should display if no form is selected on a per-page basis.
 18. Sets the default “Callout” column content.
 19. Sets the global “Why Choose” column content.
+
+![Info Theme Numbered Guide](Info-Theme-Numbered-Guide.jpg)
