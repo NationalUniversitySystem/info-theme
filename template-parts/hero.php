@@ -22,40 +22,41 @@ if ( '' !== $hero_background_image ) {
 	?>
 	<style>
 		@media( min-width: 768px ) {
-			.hero__inner {
+			.hero__background {
 				background-image:url('<?php echo esc_url( $hero_background_image ); ?>');
 			}
 		}
 	</style>
 	<?php
 }
+
+$headings_allowed_tags = [
+	'span' => [],
+];
 ?>
 
 <div class="info-section__hero">
-	<div class="hero__inner">
-		<div class="hero__title">
-			<?php if ( ! is_page_template( 'page-templates/full-width-hero.php' ) ) { ?>
-				<h1>
-					<?php echo wp_kses_post( strip_tags( $hero_title, '<span>' ) ); ?>
-				</h1>
-				<h2>
-					<?php echo wp_kses_post( strip_tags( $hero_sub_title, '<span>' ) ); ?>
-				</h2>
-				<div class="hero__title--caption">
-					<strong>
-						<?php echo esc_html( $hero_student_name ); ?>
-					</strong>
-					<em>
-						<?php echo esc_html( $hero_student_title ); ?>
-					</em>
-				</div>
-			<?php } else { ?>
-				<h1>
-					<?php echo wp_kses_post( strip_tags( $hero_title, '<span>' ) ); ?>
-				</h1>
-				<a href="#form" class="button button--yellow">Apply Now</a>
-			<?php } ?>
-		</div>
+	<div class="hero__background"></div>
+	<div class="hero__title">
+		<?php if ( ! is_page_template( 'page-templates/full-width-hero.php' ) ) { ?>
+			<h1><?php echo wp_kses( $hero_title, $headings_allowed_tags ); ?></h1>
+			<h2><?php echo wp_kses( $hero_sub_title, $headings_allowed_tags ); ?></h2>
+
+		<?php } else { ?>
+			<h1><?php echo wp_kses( $hero_title, $headings_allowed_tags ); ?></h1>
+			<a href="#form" class="button button--yellow">Apply Now</a>
+		<?php } ?>
+
+		<?php if ( $hero_student_name ) { ?>
+			<div class="hero__title--caption">
+				<strong>
+					<?php echo esc_html( $hero_student_name ); ?>
+				</strong>
+				<em>
+					<?php echo esc_html( $hero_student_title ); ?>
+				</em>
+			</div>
+		<?php } ?>
 	</div>
 </div>
 

@@ -34,7 +34,6 @@ $phone_number      = ! empty( trim( $page_phone_number ) ) ? $page_phone_number 
 						<a href="<?php echo esc_url( network_home_url() ); ?>" rel="home"></a>
 					</div>
 					<div class="site-header__phone">
-						<div data-id="c92fbc7abf" class="livechat_button d-none"><a href="https://www.livechatinc.com/customer-service/?partner=lc_1051665&amp;utm_source=chat_button">Chat Now</a></div>
 						<div class="phone__inner">
 						<?php if ( $phone_number ) { ?>
 							<a href="tel:+1-<?php echo esc_attr( $phone_number ); ?>" class="phone__number">

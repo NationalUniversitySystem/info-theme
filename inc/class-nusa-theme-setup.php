@@ -231,34 +231,27 @@ class NUSA_Theme_Setup {
 	 */
 	public function body_class( $classes = array(), $class = array() ) {
 
-		foreach ( $classes as $key => $value ) {
-			// Remove the page ID for security reasons.
-			if ( strpos( $value, 'page-id-' ) !== false || strpos( $value, 'parent-pageid-' ) !== false ) {
-				unset( $classes[ $key ] );
-			}
-		}
-
 		// If page, add hierarchy.
 		if ( is_page() ) {
 			global $post;
 
-			$ancestors = get_post_ancestors( $post->ID );
+			if ( class_exists( 'GFAPI' ) ) {
 
-			// Add the page itself to beginning of array.
-			array_unshift( $ancestors, $post->ID );
+				$gform_id = get_post_meta( $post->ID, 'gravity_forms', true );
 
-			$ancestors = array_reverse( $ancestors );
-
-			if ( ! empty( $ancestors ) ) {
-				$page_slug_class = 'page-slug';
-
-				foreach ( $ancestors as $key => $ancestor_id ) {
-					$ancestor         = get_post( $ancestor_id );
-					$classes[]        = 'pagelevel-' . $key . '-' . $ancestor->post_name; // Hierarchy on a level basis.
-					$page_slug_class .= '-' . $ancestor->post_name;
+				if ( ! $gform_id ) {
+					$gform_id = get_theme_mod( 'rfi_sidebar_form_id' );
 				}
 
-				$classes[] = $page_slug_class;
+				if ( $gform_id ) {
+					$form = GFAPI::get_form( $gform_id );
+				}
+
+				$classes[] = 'page-gf-' . strtolower( str_replace( ' ', '-', $form['title'] ) );
+			}
+
+			if ( isset( $_GET['ab-test'] ) ) {
+				$classes[] = 'ab-test-' . sanitize_text_field( wp_unslash( $_GET['ab-test'] ) );
 			}
 		}
 
@@ -302,6 +295,8 @@ class NUSA_Theme_Setup {
 		return $text;
 	}
 
+
+
 	/**
 	 * Define extra HTML elements and attributes allowed in the post content.
 	 *
@@ -340,7 +335,6 @@ class NUSA_Theme_Setup {
 		// This theme uses wp_nav_menu() in various locations.
 		register_nav_menus( array(
 			'primary-footer' => __( 'Main Footer', 'nusa' ),
-			'applite-footer' => __( 'Applite Footer', 'nusa' ),
 		) );
 
 		/**

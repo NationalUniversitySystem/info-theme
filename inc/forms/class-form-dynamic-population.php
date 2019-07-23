@@ -174,13 +174,22 @@ class Form_Dynamic_Population {
 	 * @return string
 	 */
 	public function populate_eloqua_dynamic_fields( $value, $field, $name ) {
+		// Array key is the form dynamic parameter name in GF and the value is the returned eloqua key.
 		$dynamic_names_to_populate = [
-			'first_name',
-			'last_name',
-			'email_address',
+			'first_name'     => 'firstName',
+			'last_name'      => 'lastName',
+			'email_address'  => 'emailAddress',
+			'phone_number'   => [
+				'mobilePhone',
+				'businessPhone',
+			],
+			'street_address' => 'address1',
+			'city'           => 'city',
+			'postal_code'    => 'postalCode',
+			'country'        => 'country',
 		];
 
-		if ( in_array( $name, $dynamic_names_to_populate, true ) && ! empty( $_GET['elqctid'] ) ) {
+		if ( array_key_exists( $name, $dynamic_names_to_populate ) && ! empty( $_GET['elqctid'] ) ) {
 			$ref_id = sanitize_text_field( wp_unslash( $_GET['elqctid'] ) );
 			$ref_id = preg_replace( '/[A-Za-z]/', '0', $ref_id );
 			$ref_id = intval( $ref_id );
@@ -188,16 +197,16 @@ class Form_Dynamic_Population {
 			$this->fetch_eloqua_info( $ref_id );
 
 			if ( ! empty( $this->response_data ) ) {
-				switch ( $name ) {
-					case 'first_name':
-						$value = $this->response_data->firstName;
-						break;
-					case 'last_name':
-						$value = $this->response_data->firstName;
-						break;
-					case 'email_address':
-						$value = $this->response_data->emailAddress;
+				$response_data_array = (array) $this->response_data;
+				$gf_key              = $dynamic_names_to_populate[ $name ];
+
+				if ( ! is_array( $gf_key ) ) {
+					$eloqua_key = $gf_key;
+				} else {
+					$eloqua_key = ! empty( $response_data_array[ $gf_key[0] ] ) ? $gf_key[0] : $gf_key[1];
 				}
+
+				$value = ! empty( $response_data_array[ $eloqua_key ] ) ? $response_data_array[ $eloqua_key ] : '';
 			}
 		}
 

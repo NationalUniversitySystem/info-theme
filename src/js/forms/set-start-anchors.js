@@ -11,7 +11,7 @@
 		const href    = $( this ).attr( 'href' );
 		const hrefUrl = this.href;
 
-		if ( href.indexOf( '#' ) === 0 || href.indexOf( 'mailto' === 0 ) ) {
+		if ( href.match( /^(#|mailto|tel)/ ) ) {
 			return href;
 		} else if ( hrefUrl.indexOf( '?' ) >= 0 && hrefUrl.indexOf( '#' ) === -1 ) {
 			return hrefUrl + '&' + starterQueryString;

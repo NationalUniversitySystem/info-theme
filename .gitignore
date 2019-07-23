@@ -1,0 +1,12 @@
+# This file can and should be removed once the theme is inside a full build out repo.
+
+# Ignore temporary OS files
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+node_modules
+gulp.config.local.js

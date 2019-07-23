@@ -1,33 +1,9 @@
-.page-template-thank-you,
-.page-template-app-thank-you {
-
+.page-template-thank-you {
   .hentry {
     min-height: 78vh;
   }
 
   .info-section {
-    &--applite {
-      margin-bottom: 60px;
-
-      .intro-text {
-        color: $color-black;
-        font-size: 14px;
-        font-weight: 700;
-
-        @media( min-width: $breakpoint-md-min ) {
-          font-size: 18px;
-        }
-      }
-
-      h1 {
-        font-size: 24px;
-
-        @media ( min-width: $breakpoint-md-min ) {
-          font-size: 35px;
-        }
-      }
-    }
-
     &__form {
       @include make-col(12);
 

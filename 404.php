@@ -40,15 +40,15 @@ get_header();
 							<div class="entry-content">
 								<h2>Enroll in Four-Week Classes at National University</h2>
 								<p>As a veteran-founded nonprofit, National University is proud to offer over 100 on-campus and online degree programs with one-month classes, so you can start classes sooner and finish your degree faster.</p>
-								<p>Ready to apply? Start your application below and our admissions team will make your application a priority and get you enrolled faster.</p>
+								<!-- <p>Ready to apply? Start your application below and our admissions team will make your application a priority and get you enrolled faster.</p> -->
 							</div>
 								<!-- .entry-footer -->
 							</article>
 							<span id="form"></span>
 							<div class="info-section__form">
 								<div class="form__inner">
-									<div class="form__intro">Please complete the form below to get started today.</div>
-									<?php gravity_form( 'Applite', false, false, false, null, true ); ?>
+									<!-- <div class="form__intro">Please complete the form below to get started today.</div> -->
+									<?php // gravity_form( 'Applite', false, false, false, null, true ); ?>
 								</div>
 							</div>
 						</div>

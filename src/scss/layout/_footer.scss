@@ -37,55 +37,6 @@
     }
   }
 
-  &--applite {
-    .site-footer {
-      &__navigation {
-        @include make-col-ready();
-        @include make-col(8);
-
-        li {
-          &:last-child {
-            a {
-              border: none;
-            }
-          }
-        }
-      }
-
-      &__social {
-        @include make-col-ready();
-        @include make-col(4);
-
-        text-align: right;
-
-        ul {
-          margin: 0;
-          padding: 0;
-
-          li {
-            display: inline-block;
-            list-style-type: none;
-
-            a {
-              color: $color-secondary;
-              font-size: 18px;
-              padding-left: 10px;
-
-              &:hover {
-                color: $color-accent;
-                text-decoration: none;
-              }
-            }
-          }
-        }
-      }
-
-      &__copyright {
-        margin-top: 20px;
-      }
-    }
-  }
-
   &__copyright,
   &__navigation {
     @media( min-width: $breakpoint-md-min ) {

@@ -1,13 +1,15 @@
 //=require theme/accolades-carousel.js
 //=require theme/functions.js
 //=require theme/header-offset.js
-//=require theme/livechat.js
 //=require theme/navigation.js
 //=require theme/skip-link-focus-fix.js
 //=require theme/youtube-embed.js
 
-//=require forms/set-cookies.js
-//=require forms/set-forms-fields.js
+//=require forms-tracking/set-cookies.js
+//=require forms-tracking/set-forms-fields.js
+//=require forms-tracking/optimizely-tracking.js
+//=require forms-tracking/optimizely-attributes.js
+
 //=require forms/submit-button.js
 //=require forms/tooltip.js
 //=require forms/modal-trigger.js
