@@ -11,7 +11,6 @@
  */
 
 get_header();
-require locate_template( 'template-parts/vars.php' );
 ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -19,8 +18,8 @@ require locate_template( 'template-parts/vars.php' );
 			<section class="info-section info-section--fluid">
 				<div class="container">
 					<div class="row">
-						<?php require locate_template( 'template-parts/hero.php' ); ?>
-						<?php require locate_template( 'template-parts/form.php' ); ?>
+						<?php get_template_part( 'template-parts/hero.php' ); ?>
+						<?php get_template_part( 'template-parts/form.php' ); ?>
 					</div>
 				</div>
 			</section>
@@ -29,28 +28,15 @@ require locate_template( 'template-parts/vars.php' );
 				<div class="container">
 					<div class="row">
 						<?php
-						if ( $columns ) {
-							require locate_template( 'template-parts/widget.php' );
-						}
-						?>
-						<?php
-						if ( $custom_callout || $global_callout ) {
-							require locate_template( 'template-parts/widget-alt.php' );
-						}
+						get_template_part( 'template-parts/widget' );
+
+						get_template_part( 'template-parts/widget', 'alt' );
 						?>
 					</div>
 				</div>
 			</section>
 
-			<?php if ( $quote_text ) { ?>
-				<section class="info-section info-section--quote">
-					<div class="container">
-						<div class="row">
-							<?php require locate_template( 'template-parts/quote.php' ); ?>
-						</div>
-					</div>
-				</section>
-			<?php } ?>
+			<?php get_template_part( 'template-parts/quote' ); ?>
 
 			<?php get_template_part( 'template-parts/accolades' ); ?>
 

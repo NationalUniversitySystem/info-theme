@@ -16,8 +16,6 @@ if ( empty( $first_name ) || empty( $last_name ) ) {
 }
 
 get_header();
-
-require locate_template( 'template-parts/vars.php' );
 ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">

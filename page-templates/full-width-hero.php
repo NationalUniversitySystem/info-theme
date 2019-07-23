@@ -7,7 +7,6 @@
  */
 
 get_header();
-require locate_template( 'template-parts/vars.php' );
 ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -37,14 +36,9 @@ require locate_template( 'template-parts/vars.php' );
 						<aside class="info-section info-section--widgets">
 							<div class="row">
 								<?php
-								if ( $columns || $global_why_choose ) {
-									require locate_template( 'template-parts/widget.php' );
-								}
-								?>
-								<?php
-								if ( $custom_callout || $global_callout ) {
-									require locate_template( 'template-parts/widget-alt.php' );
-								}
+								get_template_part( 'template-parts/widget' );
+
+								get_template_part( 'template-parts/widget', 'alt' );
 								?>
 							</div>
 						</aside>

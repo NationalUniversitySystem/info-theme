@@ -5,6 +5,9 @@
  * @package info.*.edu
  */
 
+$columns           = get_post_meta( get_the_ID(), '_nus_template_columns', true );
+$global_why_choose = get_theme_mod( 'why_choose' );
+
 if ( $columns ) {
 	foreach ( $columns as $column ) {
 		?>
