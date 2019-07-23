@@ -7,7 +7,6 @@
  */
 
 get_header( 'basic' );
-require locate_template( 'template-parts/vars.php' );
 ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">

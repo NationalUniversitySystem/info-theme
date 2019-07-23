@@ -7,7 +7,6 @@
  */
 
 get_header();
-require locate_template( 'template-parts/vars.php' );
 ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -38,25 +37,12 @@ require locate_template( 'template-parts/vars.php' );
 				<section class="info-section info-section--widgets">
 					<div class="container">
 						<div class="row">
-							<?php
-							if ( $custom_callout || $global_callout ) {
-								require locate_template( 'template-parts/widget-alt.php' );
-							}
-							?>
+							<?php get_template_part( 'template-parts/widget', 'alt' ); ?>
 						</div>
 					</div>
 				</section>
 
-
-				<?php if ( $quote_text ) { ?>
-					<section class="info-section info-section--quote">
-						<div class="container">
-							<div class="row">
-								<?php require locate_template( 'template-parts/quote.php' ); ?>
-							</div>
-						</div>
-					</section>
-				<?php } ?>
+				<?php get_template_part( 'template-parts/quote' ); ?>
 			</div>
 
 			<?php get_template_part( 'template-parts/accolades' ); ?>

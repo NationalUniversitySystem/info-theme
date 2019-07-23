@@ -7,7 +7,6 @@
  */
 
 get_header();
-require locate_template( 'template-parts/vars.php' );
 
 $utm_medium   = ! empty( $_GET['utm_medium'] ) ? trim( sanitize_text_field( wp_unslash( $_GET['utm_medium'] ) ) ) : '';
 $utm_campaign = ! empty( $_GET['utm_campaign'] ) ? substr( sanitize_text_field( wp_unslash( $_GET['utm_campaign'] ) ), -3 ) : '';
