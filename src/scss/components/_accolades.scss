@@ -1,7 +1,14 @@
 .info-section {
   &--accolades {
-    position: relative;
     text-align: center;
+    width: 100%;
+
+    @media( min-width: $breakpoint-xl-min ) {
+      left: 50%;
+      margin-left: -50vw;
+      position: relative;
+      width: 100vw;
+    }
 
     h2 {
       @include make-col-ready();
@@ -21,7 +28,7 @@
         font-size: 28px;
         position: absolute;
         top: 50%;
-        z-index: 99;
+        z-index: 9;
 
         @media( min-width: $breakpoint-md-min ) {
           display: none;
@@ -71,8 +78,11 @@
           }
 
           img {
-            max-width: 150px;
-            width: 100%;
+            max-width: 100%;
+
+            @media( min-width: $breakpoint-lg-min ) {
+              max-width: 150px;
+            }
           }
         }
 

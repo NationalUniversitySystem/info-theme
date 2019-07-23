@@ -9,7 +9,7 @@
       @include make-col(12);
 
       .hero {
-        &__inner {
+        &__background {
           @media( min-width: $breakpoint-md-min ) {
             background-position: 0 39%;
             background-size: cover;

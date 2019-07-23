@@ -26,14 +26,13 @@
 
         form {
           li {
+            @include make-col(12);
 
             &.gfield_html { // sass-lint:disable-line class-name-format
               margin: 0 0 5px;
             }
 
             &.form__group--select {
-              @include make-col(12);
-
               margin-bottom: 30px;
             }
           }

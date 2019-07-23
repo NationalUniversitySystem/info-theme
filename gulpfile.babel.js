@@ -73,7 +73,7 @@ const errorHandler = error => {
  *
  * @param {Mixed} done Done.
  */
- const browsersync = done => {
+const browsersync = done => {
 	const baseServerConfig = {
 		open: false,
 		injectChanges: true,
@@ -85,7 +85,6 @@ const errorHandler = error => {
 	server.init( serverConfig );
 	done();
 };
-browsersync.description = 'Load browser sync for local development.';
 
 // Helper function to allow browser reload with Gulp 4.
 const reload = done => {
@@ -101,7 +100,7 @@ const reload = done => {
  */
 export const sassLinter = () => {
 	return src( 'src/scss/**/*.scss' )
-		.pipe( plumber( errorHandler ) )
+		.pipe( plumber( { errorHandler } ) )
 		.pipe( sassLint() )
 		.pipe( sassLint.format() )
 		.pipe( sassLint.failOnError() );
@@ -121,6 +120,7 @@ sassLinter.description = 'Lint through all our SASS/SCSS files so our code is co
  *    7. Injects CSS or reloads the browser via server
  */
 export const css = ( done ) => {
+	// Clean up old files.
 	del( './assets/css/*' );
 
 	src( 'src/scss/wp-*.scss', { sourcemaps: true } )
@@ -135,9 +135,9 @@ export const css = ( done ) => {
 		], { sourcemaps: true } )
 		.pipe( plumber( errorHandler ) )
 		.pipe( sass( { outputStyle: 'expanded' } ).on( 'error', sass.logError ) )
+		.pipe( dest( './assets/css' ) )
 		.pipe( autoprefixer( {
-			cascade: false,
-			browsers: config.BROWSERS_LIST
+			cascade: false
 		} ) )
 		.pipe( cleanCSS( {
 			level: {
@@ -157,7 +157,7 @@ export const css = ( done ) => {
 
 	done();
 };
-css.description = 'Compress, clean, etc our theme CSS files.';
+css.description = 'Compiles Sass, Autoprefixes it and Minifies CSS.';
 
 /**
  * Task: `jsLinter`.
@@ -173,7 +173,7 @@ export const jsLinter = () => {
 		.pipe( eslint() )
 		.pipe( eslint.format() );
 };
-jsLinter.description = 'Linter for JavaScript';
+jsLinter.description = 'JS linter task to keep our code consistent.';
 
 /**
  * Task: `js`.

@@ -24,6 +24,8 @@
 
 				// Add all of our program posts as options to the "Degree Program" select.
 				$( programs ).appendTo( '.populate-program-metadata select' );
+
+				$( '.populate-program-metadata select' ).append( '<optgroup label="" class="d-none"></optgroup>' );
 			}
 		} );
 	}

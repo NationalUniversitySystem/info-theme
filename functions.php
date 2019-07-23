@@ -14,8 +14,6 @@ require get_template_directory() . '/inc/class-nusa-widgets.php';
 /**
  * Forms setup.
  */
-require get_template_directory() . '/inc/forms/class-outreach-form.php';
-require get_template_directory() . '/inc/forms/class-soar-setup.php';
 require get_template_directory() . '/inc/forms/class-theme-gravity-forms.php';
 require get_template_directory() . '/inc/forms/class-form-dynamic-population.php';
 
@@ -43,8 +41,6 @@ require_once get_template_directory() . '/inc/metadata/class-metadata-contact-nu
 // Theme.
 NUSA_Theme_Setup::singleton();
 NUSA_Widgets::singleton();
-Outreach_Form::singleton();
-Soar_Setup::singleton();
 
 // Forms.
 Theme_Gravity_Forms::singleton();
@@ -149,19 +145,3 @@ function get_all_meta( $post_id = null, $fields = array(), $type = 'post', $outp
 
 	return $meta_data;
 }
-
-/**
- * Add the markup necessary to launch the chat in the footer
- *
- * @return void
- */
-function add_chat_footer_markup() {
-	?>
-	<div class="newChat">
-		<img src="<?php echo esc_url( get_template_directory_uri() . '/images/Chat_icon.svg' ); ?>" alt="Chat with an Advisor">
-	</div>
-	<?php
-}
-add_action( 'wp_footer', 'add_chat_footer_markup' );
-
-

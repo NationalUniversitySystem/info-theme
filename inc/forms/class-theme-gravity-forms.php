@@ -124,7 +124,7 @@ class Theme_Gravity_Forms {
 			}
 
 			// Ok, now check if there's ONE choice and if it's completely empty, AND has our very specific class, because if that's not the case. GTFO.
-			if ( empty( $field->choices[0] ) || false === strpos( $field->cssClass, 'populate-metadata-programs' ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+			if ( empty( $field->choices[0] ) || false === strpos( $field->cssClass, 'populate-program-metadata' ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 				continue;
 			}
 
@@ -158,6 +158,8 @@ class Theme_Gravity_Forms {
 						];
 					endwhile;
 				endif;
+
+				wp_reset_postdata();
 			}
 
 			// "undecided" was at the end on the live site for "area" forms so placing it here.
@@ -250,7 +252,7 @@ class Theme_Gravity_Forms {
 		$military_id         = $this->get_field_id( $form, 'military', 'type' );
 
 		if ( false !== $advisor_location_id && false !== $military_id ) {
-			$military = rgpost( 'input_' . $military_id );
+			$military = rgpost( 'input_' . $military_id . '_1' );
 			if ( ! empty( $military ) ) {
 				$_POST[ 'input_' . $advisor_location_id ] = 'military';
 			}
@@ -258,7 +260,7 @@ class Theme_Gravity_Forms {
 	}
 
 	/**
-	 * Handle the attempt to send this form to SOAR
+	 * Add a nuEmail for tracking
 	 *
 	 * @param array $entry Array holding all of this entry's data.
 	 * @param array $form  The corresponding parent form for this entry.
@@ -287,7 +289,7 @@ class Theme_Gravity_Forms {
 
 		// Get our ajax passed data.
 		$degree_type     = sanitize_text_field( wp_unslash( $_POST['degreeType'] ) ); // input var ok.
-		$modify_programs = ! empty( $_POST['modify_programs'] ) ? true : false; // input var ok.
+		$modify_programs = ! empty( $_POST['modifyPrograms'] ) ? true : false; // input var ok.
 
 		if ( 'undecided' === $degree_type ) {
 			echo '<option value="N/A">N/A</option>';
