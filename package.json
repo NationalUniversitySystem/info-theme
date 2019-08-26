@@ -15,7 +15,7 @@
     "@babel/register": "^7.5.5",
     "babel-eslint": "^10.0.3",
     "browser-sync": "^2.26.7",
-    "del": "^5.0.0",
+    "del": "^5.1.0",
     "eslint-config-wordpress": "^2.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
