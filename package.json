@@ -32,7 +32,7 @@
     "gulp-uglify": "^3.0.2"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.4.0",
     "siema": "^1.5.1"
   },
   "scripts": {
