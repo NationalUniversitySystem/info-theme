@@ -8,7 +8,6 @@
  */
 
 ( function( $ ) {
-
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -26,43 +25,43 @@
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
 				$( '.site-title, .site-description' ).css( {
-					'clip': 'rect(1px, 1px, 1px, 1px)',
-					'position': 'absolute'
+					clip: 'rect(1px, 1px, 1px, 1px)',
+					position: 'absolute',
 				} );
 			} else {
 				$( '.site-title, .site-description' ).css( {
-					'clip': 'auto',
-					'position': 'relative'
+					clip: 'auto',
+					position: 'relative',
 				} );
 				$( '.site-title a, .site-description' ).css( {
-					'color': to
+					color: to,
 				} );
 			}
 		} );
 	} );
 
-	jQuery( document ).ready( function( $ ) {
+	$( document ).ready( function() {
 		'use strict';
 		/**
 		 * TinyMCE Custom Control
 		 *
 		 * @author Anthony Hortin <http://maddisondesigns.com>
 		 * @license http://www.gnu.org/licenses/gpl-2.0.html
-		 * @link https://github.com/maddisondesigns
+		 * {@link} https://github.com/maddisondesigns
 		 */
 
 		$( '.customize-control-tinymce-editor' ).each( function() {
 			// Get the toolbar strings that were passed from the PHP Class
-			var tinyMCEToolbar1String = _wpCustomizeSettings.controls[ $( this ).attr( 'id' ) ].skyrockettinymcetoolbar1;
-			var tinyMCEToolbar2String = _wpCustomizeSettings.controls[ $( this ).attr( 'id' ) ].skyrockettinymcetoolbar2;
+			const tinyMCEToolbar1String = _wpCustomizeSettings.controls[ $( this ).attr( 'id' ) ].skyrockettinymcetoolbar1;
+			const tinyMCEToolbar2String = _wpCustomizeSettings.controls[ $( this ).attr( 'id' ) ].skyrockettinymcetoolbar2;
 
 			wp.editor.initialize( $( this ).attr( 'id' ), {
 				tinymce: {
 					wpautop: true,
 					toolbar1: tinyMCEToolbar1String,
-					toolbar2: tinyMCEToolbar2String
+					toolbar2: tinyMCEToolbar2String,
 				},
-				quicktags: true
+				quicktags: true,
 			} );
 		} );
 
@@ -73,5 +72,4 @@
 			} );
 		} );
 	} );
-
 } )( jQuery );

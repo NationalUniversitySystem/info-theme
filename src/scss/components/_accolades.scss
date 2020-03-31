@@ -1,122 +1,45 @@
-.info-section {
-  &--accolades {
-    text-align: center;
-    width: 100%;
+.accolades {
+  background: $color-primary;
+  text-align: center;
+  width: 100%;
 
-    @media( min-width: $breakpoint-xl-min ) {
-      left: 50%;
-      margin-left: -50vw;
-      position: relative;
-      width: 100vw;
-    }
+  h2 {
+    color: $color-white;
+    font-size: 22px;
+    font-weight: 400;
+  }
 
-    h2 {
-      @include make-col-ready();
-      @include make-col(12);
+  .accolade {
+    img {
+      max-width: 100%;
 
-      color: $color-white;
-      font-size: 22px;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-
-    .accolades {
-      &__nav {
-        background: none;
-        border: none;
-        color: $color-white;
-        font-size: 28px;
-        position: absolute;
-        top: 50%;
-        z-index: 9;
-
-        @media( min-width: $breakpoint-md-min ) {
-          display: none;
-        }
-
-        &--prev {
-          left: 30px;
-
-          @media( min-width: 375px ) {
-            left: 60px;
-          }
-        }
-
-        &--next {
-          right: 30px;
-
-          @media( min-width: 375px ) {
-            right: 60px;
-          }
-        }
+      @media( min-width: $breakpoint-md-min ) {
+        max-width: 150px;
       }
+    }
+  }
 
-      &__wrap {
-        @include make-col-ready();
+  &__nav {
+    background: none;
+    border: none;
+    color: $color-white;
+    font-size: 28px;
+    top: 50%;
+    z-index: 9;
 
-        display: block;
-        flex: initial;
-        padding-left: 0;
+    &--prev {
+      left: 30px;
 
-        @media( min-width: $breakpoint-md-min ) {
-          @include make-col(9.5);
-          @include make-col-offset(1.25);
+      @media( min-width: 375px ) {
+        left: 60px;
+      }
+    }
 
-          display: flex;
-          padding-left: 15px;
-        }
+    &--next {
+      right: 30px;
 
-        .accolade {
-          padding: 0;
-
-          @media( min-width: $breakpoint-md-min ) {
-            @include make-col-ready();
-
-            align-items: center;
-            display: flex;
-            justify-content: center;
-          }
-
-          img {
-            max-width: 100%;
-
-            @media( min-width: $breakpoint-lg-min ) {
-              max-width: 150px;
-            }
-          }
-        }
-
-        &--x4 {
-          .accolade {
-            @media( min-width: $breakpoint-md-min ) {
-              @include make-col(3);
-            }
-          }
-        }
-
-        &--x3 {
-          .accolade {
-            @media( min-width: $breakpoint-md-min ) {
-              @include make-col(4);
-            }
-          }
-        }
-
-        &--x2 {
-          .accolade {
-            @media( min-width: $breakpoint-md-min ) {
-              @include make-col(6);
-            }
-          }
-        }
-
-        &--x1 {
-          .accolade {
-            @media( min-width: $breakpoint-md-min ) {
-              @include make-col(12);
-            }
-          }
-        }
+      @media( min-width: 375px ) {
+        right: 60px;
       }
     }
   }

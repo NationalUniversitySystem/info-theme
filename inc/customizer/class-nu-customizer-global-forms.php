@@ -21,13 +21,13 @@ class Nu_Customizer_Global_Forms {
 	 *
 	 * @var array
 	 */
-	public $forms = array();
+	public $forms = [];
 
 	/**
 	 * Using construct function to add any actions and filters associated with the CPT
 	 */
 	public function __construct() {
-		add_action( 'customize_register', array( $this, 'add_global_forms_section' ) );
+		add_action( 'customize_register', [ $this, 'add_global_forms_section' ] );
 	}
 
 	/**
@@ -52,11 +52,11 @@ class Nu_Customizer_Global_Forms {
 	 */
 	public function add_global_forms_section( $wp_customize = null ) {
 		// CUSTOM FORMS PANEL.
-		$wp_customize->add_panel( 'form_options', array(
+		$wp_customize->add_panel( 'form_options', [
 			'priority'   => 10,
 			'title'      => __( 'Global Forms', 'national-university' ),
 			'capability' => 'edit_theme_options',
-		) );
+		] );
 
 		// Bail if the class for forms does not exist.
 		// But Leaving the panel and the terms section so it helps avoid confusion and track down any issue that may arise,
@@ -73,8 +73,6 @@ class Nu_Customizer_Global_Forms {
 		// Call the method to save the forms array as a class variable.
 		$this->fetch_gravity_forms();
 
-
-
 		// Add each section separately, for organizational purposes.
 		$this->add_rfi_section( $wp_customize );
 	}
@@ -89,30 +87,30 @@ class Nu_Customizer_Global_Forms {
 	public function add_terms_section( $wp_customize = null ) {
 
 		// FORMS CONTENT PANEL.
-		$wp_customize->add_section( 'terms_conditions_section', array(
+		$wp_customize->add_section( 'terms_conditions_section', [
 			'title'      => __( 'Terms & Conditions' ),
 			'panel'      => 'form_options',
 			'capability' => 'edit_theme_options',
-		) );
+		] );
 
 		// TERMS & CONDITIONS.
-		$wp_customize->add_setting( 'terms_conditions', array(
+		$wp_customize->add_setting( 'terms_conditions', [
 			'default'           => '',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'wp_kses_post',
-		) );
+		] );
 
 		$wp_customize->add_control(
 			new Skyrocket_TinyMCE_Custom_Control(
 				$wp_customize,
 				'terms_conditions',
-				array(
+				[
 					'label'       => __( 'Global Terms & Conditions' ),
 					'section'     => 'terms_conditions_section',
-					'input_attrs' => array(
+					'input_attrs' => [
 						'toolbar1' => 'bold italic bullist numlist alignleft aligncenter alignright link',
-					),
-				)
+					],
+				]
 			)
 		);
 	}
@@ -127,30 +125,30 @@ class Nu_Customizer_Global_Forms {
 	public function add_form_intro_section( $wp_customize = null ) {
 
 		// FORMS CONTENT PANEL.
-		$wp_customize->add_section( 'form_intro_section', array(
+		$wp_customize->add_section( 'form_intro_section', [
 			'title'      => __( 'Default Form Intro Text' ),
 			'panel'      => 'form_options',
 			'capability' => 'edit_theme_options',
-		) );
+		] );
 
 		// TERMS & CONDITIONS.
-		$wp_customize->add_setting( 'form_intro', array(
+		$wp_customize->add_setting( 'form_intro', [
 			'default'           => '',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'wp_kses_post',
-		) );
+		] );
 
 		$wp_customize->add_control(
 			new Skyrocket_TinyMCE_Custom_Control(
 				$wp_customize,
 				'form_intro',
-				array(
+				[
 					'label'       => __( 'Intro Text' ),
 					'section'     => 'form_intro_section',
-					'input_attrs' => array(
+					'input_attrs' => [
 						'toolbar1' => 'bold italic bullist numlist alignleft aligncenter alignright link',
-					),
-				)
+					],
+				]
 			)
 		);
 	}
@@ -165,29 +163,29 @@ class Nu_Customizer_Global_Forms {
 	 */
 	public function add_rfi_section( $wp_customize = null ) {
 		// FORMS CONTENT PANEL.
-		$wp_customize->add_section( 'rfi_sidebar', array(
+		$wp_customize->add_section( 'rfi_sidebar', [
 			'title'      => __( 'Global RFI' ),
 			'panel'      => 'form_options',
 			'capability' => 'edit_theme_options',
-		) );
+		] );
 
 		// FORM ID.
-		$wp_customize->add_setting( 'rfi_sidebar_form_id', array(
+		$wp_customize->add_setting( 'rfi_sidebar_form_id', [
 			'default'   => '',
 			'transport' => 'postMessage',
-		) );
+		] );
 
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
 				'rfi_sidebar_form_id',
-				array(
+				[
 					'type'     => 'select',
 					'label'    => __( 'RFI Sidebar Form', 'national-university' ),
 					'section'  => 'rfi_sidebar',
 					'settings' => 'rfi_sidebar_form_id',
 					'choices'  => $this->forms,
-				)
+				]
 			)
 		);
 	}
@@ -201,7 +199,7 @@ class Nu_Customizer_Global_Forms {
 		// Create an array with a default null value
 		// (so if no form is needed, one is not saved by default)
 		// to add our form data into as <option>.
-		$gravity_forms = array( '' => '-- Select A Form --' );
+		$gravity_forms = [ '' => '-- Select A Form --' ];
 
 		// Get all of our info on Gravity Forms in an array so all sections can use it.
 		$forms = GFAPI::get_forms();

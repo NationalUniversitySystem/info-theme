@@ -1,5 +1,10 @@
-
 main {
+  li {
+    line-height: 20px;
+    padding: 5px;
+    position: relative;
+  }
+
   ul {
     margin: 0;
     padding: 0;
@@ -9,7 +14,7 @@ main {
       padding: 5px 5px 5px 15px;
       position: relative;
 
-      &:before {
+      &::before {
         color: $color-accent;
         content: '\2022';
         display: inline-block;
@@ -32,11 +37,5 @@ main {
     ul {
       margin-bottom: 15px;
     }
-  }
-
-  li {
-    line-height: 20px;
-    padding: 5px;
-    position: relative;
   }
 }

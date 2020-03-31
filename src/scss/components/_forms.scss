@@ -1,42 +1,5 @@
-// sass-lint:disable class-name-format
-// sass-lint:disable placeholder-in-extend
-// sass-lint:disable no-important
-// sass-lint:disable force-attribute-nesting
-// sass-lint:disable no-qualifying-elements
-// sass-lint:disable no-vendor-prefixes
-.info-section {
-  &__form {
-    @include make-col-ready();
-    @include make-col(12);
-
-    @media( min-width: $breakpoint-md-min ) {
-      @include make-col(5.5);
-
-      padding-left: 0;
-    }
-
-    @media( min-width: $breakpoint-lg-min ) {
-      @include make-col(4);
-    }
-
-    .form {
-      &__inner {
-        background: $color-alt;
-        height: 100%;
-        padding: 15px 30px;
-
-        @media( min-width: $breakpoint-md-min ) {
-          padding: 10px 20px;
-        }
-      }
-
-      &__intro {
-        font-size: 14px;
-        margin-bottom: 10px;
-      }
-    }
-  }
-
+// stylelint-disable
+.section {
   &--content {
     form {
       .gform_hidden {
@@ -61,7 +24,6 @@
 
           &.gfield_html {
             @include make-col(12);
-
             margin-top: 30px;
 
             &:not(:first-child) {
@@ -91,7 +53,7 @@
           }
 
           &.form__group--select {
-            &:after {
+            &::after {
               right: 30px;
             }
           }
@@ -109,11 +71,34 @@
       }
     }
   }
+
+  &__form {
+    @media( min-width: $breakpoint-md-min ) and ( max-width: $breakpoint-md-max ) {
+      @include make-col(5.5);
+    }
+
+    .form {
+      &__inner {
+        background: $color-alt;
+        height: 100%;
+        padding: 15px;
+
+        @media( min-width: $breakpoint-md-min ) {
+          padding: 10px 20px;
+        }
+      }
+
+      &__intro {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    }
+  }
 }
 
 .gform_wrapper {
   li {
-    &:before {
+    &::before {
       display: none;
     }
   }
@@ -152,16 +137,6 @@
       .gfield_chainedselect span:not(:first-child) { // sass-lint:disable-line force-element-nesting force-pseudo-nesting
         position: relative;
 
-        &:after {
-          color: $color-secondary;
-          content: '\e804';
-          font-family: 'fontello';
-          font-size: 12px;
-          position: absolute;
-          right: 11px;
-          top: 6px;
-        }
-
         select {
           -moz-appearance: none;
           -webkit-appearance: none;
@@ -169,6 +144,16 @@
           &::-ms-expand {
             display: none;
           }
+        }
+
+        &::after {
+          color: $color-secondary;
+          content: '\e804';
+          font-family: 'fontello';
+          font-size: 12px;
+          position: absolute;
+          right: 11px;
+          top: 6px;
         }
       }
 
@@ -183,7 +168,7 @@
         .icon--question-circle {
           display: inline-block;
 
-          &:before {
+          &::before {
             color: $color-secondary;
             font-size: 16px;
             opacity: .7;
@@ -213,7 +198,7 @@
             display: block;
           }
 
-          &:after {
+          &::after {
             border-left: 5px solid transparent;
             border-right: 5px solid transparent;
             border-top: 5px solid $error;
@@ -225,10 +210,6 @@
             width: 0;
           }
         }
-      }
-
-      &:before {
-        display: none;
       }
 
       input[type='text'],
@@ -274,7 +255,7 @@
         label {
           cursor: pointer;
 
-          &:before {
+          &::before {
             border: 1px solid #aaa;
             content: '';
             display: inline-block;
@@ -299,13 +280,13 @@
           &:checked {
             &+label {
               &::before {
-                -webkit-font-smoothing: antialiased;
                 background: $color-secondary;
                 border-color: $color-secondary;
                 color: $color-white;
                 content: '\e803';
                 font-family: fontello;
                 font-size: 11px;
+                -webkit-font-smoothing: antialiased;
                 font-style: normal;
                 font-variant: normal;
                 font-weight: 400;
@@ -343,6 +324,10 @@
           }
         }
       }
+
+      &::before {
+        display: none;
+      }
     }
   }
 
@@ -350,7 +335,6 @@
     button {
       @extend .button;
       @extend .button--yellow;
-
       max-width: 100%;
     }
   }

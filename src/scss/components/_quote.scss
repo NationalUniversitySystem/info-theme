@@ -1,32 +1,15 @@
-.info-section {
+.section {
   &--quote {
-    width: 100%;
-
-    @media( min-width: $breakpoint-xl-min ) {
-      left: 50%;
-      margin-left: -50vw;
-      position: relative;
-      width: 100vw;
-    }
+    background: $color-alt;
+    padding-left: 45px;
+    padding-right: 45px;
 
     .quote {
-      @include make-col-ready();
-      @include make-col(12);
-
-      margin: auto;
       text-align: center;
-
-      @media( min-width: $breakpoint-lg-min ) {
-        margin: 0 auto;
-        max-width: 800px;
-      }
 
       p {
         font-size: 17px;
         font-style: italic;
-        font-weight: 400;
-        margin-bottom: 10px;
-        margin-top: 0;
 
         @media( min-width: $breakpoint-md-min ) {
           font-size: 22px;
@@ -38,19 +21,18 @@
         font-size: 17px;
         font-style: normal;
         font-weight: 700;
-        margin-bottom: 0;
 
         @media( min-width: $breakpoint-md-min ) {
           font-size: 22px;
         }
+      }
 
-        span {
-          color: darken($color-alt, 30%);
-          display: block;
-          font-size: 14px;
-          font-style: italic;
-          font-weight: 400;
-        }
+      span {
+        color: darken($color-alt, 30%); // stylelint-disable-line sh-waqar/declaration-use-variable
+        display: block;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: 400;
       }
     }
   }

@@ -1,5 +1,4 @@
-/* global getCookie, getParameterByName */
-
+import { getCookie, getParameterByName } from '../theme/functions';
 /**
  * Push our UTM parameters to optimizely for tracking and data analysis.
  */
@@ -12,21 +11,21 @@
 		'utm_term',
 		'utm_content',
 		'utm_campaign',
-		'track'
+		'track',
 	];
 
-	let trackingObject = {};
+	const trackingObject = {};
 
-	utmParams.forEach( ( utmName ) => {
-		let utmCookie = getCookie( utmName + '1' );
-		let utmParam  = getParameterByName( utmName );
-		let utmValue  = utmCookie || utmParam;
+	utmParams.forEach( utmName => {
+		const utmCookie = getCookie( utmName + '1' );
+		const utmParam  = getParameterByName( utmName );
+		const utmValue  = utmCookie || utmParam;
 
 		trackingObject[ utmName ] = utmValue;
 	} );
 
 	w.optimizely.push( {
-		'type': 'user',
-		'attributes': trackingObject
+		type: 'user',
+		attributes: trackingObject,
 	} );
 } )( window );

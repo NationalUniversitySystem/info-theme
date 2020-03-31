@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: $open-sans;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: normal;
@@ -12,7 +12,7 @@ body {
 }
 
 .clearfix {
-  &:after {
+  &::after {
     clear: both;
     content: '';
     display: block;
@@ -28,7 +28,7 @@ img {
 
 .sr-only {
   border: none;
-  clip: rect(1px,  1px,  1px,  1px);
+  clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
   height: 1px;
   margin: -1px;
@@ -51,17 +51,4 @@ h2 {
 h3 {
   font-size: 18px;
   font-weight: 400;
-}
-
-// ------------------------------
-// Utility Classes
-// ------------------------------
-@each $key,  $value in $colors {
-  .bg--#{$key} {
-    background-color: $value;
-  }
-
-  .text--#{$key} {
-    color: $value;
-  }
 }

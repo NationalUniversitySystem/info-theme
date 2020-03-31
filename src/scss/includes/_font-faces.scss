@@ -1,91 +1,77 @@
-// sass-lint:disable property-sort-order
-// sass-lint:disable duplicate-properties
-// sass-lint:disable indentation
-// sass-lint:disable force-pseudo-nesting
-// sass-lint:disable no-vendor-prefixes
-// sass-lint:disable no-duplicate-properties
+// stylelint-disable sh-waqar/declaration-use-variable, indentation, value-list-comma-space-after
 @font-face {
   font-display: swap;
-  font-family: 'oswald bold';
+  font-family: oswald;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 700;
   src: url('../../fonts/oswald/oswald-bold-webfont.woff2') format('woff2'), url('../../fonts/oswald/oswald-bold-webfont.woff') format('woff');
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'oswald heavy';
+  font-family: oswald;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 900;
   src: url('../../fonts/oswald/oswald-heavy-webfont.woff2') format('woff2'), url('../../fonts/oswald/oswald-heavy-webfont.woff') format('woff');
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'oswald medium';
+  font-family: oswald;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 500;
   src: url('../../fonts/oswald/oswald-medium-webfont.woff2') format('woff2'), url('../../fonts/oswald/oswald-medium-webfont.woff') format('woff');
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'oswald regular';
+  font-family: oswald;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   src: url('../../fonts/oswald/oswald-regular-webfont.woff2') format('woff2'), url('../../fonts/oswald/oswald-regular-webfont.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url('../../fonts/open-sans/opensans-light-webfont.woff2') format('woff2'),
-       url('../../fonts/open-sans/opensans-light-webfont.woff') format('woff');
+  font-style: normal;
   font-weight: 300;
-  font-style: normal;
+  src: url('../../fonts/open-sans/opensans-light-webfont.woff2') format('woff2'), url('../../fonts/open-sans/opensans-light-webfont.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url('../../fonts/open-sans/opensans-regular-webfont.woff2') format('woff2'),
-       url('../../fonts/open-sans/opensans-regular-webfont.woff') format('woff');
+  font-style: normal;
   font-weight: 400;
-  font-style: normal;
+  src: url('../../fonts/open-sans/opensans-regular-webfont.woff2') format('woff2'), url('../../fonts/open-sans/opensans-regular-webfont.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url('../../fonts/open-sans/opensans-semibold-webfont.woff2') format('woff2'),
-       url('../../fonts/open-sans/opensans-semibold-webfont.woff') format('woff');
+  font-style: normal;
   font-weight: 600;
-  font-style: normal;
+  src: url('../../fonts/open-sans/opensans-semibold-webfont.woff2') format('woff2'), url('../../fonts/open-sans/opensans-semibold-webfont.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url('../../fonts/open-sans/opensans-bold-webfont.woff2') format('woff2'),
-       url('../../fonts/open-sans/opensans-bold-webfont.woff') format('woff');
+  font-style: normal;
   font-weight: 700;
-  font-style: normal;
+  src: url('../../fonts/open-sans/opensans-bold-webfont.woff2') format('woff2'), url('../../fonts/open-sans/opensans-bold-webfont.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url('../../fonts/open-sans/opensans-extrabold-webfont.woff2') format('woff2'),
-       url('../../fonts/open-sans/opensans-extrabold-webfont.woff') format('woff');
-  font-weight: 800;
   font-style: normal;
+  font-weight: 800;
+  src: url('../../fonts/open-sans/opensans-extrabold-webfont.woff2') format('woff2'), url('../../fonts/open-sans/opensans-extrabold-webfont.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'fontello';
-  src: url('../../fonts/fontello/fontello.eot?36463184');
-  src: url('../../fonts/fontello/fontello.eot?36463184#iefix') format('embedded-opentype'),
-       url('../../fonts/fontello/fontello.woff2?36463184') format('woff2'),
-       url('../../fonts/fontello/fontello.woff?36463184') format('woff'),
-       url('../../fonts/fontello/fontello.ttf?36463184') format('truetype'),
-       url('../../fonts/fontello/fontello.svg?36463184#fontello') format('svg');
-  font-weight: normal;
+  font-family: fontello;
   font-style: normal;
+  font-weight: 400;
+  src: url('../../fonts/fontello/fontello.eot?36463184');
+  src: url('../../fonts/fontello/fontello.eot?36463184#iefix') format('embedded-opentype'), url('../../fonts/fontello/fontello.woff2?36463184') format('woff2'), url('../../fonts/fontello/fontello.woff?36463184') format('woff'), url('../../fonts/fontello/fontello.ttf?36463184') format('truetype'), url('../../fonts/fontello/fontello.svg?36463184#fontello') format('svg');
 }
 
 .icon,
@@ -94,13 +80,13 @@
 [class*=' icon--'] {
   &::before,
   &::after {
-    font-variant: normal;
+    display: inline-block;
+    font-family: fontello;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-family: 'fontello';
     font-style: normal;
-    font-weight: normal;
+    font-variant: normal;
+    font-weight: 400;
     line-height: 1em;
     margin-left: .2em;
     margin-right: .2em;
@@ -112,19 +98,48 @@
   }
 }
 
-.icon-attention-circled:before { content: '\e800'; }
-.icon-cancel:before { content: '\e801'; }
-.icon--question-circle:before { content: '\e802'; }
-.icon-ok:before { content: '\e803'; }
-.icon-down-open:before { content: '\e804'; }
-.icon-twitter:before { content: '\f099'; }
-.icon-facebook:before { content: '\f09a'; }
-.icon-linkedin:before { content: '\f0e1'; }
-.icon-youtube-play:before { content: '\f16a'; }
-.icon-instagram:before { content: '\f16d'; }
+.icon-attention-circled::before {
+  content: '\e800';
+}
 
-.icon--spin:after {
-  content: '\e838';
+.icon-cancel::before {
+  content: '\e801';
+}
+
+.icon--question-circle::before {
+  content: '\e802';
+}
+
+.icon-ok::before {
+  content: '\e803';
+}
+
+.icon-down-open::before {
+  content: '\e804';
+}
+
+.icon-twitter::before {
+  content: '\f099';
+}
+
+.icon-facebook::before {
+  content: '\f09a';
+}
+
+.icon-linkedin::before {
+  content: '\f0e1';
+}
+
+.icon-youtube-play::before {
+  content: '\f16a';
+}
+
+.icon-instagram::before {
+  content: '\f16d';
+}
+
+.icon--spin::after {
   animation: spin 1s infinite linear;
   color: $color-accent;
+  content: '\e838';
 }

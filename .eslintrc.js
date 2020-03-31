@@ -1,28 +1,31 @@
 module.exports = {
-	env: {
-		browser: true,
-		es6: true,
-		jquery: true,
-		node: true
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true,
+		"jquery": true
 	},
-	extends: [
+	"extends": [
 		"eslint:recommended",
-		"wordpress"
+		"plugin:@wordpress/eslint-plugin/recommended-with-formatting"
 	],
-	parserOptions: {
-		ecmaVersion: 2017,
-		sourceType: "module"
+	"parserOptions": {
+		"ecmaVersion": 2018,
+		"sourceType": "module"
 	},
-	parser: "babel-eslint",
-	rules: {
-		complexity: [
+	"rules": {
+		"arrow-parens": [
+			"error",
+			"as-needed"
+		],
+		"complexity": [
 			"warn", {
 				"max": 8
 			}
 		],
-		eqeqeq: ["error", "smart"],
+		"eqeqeq": [ "error", "smart"] ,
 		"lines-around-comment": "off",
-		"space-in-parens": ["warn", "always"],
+		"space-in-parens": [ "warn", "always" ],
 		"no-empty-function": [
 			"warn", {
 				"allow": [
@@ -47,6 +50,6 @@ module.exports = {
 			"error",
 			"inside"
 		],
-		yoda: "off"
+		"yoda": "off"
 	}
 };

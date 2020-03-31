@@ -32,18 +32,17 @@ import { dest, parallel, src, series, watch } from 'gulp';
 import autoprefixer from 'gulp-autoprefixer';
 import cleanCSS from 'gulp-clean-css';
 import sass from 'gulp-sass';
-import sassLint from 'gulp-sass-lint';
+import styleLint from 'gulp-stylelint';
 
 // JS related plugins.
-import babel from 'gulp-babel';
 import eslint from 'gulp-eslint';
-import include from 'gulp-include';
-import uglify from 'gulp-uglify';
+import named from 'vinyl-named';
+import webpack from 'webpack-stream';
+import webpackConfig from './webpack.config.js';
 
 // Utility related plugins.
 import browserSync from 'browser-sync';
 import del from 'del';
-import lineec from 'gulp-line-ending-corrector';
 import notify from 'gulp-notify';
 import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
@@ -53,13 +52,13 @@ const server = browserSync.create();
 /**
  * Custom Error Handler.
  *
- * @param Mixed error
+ * @param {Object} error
  */
 const errorHandler = error => {
 	notify.onError( {
 		title: 'Gulp error in ' + error.plugin,
 		message: error.toString(),
-		sound: false
+		sound: false,
 	} )( error );
 };
 
@@ -67,17 +66,18 @@ const errorHandler = error => {
  * Task: `browsersync`.
  *
  * Live Reloads, CSS injections, Localhost tunneling.
- * @link http://www.browsersync.io/docs/options/
+ *
+ * {@link} http://www.browsersync.io/docs/options/
  *
  * BrowserSync options can be overwritten by gulp.config.local.js file.
  *
- * @param {Mixed} done Done.
+ * @param {*} done Done.
  */
 const browsersync = done => {
 	const baseServerConfig = {
 		open: false,
 		injectChanges: true,
-		watchEvents: [ 'change', 'add', 'unlink', 'addDir', 'unlinkDir' ]
+		watchEvents: [ 'change', 'add', 'unlink', 'addDir', 'unlinkDir' ],
 	};
 
 	const serverConfig = { ...baseServerConfig, ...config.serverConfig };
@@ -85,6 +85,7 @@ const browsersync = done => {
 	server.init( serverConfig );
 	done();
 };
+browsersync.description = 'Load browser sync for local development.';
 
 // Helper function to allow browser reload with Gulp 4.
 const reload = done => {
@@ -100,12 +101,16 @@ const reload = done => {
  */
 export const sassLinter = () => {
 	return src( 'src/scss/**/*.scss' )
-		.pipe( plumber( { errorHandler } ) )
-		.pipe( sassLint() )
-		.pipe( sassLint.format() )
-		.pipe( sassLint.failOnError() );
+		.pipe( plumber( errorHandler ) )
+		.pipe( styleLint( {
+			syntax: 'scss',
+			reporters: [ {
+				formatter: 'string',
+				console: true,
+			} ],
+		} ) );
 };
-sassLinter.description = 'Lint through all our SASS/SCSS files so our code is consistent across files.';
+sassLinter.description = 'Lint through all our SCSS files so our code is consistent across files.';
 
 /**
  * Task: `css`.
@@ -118,9 +123,10 @@ sassLinter.description = 'Lint through all our SASS/SCSS files so our code is co
  *    5. Renames the CSS file with suffix .min.css
  *    6. Minifies the CSS file and generates *.min.css
  *    7. Injects CSS or reloads the browser via server
+ *
+ * @param {Function} done Callback function for async purposes.
  */
-export const css = ( done ) => {
-	// Clean up old files.
+export const css = done => {
 	del( './assets/css/*' );
 
 	src( 'src/scss/wp-*.scss', { sourcemaps: true } )
@@ -130,34 +136,32 @@ export const css = ( done ) => {
 		.pipe( dest( './assets/css', { sourcemaps: '.' } ) );
 
 	src( [
-			'src/scss/*.scss',
-			'!src/scss/wp-*.scss'
-		], { sourcemaps: true } )
+		'src/scss/*.scss',
+		'!src/scss/wp-*.scss',
+	], { sourcemaps: true } )
 		.pipe( plumber( errorHandler ) )
 		.pipe( sass( { outputStyle: 'expanded' } ).on( 'error', sass.logError ) )
-		.pipe( dest( './assets/css' ) )
 		.pipe( autoprefixer( {
-			cascade: false
+			cascade: false,
 		} ) )
 		.pipe( cleanCSS( {
 			level: {
 				2: {
 					all: false,
 					mergeIntoShorthands: true,
-					mergeMedia: true
-				}
-			}
+					mergeMedia: true,
+				},
+			},
 		} ) )
-		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
 		.pipe( rename( { suffix: '.min' } ) )
 		.pipe( dest( './assets/css', { sourcemaps: '.' } ) )
 		.pipe( server.stream( {
-			match: '**/*.css' // Sourcemap is in stream so match for actual CSS files
+			match: '**/*.css', // Sourcemap is in stream so match for actual CSS files
 		} ) );
 
 	done();
 };
-css.description = 'Compiles Sass, Autoprefixes it and Minifies CSS.';
+css.description = 'Compress, clean, etc our theme CSS files.';
 
 /**
  * Task: `jsLinter`.
@@ -167,13 +171,13 @@ css.description = 'Compiles Sass, Autoprefixes it and Minifies CSS.';
  */
 export const jsLinter = () => {
 	return src( [
-			'./src/js/**/*.js',
-			'!src/js/vendor/**'
-		] )
+		'./src/js/**/*.js',
+		'!src/js/vendor/**',
+	] )
 		.pipe( eslint() )
 		.pipe( eslint.format() );
 };
-jsLinter.description = 'JS linter task to keep our code consistent.';
+jsLinter.description = 'Linter for JavaScript';
 
 /**
  * Task: `js`.
@@ -188,24 +192,14 @@ export const js = () => {
 	// Clean up old files.
 	del( './assets/js/*' );
 
-	return src( 'src/js/*.js', {
-			sourcemaps: true
-		} )
+	return src( './src/js/*.js' )
 		.pipe( plumber( errorHandler ) )
-		.pipe( include( {
-			includePaths: [
-				__dirname + '/src/js',
-				__dirname + '/node_modules'
-			]
-		} ) )
-		.pipe( babel() ) // config is in .babelrc file
-		.pipe( uglify() )
-		.pipe( rename( { suffix: '.min' } ) )
-		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
-		.pipe( dest( './assets/js', { sourcemaps: '.' } ) )
+		.pipe( named() )
+		.pipe( webpack( webpackConfig ) )
+		.pipe( dest( './assets/js/' ) )
 		.pipe( server.reload( {
 			match: '**/*.js', // Sourcemap is in stream so match for actual JS files
-			stream: true
+			stream: true,
 		} ) );
 };
 js.description = 'Run all JS compression and sourcemap work.';

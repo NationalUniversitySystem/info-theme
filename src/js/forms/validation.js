@@ -30,7 +30,6 @@
 				event.target.addEventListener( 'keyup', validationFunction, true );
 			}
 		}, true );
-
 	} );
 
 	// Phone validation.
@@ -57,7 +56,6 @@
 	} );
 
 	function phoneValidation( element ) {
-
 		if ( element.value !== '' ) {
 			if ( isValidPhoneUS( element.value ) ) {
 				clearError( element );
@@ -71,5 +69,4 @@
 			element.title = 'Phone is required';
 		}
 	}
-
 } )();

@@ -11,7 +11,6 @@ $breakpoint-sm-max: ($breakpoint-md-min - 1);
 $breakpoint-md-max: ($breakpoint-lg-min - 1);
 $breakpoint-lg-max: ($breakpoint-xl-min - 1);
 
-
 // ------------------------------
 // Colors
 // ------------------------------
@@ -68,19 +67,15 @@ $color-black: map-get($colors, 'black');
 $color-green: map-get($colors, 'green-dark');
 $color-blue-19: map-get($colors, 'blue-19');
 
-
 // ------------------------------
 // Fills
 // ------------------------------
-
 
 // ------------------------------
 // Text
 // ------------------------------
 
-
-
 // ------------------------------
 // Fonts
 // ------------------------------
-
+$open-sans: 'Open Sans', 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, sans-serif;

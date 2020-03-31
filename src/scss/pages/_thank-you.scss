@@ -3,7 +3,7 @@
     min-height: 78vh;
   }
 
-  .info-section {
+  .section {
     &__form {
       @include make-col(12);
 
@@ -19,7 +19,6 @@
       }
     }
   }
-
 
   .entry-title {
     color: $color-primary;

@@ -7,18 +7,16 @@
 
 get_header();
 ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<main id="main" class="site-main">
 
-			<section class="info-section info-section--widgets">
-				<div class="container">
-					<div class="row">
-						<?php get_template_part( 'template-parts/content/content', 'page' ); ?>
-					</div>
+		<section class="section section--widgets">
+			<div class="container">
+				<div class="row">
+					<?php get_template_part( 'template-parts/content/content', 'page' ); ?>
 				</div>
-			</section>
+			</div>
+		</section>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main><!-- #main -->
 <?php
 get_footer();

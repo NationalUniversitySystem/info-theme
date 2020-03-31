@@ -7,43 +7,31 @@
  * @package nusa
  */
 
-$site_terms = get_theme_mod( 'terms_conditions' );
 ?>
 
-		</div><!-- #content -->
-
-		<footer class="site-footer">
-			<div class="container">
-				<div class="site-footer__navigation">
-					<nav class="footer-navigation" role="navigation" aria-label="Footer Navigation - <?php echo esc_attr( wp_get_nav_menu_name( 'primary-footer' ) ); ?>">
+	<footer class="footer py-5">
+		<div class="container">
+			<?php if ( has_nav_menu( 'primary-footer' ) ) { ?>
+				<div class="footer__navigation d-md-inline-block">
+					<nav class="footer-navigation d-inline-block" role="navigation" aria-label="Footer Navigation - <?php echo esc_attr( wp_get_nav_menu_name( 'primary-footer' ) ); ?>">
 						<?php
-						wp_nav_menu( array(
+						wp_nav_menu( [
 							'theme_location' => 'primary-footer',
 							'container'      => false,
 							'fallback_cb'    => false,
-						) );
+							'menu_class'     => 'm-0 p-0',
+						] );
 						?>
 					</nav>
 				</div>
-				<div class="site-footer__copyright">
-					<p><?php printf( '&copy; Copyright %s %s. All Rights Reserved.', esc_html( date( 'Y' ) ), esc_html( get_bloginfo( 'name' ) ) ); ?></p>
-				</div>
-			</div>
-		</footer>
-	</div><!-- #page -->
+			<?php } // end check for $footer_nav ?>
 
-	<div class="modal fade" id="terms-modal">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-body">
-					<button type="button" class="icon icon-cancel close" data-dismiss="modal"></button>
-					<?php echo wp_kses_post( $site_terms ); ?>
-				</div>
+			<div class="footer__copyright d-md-inline-block">
+				<p class="mb-0"><?php printf( '&copy; Copyright %s %s. All Rights Reserved.', esc_html( gmdate( 'Y' ) ), esc_html( get_bloginfo( 'name' ) ) ); ?></p>
 			</div>
 		</div>
-	</div>
+	</footer>
 
 	<?php wp_footer(); ?>
-
 </body>
 </html>
