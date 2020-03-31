@@ -30,7 +30,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sass-lint": "^1.4.0",
     "gulp-uglify": "^3.0.2",
-    "mobile-detect": "^1.4.3"
+    "mobile-detect": "^1.4.4"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
