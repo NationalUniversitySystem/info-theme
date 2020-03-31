@@ -1,6 +1,6 @@
-/* global getCookie, getParameterByName, setInputValue, MobileDetect */
 /* eslint-disable complexity */
-// Setup all process trackers
+import { getCookie, getParameterByName, setInputValue } from '../theme/functions';
+// Setup all process trackers.
 ( function() {
 	const utmParams = [
 		'utm_source',
@@ -8,39 +8,39 @@
 		'utm_term',
 		'utm_content',
 		'utm_campaign',
-		'track'
+		'track',
 	];
 
 	const cookieParamSet = [
 		'gclid',
-		'_ga'
+		'_ga',
 	];
 
 	const cookieCheck = [
 		'initial_referrer',
 		'referring_domain',
-		'initial_landing_page'
+		'initial_landing_page',
 	];
 
 	const forms = document.querySelectorAll( 'form' );
 
-	forms.forEach( ( form ) => {
+	forms.forEach( form => {
 		// Set values for each input, giving cookies that are set priority over the parameters.
 		// UTM parameters (cookie is stored with an appended "1").
-		utmParams.forEach( ( utmName ) => {
-			let utmCookie = getCookie( utmName + '1' );
-			let utmParam  = getParameterByName( utmName );
-			let utmValue  = utmCookie || utmParam;
+		utmParams.forEach( utmName => {
+			const utmCookie = getCookie( utmName + '1' );
+			const utmParam  = getParameterByName( utmName );
+			const utmValue  = utmCookie || utmParam;
 
 			if ( '' !== utmValue ) {
 				setInputValue( '.' + utmName, utmValue, form );
 			}
 		} );
 
-		cookieParamSet.forEach( ( cookieParamName ) => {
-			let cookieValue = getCookie( cookieParamName );
-			let paramValue  = getParameterByName( cookieParamName );
-			let inputValue  = cookieValue || paramValue;
+		cookieParamSet.forEach( cookieParamName => {
+			const cookieValue = getCookie( cookieParamName );
+			const paramValue  = getParameterByName( cookieParamName );
+			const inputValue  = cookieValue || paramValue;
 
 			if ( '' !== inputValue ) {
 				setInputValue( '.' + cookieParamName, inputValue, form );
@@ -48,20 +48,12 @@
 		} );
 
 		// These values do not need parameter checked.
-		cookieCheck.forEach( ( cookieName ) => {
-			let cookieValue  = getCookie( cookieName );
+		cookieCheck.forEach( cookieName => {
+			const cookieValue  = getCookie( cookieName );
 
 			if ( '' !== cookieValue ) {
 				setInputValue( '.' + cookieName, cookieValue, form );
 			}
 		} );
-
-		// Determine our device type and track it (Relies on MobileDetect being included, not the case in all our sites).
-		if ( 'undefined' !== typeof MobileDetect ) {
-			const mobileDetect = new MobileDetect( window.navigator.userAgent );
-			const deviceType   = mobileDetect.phone() || ( mobileDetect.tablet() || 'desktop' );
-
-			setInputValue( '.device_type', deviceType, form );
-		}
 	} );
 } )();

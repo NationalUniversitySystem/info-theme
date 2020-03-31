@@ -57,7 +57,7 @@ Metadata_Content::singleton();
 Metadata_Layout::singleton();
 Metadata_Contact_Number::singleton();
 
-add_action( 'after_setup_theme', array( 'NUSA_Theme_Setup', 'set_theme_options' ) );
+add_action( 'after_setup_theme', [ 'NUSA_Theme_Setup', 'set_theme_options' ] );
 
 /**
  * Stop WYSIWYG editor from removing spans
@@ -135,7 +135,7 @@ function get_campaign_activity( $metadata = null ) {
  *
  * @return mixed    MySQL object/Associative Array containing returned post metadata.
  */
-function get_all_meta( $post_id = null, $fields = array(), $type = 'post', $output = ARRAY_A ) {
+function get_all_meta( $post_id = null, $fields = [], $type = 'post', $output = ARRAY_A ) {
 
 	$meta_data = get_post_meta( $post_id );
 

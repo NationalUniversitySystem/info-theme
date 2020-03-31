@@ -1,6 +1,6 @@
 # Browsers you care about for autoprefixing. Browserlist https://github.com/ai/browserslist
 # The following list is set as per WordPress requirements in addition to our GA stats.
-last 2 version
+last 2 versions
 > 1%
 ie >= 10
 last 1 Android versions

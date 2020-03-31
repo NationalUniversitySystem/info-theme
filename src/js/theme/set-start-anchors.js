@@ -1,11 +1,10 @@
 
-/* global getParameterByName, getCookie */
-
+import { getParameterByName, getCookie } from '../theme/functions';
 /**
  * This file builds a query string to attach to anchor links so that we can track data on our other domains.
  */
 ( function( $ ) {
-	var starterQueryString = getStarterString();
+	const starterQueryString = getStarterString();
 
 	$( 'a' ).prop( 'href', function() {
 		const href    = $( this ).attr( 'href' );
@@ -26,7 +25,7 @@
 function getStarterString() {
 	const starter  = window.location.hostname;
 	let string     = '';
-	let parameters = [];
+	const parameters = [];
 
 	const trackersToUse = [
 		'utm_source',
@@ -34,13 +33,13 @@ function getStarterString() {
 		'utm_term',
 		'utm_content',
 		'utm_campaign',
-		'track'
+		'track',
 	];
 
 	trackersToUse.forEach( function( tracker ) {
 		parameters.push( {
 			key: tracker,
-			value: getParameterByName( tracker )
+			value: getParameterByName( tracker ),
 		} );
 	} );
 
@@ -53,12 +52,12 @@ function getStarterString() {
 			string += '&' + parameterObject.key + '=' + parameterObject.value;
 		} );
 	} else {
-		let cookies = [];
+		const cookies = [];
 
 		trackersToUse.forEach( function( tracker ) {
 			cookies.push( {
 				key: tracker,
-				value: getCookie( tracker + '1' )
+				value: getCookie( tracker + '1' ),
 			} );
 		} );
 

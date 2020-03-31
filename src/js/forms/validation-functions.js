@@ -7,32 +7,31 @@ function validateEmail( mail ) {
 }
 
 function isValidPhone( phonenumber ) {
-	var numCnt = 0;
 	if ( phonenumber !== '' ) {
-		var goodChars = '+- 1234567890().';
-		var cnt = phonenumber.replace( /[^0-9]/g, '' ).length;
+		const goodChars = '+- 1234567890().';
+		const cnt = phonenumber.replace( /[^0-9]/g, '' ).length;
 		if ( cnt < 10 ) {
 			return false;
 		}
-		for ( var i = 0; i < phonenumber.length; i++ ) {
-			var c = phonenumber.charAt( i );
+		for ( let i = 0; i < phonenumber.length; i++ ) {
+			const c = phonenumber.charAt( i );
 			if ( goodChars.indexOf( c ) < 0 ) {
 				return false;
 			}
 		}
 		return true;
-	} else {
-		return false;
 	}
+
+	return false;
 }
 
 function isValidPhoneUS( phonenumber ) {
 	phonenumber = phonenumber.replace( /\s+/g, '' );
 	if ( phonenumber.length > 9 && phonenumber.match( /^(\+?1-?)?(\([2-9]([02-9]\d|1[02-9])\)|[2-9]([02-9]\d|1[02-9]))-?[2-9]([02-9]\d|1[02-9])-?\d{4}$/ ) ) {
 		return true;
-	} else {
-		return false;
 	}
+
+	return false;
 }
 
 function checkZip( value ) {
@@ -42,44 +41,14 @@ function checkZip( value ) {
 function nameCheck( value ) {
 	if ( value.length > 1 && value.match( /^[a-zA-Z, .-]+$/i ) ) {
 		return true;
-	} else {
-		return false;
 	}
-}
 
-function cityCheck( value ) {
-	if ( value.length > 1 && value.match( /^[a-zA-Z0-9 , .]+$/i ) ) {
-		var str  = $( '#city' ).val();
-		var str2 = $( '#country' ).val();
-
-		return true;
-	} else {
-		return false;
-	}
-}
-
-function countryCheck( value ) {
-	if ( value.length > 1 && value.match( /^[a-zA-Z0-9 , .]+$/i ) ) {
-		var str = $( '#country' ).val();
-
-		return true;
-	} else {
-		return false;
-	}
-}
-
-function streetCheck( value ) {
-	if ( value.length > 3 && value.match( /[a-zA-Z0-9 , .]+$/i ) ) {
-		var str = $( '#address' ).val();
-		return true;
-	} else {
-		return false;
-	}
+	return false;
 }
 
 function clearError( element ) {
-	var x = element.id;
-	var y = document.activeElement.id;
+	const x = element.id;
+	const y = document.activeElement.id;
 
 	element.parentNode.classList.remove( 'gfield_error' );
 

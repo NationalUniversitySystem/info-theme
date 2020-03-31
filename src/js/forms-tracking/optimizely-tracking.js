@@ -1,4 +1,4 @@
-/* global setInputValue */
+import { setInputValue } from '../theme/functions';
 /**
  * Fetch the optimizely info we want to track and place it into our forms to track,
  * if the appropriate fields exist.
@@ -10,13 +10,13 @@
 	}
 
 	const activeCampaignStates = w.optimizely.get( 'state' ).getCampaignStates( {
-		'isActive': true
+		isActive: true,
 	} );
 
 	const activeCampaigns = [];
 
-	for ( let campaignId in activeCampaignStates ) {
-		let theCampaign = activeCampaignStates[ campaignId ];
+	for ( const campaignId in activeCampaignStates ) {
+		const theCampaign = activeCampaignStates[ campaignId ];
 
 		activeCampaigns.push( theCampaign.experiment.id + '|' + theCampaign.variation.id );
 	}

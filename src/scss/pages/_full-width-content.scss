@@ -1,15 +1,7 @@
 // sass-lint:disable nesting-depth
 .page-template-full-width-content {
-
-  .info-section {
+  .section {
     &--content {
-      padding-top: 30px;
-
-      article {
-        @include make-col-ready();
-        @include make-col(12);
-      }
-
       h2 {
         color: $color-primary;
         font-weight: 700;
@@ -28,7 +20,6 @@
         @include make-col-ready();
         @include make-col(12);
         @include make-col-offset(0);
-
         background: $color-secondary;
         color: $color-white;
         margin: 15px auto 30px;
@@ -46,19 +37,14 @@
     }
 
     &--widgets {
-      padding: 0;
-      width: 100%;
-
-      @media (min-width: $breakpoint-md-min ) {
-        width: 50%;
-      }
-
       .container {
         height: 100%;
         padding: 0 15px;
+      }
 
-        .row {
-          height: 100%;
+      .icon {
+        @media( min-width: $breakpoint-sm-min ) {
+          max-width: 65px;
         }
       }
 
@@ -72,26 +58,6 @@
         &__border {
           min-height: 0;
         }
-
-        &__inner {
-          position: static;
-          transform: none;
-
-          @media( min-width: $breakpoint-md-min ) {
-            display: block;
-          }
-
-          img {
-            @media( min-width: $breakpoint-sm-min ) {
-              margin: 0 auto 15px;
-              max-width: 65px;
-            }
-          }
-        }
-
-        &__content {
-          text-align: center;
-        }
       }
     }
 
@@ -102,11 +68,5 @@
         width: 50%;
       }
     }
-  }
-
-  .split-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 30px;
   }
 }

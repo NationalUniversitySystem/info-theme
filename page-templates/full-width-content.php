@@ -8,46 +8,56 @@
 
 get_header();
 ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-			<section class="info-section info-section--fluid">
-				<div class="container">
-					<div class="row">
-						<?php require locate_template( 'template-parts/hero.php' ); ?>
-						<?php require locate_template( 'template-parts/form.php' ); ?>
-					</div>
+	<main id="main" class="site-main">
+		<section class="section section--fluid">
+			<div class="container">
+				<div class="row">
+					<?php get_template_part( 'template-parts/hero' ); ?>
+					<?php get_template_part( 'template-parts/form' ); ?>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<section class="info-section info-section--content">
-				<div class="container">
-					<div class="row">
-						<?php
-						while ( have_posts() ) :
-							the_post();
-							get_template_part( 'template-parts/content/content', 'page' );
-						endwhile; // End of the loop.
-						?>
-					</div>
+		<section class="section section--content py-8">
+			<div class="container">
+				<div class="row">
+					<?php
+					while ( have_posts() ) :
+						the_post();
+						get_template_part( 'template-parts/content/content', 'page' );
+					endwhile; // End of the loop.
+					?>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<div class="split-wrap">
-				<section class="info-section info-section--widgets">
+
+		<div class="split-wrap d-flex flex-wrap">
+			<?php
+			// Widget with border.
+			$custom_callout = get_post_meta( get_the_ID(), '_callout', true );
+			$callout_text   = ! empty( $custom_callout ) ? $custom_callout : get_theme_mod( 'callout' );
+			if ( ! empty( $callout_text ) ) {
+				?>
+
+				<section class="section section--widgets p-0 col-12 col-md-6">
 					<div class="container">
 						<div class="row">
-							<?php get_template_part( 'template-parts/widget', 'alt' ); ?>
+							<div class="widget widget--alt col-12 col-lg-4 p-5 d-md-flex flex-lg-wrap align-content-lg-center">
+								<?php echo wp_kses_post( $callout_text ); ?>
+							</div>
 						</div>
 					</div>
 				</section>
 
-				<?php get_template_part( 'template-parts/quote' ); ?>
-			</div>
+				<?php
+			}
+			?>
 
-			<?php get_template_part( 'template-parts/accolades' ); ?>
+			<?php get_template_part( 'template-parts/quote' ); ?>
+		</div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		<?php get_template_part( 'template-parts/accolades' ); ?>
+	</main><!-- #main -->
 <?php
 get_footer();

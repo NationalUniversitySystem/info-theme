@@ -24,27 +24,23 @@ $phone_number      = ! empty( trim( $page_phone_number ) ) ? $page_phone_number 
 </head>
 
 <body <?php body_class(); ?>>
-	<div id="page" class="site">
-		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nusa' ); ?></a>
+	<?php wp_body_open(); ?>
 
-		<header id="masthead" class="site-header" role="banner">
-			<div class="container">
-				<div class="row">
-					<div class="site-header__logo">
-						<a href="<?php echo esc_url( network_home_url() ); ?>" rel="home"></a>
-					</div>
-					<div class="site-header__phone">
-						<div class="phone__inner">
-						<?php if ( $phone_number ) { ?>
-							<a href="tel:+1-<?php echo esc_attr( $phone_number ); ?>" class="phone__number">
-								<span><?php echo esc_html( $phone_number ); ?></span>
-							</a>
-							<a href="tel:+1-<?php echo esc_attr( $phone_number ); ?>" class="phone__icon"></a>
-						<?php } ?>
-						</div>
-					</div>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nusa' ); ?></a>
+
+	<header class="header py-4" role="banner">
+		<div class="container">
+			<div class="row">
+				<div class="header__logo col-8">
+					<a class="d-block" href="<?php echo esc_url( network_home_url() ); ?>" rel="home"></a>
 				</div>
-			</div><!-- .site-branding -->
-		</header><!-- #masthead -->
 
-		<div id="content" class="site-content">
+				<?php if ( $phone_number ) { ?>
+				<div class="header__contact col-4 d-flex align-items-center justify-content-end">
+					<a href="tel:+1-<?php echo esc_attr( $phone_number ); ?>" class="phone__number d-none d-md-block pr-5"><?php echo esc_html( $phone_number ); ?></a>
+					<a href="tel:+1-<?php echo esc_attr( $phone_number ); ?>" class="phone__icon"></a>
+				</div>
+				<?php } ?>
+			</div>
+		</div><!-- .container -->
+	</header>

@@ -1,23 +1,12 @@
-// sass-lint:disable no-important
 body {
   &.modal-open {
     overflow: inherit;
-    padding-right: 0 !important;
+    padding-right: 0 !important; // stylelint-disable-line declaration-no-important
   }
 }
 
 .modal {
-  // sass-lint:disable no-ids
-  &#thanks-modal {
-    text-align: center;
-
-    // sass-lint:enable no-ids
-    .modal-dialog {
-      max-width: 250px;
-    }
-  }
-
-  .modal-content {
+  &-content {
     border: none;
     border-radius: 0;
     font-size: 12px;
@@ -32,12 +21,9 @@ body {
   }
 
   .close {
-    background: none;
     border: none;
-    font-size: 20px;
-    position: absolute;
-    right: -13px;
-    top: -15px;
+    font-size: 25px;
+    font-weight: 700;
   }
 
   h3 {

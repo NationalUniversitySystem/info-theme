@@ -4,21 +4,21 @@
  */
 ( function( $ ) {
 	$( document ).ready( function() {
-		$( '.info-section__form' ).on( 'change', '.field__degree-type select', programsFinder );
+		$( '.section__form' ).on( 'change', '.field__degree-type select', programsFinder );
 	} );
 
 	function programsFinder() {
-		var degreeType = $( this ).val();
+		const degreeType = $( this ).val();
 
 		// Begin our ajax call.
 		$.ajax( {
 			type: 'POST',
 			url: InfoAjaxObject.ajax_url,
 			data: {
-				degreeType: degreeType,
-				action: 'info_degree_select'
+				degreeType,
+				action: 'info_degree_select',
 			},
-			success: function( programs ) { // The WP PHP AJAX action returns a list of programs as a string.
+			success( programs ) { // The WP PHP AJAX action returns a list of programs as a string.
 				// Remove all previously added programs as options from "Degree Program" select.
 				$( '.populate-program-metadata select' ).find( 'option:not([disabled="disabled"])' ).remove();
 
@@ -26,7 +26,7 @@
 				$( programs ).appendTo( '.populate-program-metadata select' );
 
 				$( '.populate-program-metadata select' ).append( '<optgroup label="" class="d-none"></optgroup>' );
-			}
+			},
 		} );
 	}
 } )( jQuery );
