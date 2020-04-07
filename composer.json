@@ -1,0 +1,24 @@
+{
+	"name": "nationaluniversitysystem/info-theme",
+	"type": "wordpress-theme",
+	"require": {
+		"composer/installers": "~1.0"
+	},
+	"authors": [
+		{
+			"name": "Mike Estrada",
+			"email": "mestrada@nu.edu",
+			"role": "Developer"
+		},
+		{
+			"name": "Chris Maust",
+			"email": "cmaust@nu.edu",
+			"role": "Developer"
+		},
+		{
+			"name": "Alex Gamero",
+			"email": "agamero@nu.edu",
+			"role": "Developer"
+		}
+	]
+}
