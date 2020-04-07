@@ -1,124 +1,94 @@
-// sass-lint:disable nesting-depth
-.info-section {
-  &__hero {
-    @include make-col-ready();
-    @include make-col(12);
+.hero {
+  @media( min-width: $breakpoint-md-min) and ( max-width: $breakpoint-md-max ) { // stylelint-disable-line media-feature-name-whitelist
+    @include make-col(6.5);
+  }
 
-    @media( min-width: $breakpoint-sm-min ){
-      padding-right: 0;
-    }
+  h1 {
+    color: $color-primary;
+    font-size: 32px;
+    font-weight: 600;
 
     @media( min-width: $breakpoint-md-min ) {
-      @include make-col(6.5);
+      color: $color-white;
+      font-size: 36px;
+      line-height: 42px;
     }
 
     @media( min-width: $breakpoint-lg-min ) {
-      @include make-col(8);
+      font-size: 45px;
     }
 
+    span {
+      display: inline;
 
-    .hero {
-      &__inner {
-        @media( min-width: $breakpoint-md-min ) {
-          background-size: cover;
-          height: 100%;
-          min-height: 405px;
-          position: relative;
-        }
+      @media( min-width: $breakpoint-md-min ) {
+        display: block;
       }
 
-      &__title {
-        line-height: 1;
-        padding: 30px;
-        width: 100%;
-
-        @media( min-width: $breakpoint-md-min ) {
-          background:  linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, .62) 44%, rgba(0, 0, 0, .8) 100%);
-          bottom: 0;
-          left: 0;
-          padding: 30px;
-          position: absolute;
-        }
-
-        @media( min-width: $breakpoint-xl-min ) {
-          padding: 50px 15px 15px;
-        }
-
-        h1 {
-          color: $color-primary;
-          font-size: 32px;
-          font-weight: 600;
-          line-height: 1;
-          margin: 0 0 10px;
-
-          @media( min-width: $breakpoint-md-min ) {
-            color: $color-white;
-            font-size: 36px;
-            line-height: 42px;
-          }
-
-          @media( min-width: $breakpoint-lg-min ) {
-            color: $color-white;
-            font-size:  45px;
-          }
-
-          span {
-            display: inline;
-
-            @media( min-width: $breakpoint-md-min ) {
-              display: block;
-            }
-
-            @media( min-width: $breakpoint-lg-min ) {
-              display: inline;
-            }
-          }
-        }
-
-        h2 {
-          color: $color-secondary;
-          font-size: 16px;
-          font-weight: 400;
-
-          @media( min-width: $breakpoint-md-min ) {
-            color: $color-white;
-            font-size:  22px;
-            line-height: 27px;
-            margin-bottom: 20px;
-          }
-
-          @media( min-width: $breakpoint-lg-min ) {
-            color: $color-white;
-            font-size:  25px;
-          }
-
-          span {
-            display: inline;
-
-            @media( min-width: $breakpoint-md-min ) {
-              display: block;
-            }
-
-            @media( min-width: $breakpoint-lg-min ) {
-              display: inline;
-            }
-          }
-        }
-
-        &--caption {
-          display: none;
-
-          @media( min-width: $breakpoint-md-min ) {
-            color: $white;
-            display: block;
-          }
-
-          strong {
-            display: block;
-            margin-bottom: 5px;
-          }
-        }
+      @media( min-width: $breakpoint-lg-min ) {
+        display: inline;
       }
+    }
+  }
+
+  h2 {
+    color: $color-secondary;
+    font-size: 16px;
+    font-weight: 400;
+
+    @media( min-width: $breakpoint-md-min ) {
+      color: $color-white;
+      font-size: 22px;
+      line-height: 27px;
+      margin-bottom: 20px;
+    }
+
+    @media( min-width: $breakpoint-lg-min ) {
+      font-size: 25px;
+    }
+
+    span {
+      display: inline;
+
+      @media( min-width: $breakpoint-md-min ) {
+        display: block;
+      }
+
+      @media( min-width: $breakpoint-lg-min ) {
+        display: inline;
+      }
+    }
+  }
+
+  &__background {
+    background-size: cover;
+    height: 100%;
+    min-height: 405px;
+  }
+
+  &__caption {
+    color: $white;
+
+    strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__copy {
+    line-height: 1;
+    padding: 30px;
+    width: 100%;
+
+    @media( min-width: $breakpoint-md-min ) {
+      background-image: linear-gradient(to top, rgba(0, 0, 0, .8) 0%, rgba(0, 0, 0, .62) 66%, rgba(0, 0, 0, 0) 100%);
+      bottom: 0;
+      left: 0;
+      position: absolute;
+    }
+
+    @media( min-width: $breakpoint-xl-min ) {
+      padding: 50px 15px 15px;
     }
   }
 }

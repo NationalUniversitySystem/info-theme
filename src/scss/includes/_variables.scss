@@ -11,7 +11,6 @@ $breakpoint-sm-max: ($breakpoint-md-min - 1);
 $breakpoint-md-max: ($breakpoint-lg-min - 1);
 $breakpoint-lg-max: ($breakpoint-xl-min - 1);
 
-
 // ------------------------------
 // Colors
 // ------------------------------
@@ -19,6 +18,7 @@ $colors: (
   'black': #000,
   'red': #df0523,
   'blue': #003161,
+  'blue-19': #1a3660,
   'light-blue': #398ece,
   'orange': #ffa500,
   'green': #63b00f,
@@ -65,20 +65,17 @@ $text-body: map-get($colors, 'black');
 $color-white: map-get($colors, 'white');
 $color-black: map-get($colors, 'black');
 $color-green: map-get($colors, 'green-dark');
-
+$color-blue-19: map-get($colors, 'blue-19');
 
 // ------------------------------
 // Fills
 // ------------------------------
 
-
 // ------------------------------
 // Text
 // ------------------------------
 
-
-
 // ------------------------------
 // Fonts
 // ------------------------------
-
+$open-sans: 'Open Sans', 'Helvetica Neue', 'Segoe UI', Tahoma, Arial, sans-serif;

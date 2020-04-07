@@ -7,18 +7,14 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article <?php post_class( 'col-12' ); ?>>
 	<?php if ( is_page_template( 'page-templates/thank-you.php' ) ) { ?>
 		<div class="entry-title">
-			<h1>
-				<?php the_title(); ?>
-			</h1>
+			<?php the_title( '<h1>', '</h1>' ); ?>
 		</div>
 	<?php } ?>
 	<div class="entry-content">
-		<?php
-		the_content();
-		?>
+		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
@@ -29,11 +25,11 @@
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
 						__( 'Edit <span class="screen-reader-text">%s</span>', 'nusa' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
+						[
+							'span' => [
+								'class' => [],
+							],
+						]
 					),
 					get_the_title()
 				),
@@ -43,4 +39,4 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>

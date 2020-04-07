@@ -28,7 +28,7 @@ class Metadata_Layout {
 		// Start with an underscore to hide fields from custom fields list.
 		self::$prefix = '_nus_template_';
 
-		add_action( 'fm_post', array( $this, 'register_metabox' ) );
+		add_action( 'fm_post', [ $this, 'register_metabox' ] );
 	}
 
 	/**
@@ -50,76 +50,76 @@ class Metadata_Layout {
 	 * @return void
 	 */
 	public function register_metabox() {
-		$degree_types = taxonomy_exists( 'degree-type' ) ? new Fieldmanager_Datasource_Term( array(
+		$degree_types = taxonomy_exists( 'degree-type' ) ? new Fieldmanager_Datasource_Term( [
 			'taxonomy' => 'degree-type',
-		) ) : new stdClass();
-		$degree_types = method_exists( $degree_types, 'get_items' ) ? $degree_types->get_items() : array();
+		] ) : new stdClass();
+		$degree_types = method_exists( $degree_types, 'get_items' ) ? $degree_types->get_items() : [];
 
-		$areas_of_study = taxonomy_exists( 'area-of-study' ) ? new Fieldmanager_Datasource_Term( array(
+		$areas_of_study = taxonomy_exists( 'area-of-study' ) ? new Fieldmanager_Datasource_Term( [
 			'taxonomy' => 'area-of-study',
-		) ) : new stdClass();
-		$areas_of_study = method_exists( $areas_of_study, 'get_items' ) ? $areas_of_study->get_items() : array();
+		] ) : new stdClass();
+		$areas_of_study = method_exists( $areas_of_study, 'get_items' ) ? $areas_of_study->get_items() : [];
 
-		$class_formats = taxonomy_exists( 'class-format' ) ? new Fieldmanager_Datasource_Term( array(
+		$class_formats = taxonomy_exists( 'class-format' ) ? new Fieldmanager_Datasource_Term( [
 			'taxonomy' => 'class-format',
-		) ) : new stdClass();
-		$class_formats = method_exists( $class_formats, 'get_items' ) ? $class_formats->get_items() : array();
+		] ) : new stdClass();
+		$class_formats = method_exists( $class_formats, 'get_items' ) ? $class_formats->get_items() : [];
 
-		$degrees = new Fieldmanager_Datasource_Post( array(
-			'query_args' => array(
+		$degrees = new Fieldmanager_Datasource_Post( [
+			'query_args' => [
 				'post_type'      => 'program',
 				'posts_per_page' => -1,
-			),
-		) );
-		$degrees = ! empty( $degrees->get_items() ) ? $degrees->get_items() : array();
+			],
+		] );
+		$degrees = ! empty( $degrees->get_items() ) ? $degrees->get_items() : [];
 
-		$fm = new Fieldmanager_Group( array(
+		$fm = new Fieldmanager_Group( [
 			'name'           => 'form_landing', // "name" id deceiving, used as the key/ID.
 			'serialize_data' => false,
 			'add_to_prefix'  => false,
-			'children'       => array(
-				self::$prefix . 'form_type'     => new Fieldmanager_Radios( 'Form Type', array(
+			'children'       => [
+				self::$prefix . 'form_type'     => new Fieldmanager_Radios( 'Form Type', [
 					'description' => 'Would you like a Program selection? A Program and Degree selection? or neither?. NOTE:  Save the page to see other fields.',
-					'options'     => array(
-						'brand'   => __( 'Brand Specific', 'nus' ),
-						'area'    => __( 'Area of Study Specific', 'nus' ),
-						'program' => __( 'Program Specific', 'nus' ),
-					),
-				) ),
-				self::$prefix . 'degree_type'   => new Fieldmanager_Checkboxes( 'Degree Type', array(
+					'options'     => [
+						'brand'   => __( 'Brand Specific', 'nusa' ),
+						'area'    => __( 'Area of Study Specific', 'nusa' ),
+						'program' => __( 'Program Specific', 'nusa' ),
+					],
+				] ),
+				self::$prefix . 'degree_type'   => new Fieldmanager_Checkboxes( 'Degree Type', [
 					'description' => 'You may choose multiple degree types.',
 					'options'     => $degree_types,
-					'attributes'  => array(
+					'attributes'  => [
 						'data-conditional-id'    => self::$prefix . 'form_type',
-						'data-conditional-value' => wp_json_encode( array( 'area', 'program' ) ),
-					),
-				) ),
-				self::$prefix . 'area_of_study' => new Fieldmanager_Radios( 'Area of Study', array(
+						'data-conditional-value' => wp_json_encode( [ 'area', 'program' ] ),
+					],
+				] ),
+				self::$prefix . 'area_of_study' => new Fieldmanager_Radios( 'Area of Study', [
 					'description' => 'You may only choose one.',
 					'options'     => $areas_of_study,
-					'attributes'  => array(
+					'attributes'  => [
 						'data-conditional-id'    => self::$prefix . 'form_type',
-						'data-conditional-value' => wp_json_encode( array( 'area', 'program' ) ),
-					),
-				) ),
-				self::$prefix . 'class_format'  => new Fieldmanager_Checkboxes( 'Class Format', array(
+						'data-conditional-value' => wp_json_encode( [ 'area', 'program' ] ),
+					],
+				] ),
+				self::$prefix . 'class_format'  => new Fieldmanager_Checkboxes( 'Class Format', [
 					'description' => 'All Classes are offered on campus.',
 					'options'     => $class_formats,
-					'attributes'  => array(
+					'attributes'  => [
 						'data-conditional-id'    => self::$prefix . 'form_type',
-						'data-conditional-value' => wp_json_encode( array( 'area', 'program' ) ),
-					),
-				) ),
-				self::$prefix . 'degrees'       => new Fieldmanager_Checkboxes( 'Select Degree(s)', array(
+						'data-conditional-value' => wp_json_encode( [ 'area', 'program' ] ),
+					],
+				] ),
+				self::$prefix . 'degrees'       => new Fieldmanager_Checkboxes( 'Select Degree(s)', [
 					'description_after_element' => false,
 					'options'                   => $degrees,
-					'attributes'                => array(
+					'attributes'                => [
 						'data-conditional-id'    => self::$prefix . 'form_type',
-						'data-conditional-value' => wp_json_encode( array( 'area', 'program' ) ),
-					),
-				) ),
-			),
-		) );
+						'data-conditional-value' => wp_json_encode( [ 'area', 'program' ] ),
+					],
+				] ),
+			],
+		] );
 
 		/**
 		 * Initiate the metabox

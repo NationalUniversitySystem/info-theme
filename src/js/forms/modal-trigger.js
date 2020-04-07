@@ -4,7 +4,7 @@
 			event.preventDefault();
 
 			const href = event.target.getAttribute( 'href' );
-			$( href ).modal( 'show' );
+			$( href ).modal();
 		}
 	} );
 } )( jQuery );

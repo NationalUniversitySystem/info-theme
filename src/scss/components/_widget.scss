@@ -1,0 +1,45 @@
+.widget {
+  h2,
+  h3 {
+    color: $color-secondary;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  &--alt {
+    border: 2px solid darken($color-alt, 12%);
+    text-align: center;
+
+    img {
+      display: block;
+      margin-bottom: 15px;
+      margin-left: auto;
+      margin-right: auto;
+
+      @media( min-width: $breakpoint-md-min ) and ( max-width: $breakpoint-md-max ) { // stylelint-disable-line media-feature-name-whitelist
+        margin-bottom: 0;
+        margin-right: 40px;
+      }
+
+      &.icon {
+        max-width: 90px;
+
+        @media( min-width: $breakpoint-md-min ) {
+          max-width: 115px;
+        }
+
+        @media( min-width: $breakpoint-lg-min ) {
+          max-width: 65px;
+        }
+      }
+    }
+  }
+
+  &__content {
+    text-align: center;
+
+    @media( min-width: $breakpoint-md-min ) and ( max-width: $breakpoint-md-max ) { // stylelint-disable-line media-feature-name-whitelist
+      text-align: left;
+    }
+  }
+}

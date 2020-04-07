@@ -1,21 +1,21 @@
-//=require theme/accolades-carousel.js
-//=require theme/functions.js
-//=require theme/header-offset.js
-//=require theme/livechat.js
-//=require theme/navigation.js
-//=require theme/skip-link-focus-fix.js
-//=require theme/youtube-embed.js
+import 'bootstrap/js/dist/util';
+import 'bootstrap/js/dist/modal';
 
-//=require forms/set-cookies.js
-//=require forms/set-forms-fields.js
-//=require forms/submit-button.js
-//=require forms/tooltip.js
-//=require forms/modal-trigger.js
-//=require forms/modal-thanks.js
-//=require forms/degree-type-select.js
-//=require forms/set-start-anchors.js
-//=require forms/validation-functions.js
-//=require forms/validation.js
+import './theme/header.js';
+import './theme/accolades-carousel.js';
+import './theme/functions.js';
+import './theme/set-start-anchors.js';
+import './theme/skip-link-focus-fix.js';
+import './theme/youtube-embed.js';
 
-//=require bootstrap/js/dist/util.js
-//=require bootstrap/js/dist/modal.js
+import './forms-tracking/set-cookies.js';
+import './forms-tracking/set-forms-fields.js';
+import './forms-tracking/optimizely-tracking.js';
+import './forms-tracking/optimizely-attributes.js';
+
+import './forms/submit-button.js';
+import './forms/tooltip.js';
+import './forms/modal-trigger.js';
+import './forms/degree-type-select.js';
+import './forms/validation-functions.js';
+import './forms/validation.js';

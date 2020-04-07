@@ -1,0 +1,24 @@
+.section {
+  &--fluid {
+    .container {
+      max-width: 100%;
+      padding: 0;
+      width: 100%;
+
+      @media( min-width: $breakpoint-xl-min ) {
+        max-width: 1210px;
+        padding: 0 15px;
+      }
+    }
+  }
+
+  &--content {
+    > .container {
+      padding: 0 30px;
+
+      @media( min-width: $breakpoint-xl-min ) {
+        padding: 0 15px;
+      }
+    }
+  }
+}

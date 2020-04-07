@@ -20,25 +20,24 @@ class Theme_Gravity_Forms {
 	 * Using construct function to add any actions and filters associated with the CPT
 	 */
 	public function __construct() {
-		add_filter( 'gform_pre_render', array( $this, 'populate_degree_type' ), 10, 1 );
-		add_filter( 'gform_pre_validation', array( $this, 'populate_degree_type' ), 10, 1 );
-		add_filter( 'gform_pre_submission_filter', array( $this, 'populate_degree_type' ), 10, 1 );
-		add_filter( 'gform_admin_pre_render', array( $this, 'populate_degree_type' ), 10, 1 );
+		add_filter( 'gform_pre_render', [ $this, 'populate_degree_type' ], 10, 1 );
+		add_filter( 'gform_pre_validation', [ $this, 'populate_degree_type' ], 10, 1 );
+		add_filter( 'gform_pre_submission_filter', [ $this, 'populate_degree_type' ], 10, 1 );
+		add_filter( 'gform_admin_pre_render', [ $this, 'populate_degree_type' ], 10, 1 );
 
-		add_filter( 'gform_pre_render', array( $this, 'populate_metadata_programs' ), 10, 1 );
-		add_filter( 'gform_pre_validation', array( $this, 'populate_metadata_programs' ), 10, 1 );
-		add_filter( 'gform_pre_submission_filter', array( $this, 'populate_metadata_programs' ), 10, 1 );
-		add_filter( 'gform_admin_pre_render', array( $this, 'populate_metadata_programs' ), 10, 1 );
+		add_filter( 'gform_pre_render', [ $this, 'populate_metadata_programs' ], 10, 1 );
+		add_filter( 'gform_pre_validation', [ $this, 'populate_metadata_programs' ], 10, 1 );
+		add_filter( 'gform_pre_submission_filter', [ $this, 'populate_metadata_programs' ], 10, 1 );
+		add_filter( 'gform_admin_pre_render', [ $this, 'populate_metadata_programs' ], 10, 1 );
 
-		add_action( 'gform_pre_submission', array( $this, 'make_degree_type_singular' ), 10, 1 );
-		add_action( 'gform_pre_submission', array( $this, 'modify_leadcomments' ) );
-		add_action( 'gform_pre_submission', array( $this, 'modify_track_camp' ) );
-		add_action( 'gform_pre_submission', array( $this, 'modify_advisor_location' ), 10, 2 );
-		add_action( 'gform_after_submission', array( $this, 'set_nuEmail_cookie' ), 10, 2 );
+		add_action( 'gform_pre_submission', [ $this, 'make_degree_type_singular' ], 10, 1 );
+		add_action( 'gform_pre_submission', [ $this, 'modify_leadcomments' ] );
+		add_action( 'gform_pre_submission', [ $this, 'modify_track_camp' ] );
+		add_action( 'gform_pre_submission', [ $this, 'modify_advisor_location' ], 10, 2 );
 
 		// Ajax calls.
-		add_action( 'wp_ajax_info_degree_select', array( $this, 'degree_select' ) );
-		add_action( 'wp_ajax_nopriv_info_degree_select', array( $this, 'degree_select' ) );
+		add_action( 'wp_ajax_info_degree_select', [ $this, 'degree_select' ] );
+		add_action( 'wp_ajax_nopriv_info_degree_select', [ $this, 'degree_select' ] );
 	}
 
 	/**
@@ -78,23 +77,23 @@ class Theme_Gravity_Forms {
 				continue;
 			}
 
-			$degree_types = get_terms( array(
+			$degree_types = get_terms( [
 				'taxonomy' => 'degree-type',
-			) );
+			] );
 
-			$choices = array();
+			$choices = [];
 
 			foreach ( $degree_types as $degree_type ) {
-				$choices[] = array(
+				$choices[] = [
 					'text'  => $degree_type->name,
 					'value' => $degree_type->slug,
-				);
+				];
 			}
 
-			$choices[] = array(
+			$choices[] = [
 				'text'  => 'Undecided',
 				'value' => 'undecided',
-			);
+			];
 
 			$field->choices = $choices;
 		}
@@ -124,7 +123,7 @@ class Theme_Gravity_Forms {
 			}
 
 			// Ok, now check if there's ONE choice and if it's completely empty, AND has our very specific class, because if that's not the case. GTFO.
-			if ( empty( $field->choices[0] ) || false === strpos( $field->cssClass, 'populate-metadata-programs' ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+			if ( empty( $field->choices[0] ) || false === strpos( $field->cssClass, 'populate-program-metadata' ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 				continue;
 			}
 
@@ -158,6 +157,8 @@ class Theme_Gravity_Forms {
 						];
 					endwhile;
 				endif;
+
+				wp_reset_postdata();
 			}
 
 			// "undecided" was at the end on the live site for "area" forms so placing it here.
@@ -250,27 +251,10 @@ class Theme_Gravity_Forms {
 		$military_id         = $this->get_field_id( $form, 'military', 'type' );
 
 		if ( false !== $advisor_location_id && false !== $military_id ) {
-			$military = rgpost( 'input_' . $military_id );
+			$military = rgpost( 'input_' . $military_id . '_1' );
 			if ( ! empty( $military ) ) {
 				$_POST[ 'input_' . $advisor_location_id ] = 'military';
 			}
-		}
-	}
-
-	/**
-	 * Handle the attempt to send this form to SOAR
-	 *
-	 * @param array $entry Array holding all of this entry's data.
-	 * @param array $form  The corresponding parent form for this entry.
-	 *
-	 * @return void
-	 */
-	public function set_nuEmail_cookie( $entry, $form ) {
-		$email_id = $this->get_field_id( $form, 'Email Address', 'label' );
-		$email_id = ! empty( $email_id ) ? $email_id : $this->get_field_id( $form, 'Email', 'label' );
-
-		if ( ! empty( $email_id ) && ! empty( $_SERVER['SERVER_NAME'] ) ) {
-			setcookie( 'nuEmail', $entry[ $email_id ], time() + ( 60 * 60 * 24 ), '/', '.' . sanitize_text_field( wp_unslash( $_SERVER['SERVER_NAME'] ) ) ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.cookies_setcookie
 		}
 	}
 
@@ -281,13 +265,13 @@ class Theme_Gravity_Forms {
 	 */
 	public function degree_select() {
 		// Make sure the value is in the request.
-		if ( empty( $_POST['degreeType'] ) ) { // input var ok.
+		if ( empty( $_POST['degreeType'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			wp_die();
 		}
 
 		// Get our ajax passed data.
-		$degree_type     = sanitize_text_field( wp_unslash( $_POST['degreeType'] ) ); // input var ok.
-		$modify_programs = ! empty( $_POST['modify_programs'] ) ? true : false; // input var ok.
+		$degree_type     = sanitize_text_field( wp_unslash( $_POST['degreeType'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+		$modify_programs = ! empty( $_POST['modifyPrograms'] ) ? true : false; // phpcs:ignore WordPress.Security.NonceVerification.Missing
 
 		if ( 'undecided' === $degree_type ) {
 			echo '<option value="N/A">N/A</option>';
@@ -296,7 +280,7 @@ class Theme_Gravity_Forms {
 			$term = get_term_by( 'slug', $degree_type, 'degree-type' );
 
 			// Setup array of current program types and their new names.
-			$new_program_names = array(
+			$new_program_names = [
 				'Associate of Arts'    => 'AA',
 				'Associate of Science' => 'AS',
 				'Bachelor of Arts'     => 'BA',
@@ -305,13 +289,13 @@ class Theme_Gravity_Forms {
 				'Master of Education'  => 'ME',
 				'Master of Fine Arts'  => 'MFA',
 				'Master of Science'    => 'MS',
-			);
+			];
 
 			$programs = get_transient( 'form_programs_' . $term->slug );
 
 			if ( false === $programs ) {
 				// Setup our query args.
-				$args     = array(
+				$args     = [
 					'order'                  => 'ASC',
 					'orderby'                => 'title',
 					'post_type'              => 'program',
@@ -320,14 +304,14 @@ class Theme_Gravity_Forms {
 					'no_found_rows'          => true,
 					'update_post_meta_cache' => false,
 					'update_post_term_cache' => false,
-					'tax_query'              => array(
-						array(
+					'tax_query'              => [
+						[
 							'taxonomy' => 'degree-type',
 							'field'    => 'slug',
 							'terms'    => $term->slug,
-						),
-					),
-				);
+						],
+					],
+				];
 				$programs = new WP_Query( $args );
 
 				// Save our transient.

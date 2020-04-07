@@ -1,36 +1,34 @@
 ( function() {
-	var ytVids = document.querySelectorAll( '.youtube-embed' );
+	const ytVids = document.querySelectorAll( '.youtube-embed' );
 
 	ytVids.forEach( function( ytVid ) {
-
 		// Make sure the data attribute is present.
 		if ( ! ytVid.dataset.ytid ) {
 			return;
 		}
 
 		// Get image URLs from ID.
-		var imageSources = [
+		const imageSources = [
 			'https://img.youtube.com/vi/' + ytVid.dataset.ytid + '/maxresdefault.jpg',
 			'https://img.youtube.com/vi/' + ytVid.dataset.ytid + '/hqdefault.jpg',
-			'https://img.youtube.com/vi/' + ytVid.dataset.ytid + '/sddefault.jpg'
+			'https://img.youtube.com/vi/' + ytVid.dataset.ytid + '/sddefault.jpg',
 		];
 
 		// Build out markup that will be inserted into yt-embed div.
-		var thumbnail       = document.createElement( 'div' );
-		var thumbnailImage  = document.createElement( 'div' );
-		var thumbnailButton = document.createElement( 'div' );
+		const thumbnail       = document.createElement( 'div' );
+		const thumbnailImage  = document.createElement( 'div' );
+		const thumbnailButton = document.createElement( 'div' );
 
 		thumbnail.className = 'thumbnail';
 		thumbnailImage.className = 'thumbnail__image';
 		thumbnailButton.className = 'thumbnail__button';
 
 		// Create image to load.
-		var imageToLoad      = 0;
-		var downloadingImage = new Image();
+		let imageToLoad      = 0;
+		const downloadingImage = new Image();
 
 		// onload event has to be defined/attached to the new image before we set the src.
 		downloadingImage.onload = function() {
-
 			// Check if YT returned it's 404 image, and if it did try to load the HQ option.
 			if ( this.naturalHeight <= 90 ) {
 				imageToLoad++;
@@ -45,7 +43,7 @@
 		downloadingImage.src = imageSources[ imageToLoad ];
 
 		ytVid.addEventListener( 'click', function() {
-			var iframe = document.createElement( 'iframe' );
+			const iframe = document.createElement( 'iframe' );
 
 			iframe.setAttribute( 'height', '100%' );
 			iframe.setAttribute( 'width', '100%' );

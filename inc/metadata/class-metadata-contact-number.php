@@ -18,7 +18,7 @@ class Metadata_Contact_Number {
 	 * Using construct function to add any actions and filters
 	 */
 	public function __construct() {
-		add_action( 'fm_post_page', array( $this, 'register_metabox' ) );
+		add_action( 'fm_post_page', [ $this, 'register_metabox' ] );
 	}
 
 	/**
@@ -40,15 +40,15 @@ class Metadata_Contact_Number {
 	 * @return void
 	 */
 	public function register_metabox() {
-		$fm = new Fieldmanager_TextField( array(
+		$fm = new Fieldmanager_TextField( [
 			'name'        => '_page_contact_phone_number', // "name" id deceiving, used as the key/ID.
 			'label'       => 'Phone Number',
 			'description' => 'Override the phone number in the header. Format: 855-355-6288.',
-			'attributes'  => array(
+			'attributes'  => [
 				'type'    => 'tel',
 				'pattern' => '[0-9]{3}-[0-9]{3}-[0-9]{4}',
-			),
-		) );
+			],
+		] );
 
 		/**
 		 * Initiate the metabox

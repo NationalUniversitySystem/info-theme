@@ -20,13 +20,13 @@ class Form_Dynamic_Population {
 	 * Using construct function to add any actions and filters associated with the CPT
 	 */
 	public function __construct() {
-		add_filter( 'gform_field_value_populate-hidden-degree-type', array( $this, 'populate_hidden_degree_type' ) );
-		add_filter( 'gform_field_value_populate-hidden-program', array( $this, 'populate_hidden_program' ) );
-		add_filter( 'gform_field_value_campaign_activity', array( $this, 'populate_campaign_activity' ) );
-		add_filter( 'gform_field_value_arrivaluri', array( $this, 'populate_arrivaluri' ) );
-		add_filter( 'gform_field_value_location', array( $this, 'populate_location' ) );
-		add_filter( 'gform_field_value_lead_transactionID', array( $this, 'populate_lead_transaction_id' ) );
-		add_filter( 'gform_field_value', array( $this, 'populate_eloqua_dynamic_fields' ), 10, 3 );
+		add_filter( 'gform_field_value_populate-hidden-degree-type', [ $this, 'populate_hidden_degree_type' ] );
+		add_filter( 'gform_field_value_populate-hidden-program', [ $this, 'populate_hidden_program' ] );
+		add_filter( 'gform_field_value_campaign_activity', [ $this, 'populate_campaign_activity' ] );
+		add_filter( 'gform_field_value_arrivaluri', [ $this, 'populate_arrivaluri' ] );
+		add_filter( 'gform_field_value_location', [ $this, 'populate_location' ] );
+		add_filter( 'gform_field_value_lead_transactionID', [ $this, 'populate_lead_transaction_id' ] );
+		add_filter( 'gform_field_value', [ $this, 'populate_eloqua_dynamic_fields' ], 10, 3 );
 	}
 
 	/**
@@ -142,8 +142,8 @@ class Form_Dynamic_Population {
 	 * @return string
 	 */
 	public function populate_lead_transaction_id( $value ) {
-		if ( empty( $value ) && ! empty( $_GET['elqctid'] ) ) {
-			$ref_id = sanitize_text_field( wp_unslash( $_GET['elqctid'] ) );
+		if ( empty( $value ) && ! empty( $_GET['elqctid'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$ref_id = sanitize_text_field( wp_unslash( $_GET['elqctid'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			$ref_id = preg_replace( '/[A-Za-z]/', '0', $ref_id );
 			$ref_id = intval( $ref_id );
 
@@ -174,30 +174,39 @@ class Form_Dynamic_Population {
 	 * @return string
 	 */
 	public function populate_eloqua_dynamic_fields( $value, $field, $name ) {
+		// Array key is the form dynamic parameter name in GF and the value is the returned eloqua key.
 		$dynamic_names_to_populate = [
-			'first_name',
-			'last_name',
-			'email_address',
+			'first_name'     => 'firstName',
+			'last_name'      => 'lastName',
+			'email_address'  => 'emailAddress',
+			'phone_number'   => [
+				'mobilePhone',
+				'businessPhone',
+			],
+			'street_address' => 'address1',
+			'city'           => 'city',
+			'postal_code'    => 'postalCode',
+			'country'        => 'country',
 		];
 
-		if ( in_array( $name, $dynamic_names_to_populate, true ) && ! empty( $_GET['elqctid'] ) ) {
-			$ref_id = sanitize_text_field( wp_unslash( $_GET['elqctid'] ) );
+		if ( array_key_exists( $name, $dynamic_names_to_populate ) && ! empty( $_GET['elqctid'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$ref_id = sanitize_text_field( wp_unslash( $_GET['elqctid'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			$ref_id = preg_replace( '/[A-Za-z]/', '0', $ref_id );
 			$ref_id = intval( $ref_id );
 
 			$this->fetch_eloqua_info( $ref_id );
 
 			if ( ! empty( $this->response_data ) ) {
-				switch ( $name ) {
-					case 'first_name':
-						$value = $this->response_data->firstName;
-						break;
-					case 'last_name':
-						$value = $this->response_data->firstName;
-						break;
-					case 'email_address':
-						$value = $this->response_data->emailAddress;
+				$response_data_array = (array) $this->response_data;
+				$gf_key              = $dynamic_names_to_populate[ $name ];
+
+				if ( ! is_array( $gf_key ) ) {
+					$eloqua_key = $gf_key;
+				} else {
+					$eloqua_key = ! empty( $response_data_array[ $gf_key[0] ] ) ? $gf_key[0] : $gf_key[1];
 				}
+
+				$value = ! empty( $response_data_array[ $eloqua_key ] ) ? $response_data_array[ $eloqua_key ] : '';
 			}
 		}
 
@@ -216,14 +225,14 @@ class Form_Dynamic_Population {
 		if ( empty( $this->response_data ) || 'partial' !== $depth ) {
 			$eloqua_url = 'https://secure.p03.eloqua.com/api/REST/1.0/data/contact/' . $ref_id . '?depth=' . $depth;
 
-			$eloqua_args = array(
-				'headers' => array(
+			$eloqua_args = [
+				'headers' => [
 					'Accept'        => 'application/json',
 					'Content-Type'  => 'application/json',
 					'Cache-Control' => 'no-cache',
 					'Authorization' => 'Basic TmF0aW9uYWxVbml2ZXJzaXR5XE5VV2ViRGV2LkJ1bGtBUEk6eWU4M3J1dFJVc2FjZVc=',
-				),
-			);
+				],
+			];
 
 			$response = wp_remote_retrieve_body( wp_remote_request( $eloqua_url, $eloqua_args ) );
 
