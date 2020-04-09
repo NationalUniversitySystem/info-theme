@@ -1,0 +1,72 @@
+// stylelint-disable selector-max-compound-selectors
+.page-template-full-width-content {
+  .section {
+    &--content {
+      h2 {
+        color: $color-primary;
+        font-weight: 700;
+      }
+
+      h3 {
+        color: $color-secondary;
+      }
+
+      hr {
+        border: none;
+        margin: 30px 0 0;
+      }
+
+      .feature-banner {
+        @include make-col-ready();
+        @include make-col(12);
+        @include make-col-offset(0);
+        background: $color-secondary;
+        color: $color-white;
+        margin: 15px auto 30px;
+        padding: 30px;
+
+        @media( min-width: $breakpoint-lg-min ) {
+          @include make-col(8);
+          @include make-col-offset(2);
+        }
+
+        h3 {
+          color: $color-white;
+        }
+      }
+    }
+
+    &--widgets {
+      .container {
+        height: 100%;
+        padding: 0 15px;
+      }
+
+      .icon {
+        @media( min-width: $breakpoint-sm-min ) {
+          max-width: 65px;
+        }
+      }
+
+      .widget {
+        &--alt {
+          @include make-col(12);
+          margin-top: 0;
+          padding: 0;
+        }
+
+        &__border {
+          min-height: 0;
+        }
+      }
+    }
+
+    &--quote {
+      width: 100%;
+
+      @media (min-width: $breakpoint-md-min ) {
+        width: 50%;
+      }
+    }
+  }
+}

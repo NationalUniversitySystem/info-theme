@@ -1,0 +1,19 @@
+form {
+  .section {
+    &-title {
+      border-bottom: 1px solid #ccc; /* stylelint-disable-line sh-waqar/declaration-use-variable */
+      font-size: 14px;
+      padding-bottom: 2px;
+
+      span {
+        font-weight: 700;
+
+        &.optional {
+          color: #ccc; /* stylelint-disable-line sh-waqar/declaration-use-variable */
+          font-style: italic;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.header {
+  background: $color-primary;
+  width: 100%;
+  z-index: 99;
+
+  .logged-in & {
+    top: 46px;
+
+    @media( min-width: 783px ) {
+      top: 32px;
+    }
+  }
+
+  .phone {
+    &__number {
+      color: $color-accent;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    &__icon {
+      background: url('../../images/phone_icon_gold.svg') top center no-repeat;
+      height: 30px;
+      width: 30px;
+
+      @media( min-width: $breakpoint-md-min ) {
+        height: 35px;
+        width: 35px;
+      }
+    }
+  }
+}
