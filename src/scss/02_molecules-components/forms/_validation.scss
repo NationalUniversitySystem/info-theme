@@ -1,0 +1,20 @@
+.validation {
+  &_error {
+    display: none !important; /* stylelint-disable-line declaration-no-important */
+  }
+}
+
+.gfield {
+  /* stylelint-disable selector-no-qualifying-type */
+  &_error {
+    input[type='text'],
+    select {
+      border: 2px solid $error;
+      color: $error;
+    }
+
+    input[type='checkbox'] {
+      color: $error;
+    }
+  }
+}

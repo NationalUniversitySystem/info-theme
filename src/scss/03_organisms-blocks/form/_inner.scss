@@ -1,0 +1,11 @@
+.form {
+  &__inner {
+    background: $color-alt;
+    height: 100%;
+    padding: 15px;
+
+    @media( min-width: $breakpoint-md-min ) {
+      padding: 10px 20px;
+    }
+  }
+}

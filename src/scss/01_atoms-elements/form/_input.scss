@@ -1,0 +1,10 @@
+input[type='text'] { /* stylelint-disable-line selector-no-qualifying-type */
+  background: $color-white;
+  border: 1px solid darken($color-alt, 20%);
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 200;
+  height: 34px;
+  padding: 7px 10px;
+  width: 100% !important; /* stylelint-disable-line declaration-no-important */
+}

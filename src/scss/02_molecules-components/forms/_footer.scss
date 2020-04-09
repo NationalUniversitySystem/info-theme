@@ -1,0 +1,9 @@
+.gform {
+  &_footer {
+    button {
+      @extend .button; /* stylelint-disable-line scss/at-extend-no-missing-placeholder */
+      @extend .button--yellow; /* stylelint-disable-line scss/at-extend-no-missing-placeholder */
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+// stylelint-disable selector-max-compound-selectors
+.nuedu2 {
+  $color-primary:   #1a3660;
+  $color-secondary: #0088cf;
+  $font-oswald: 'oswald', Arial, Helvetica, sans-serif;
+
+  .header {
+    background: $color-white;
+
+    &__logo {
+      .phone {
+        &__number {
+          color: $color-primary;
+        }
+
+        &__icon {
+          background: url('../../images/phone_icon-alt.svg') top center no-repeat;
+        }
+      }
+
+      a {
+        background: url('../../images/logo-alt-mobile.svg') top left no-repeat;
+
+        @media( min-width: $breakpoint-md-min ) {
+          background: url('../../images/logo-alt.svg') top left no-repeat;
+        }
+      }
+    }
+  }
+
+  .accolades {
+    background-color: $color-primary;
+  }
+
+  .hero {
+    h1,
+    h2 {
+      color: $color-white;
+      display: inline-block;
+      font-family: $font-oswald;
+      font-weight: 700;
+      padding: 10px 20px;
+      text-transform: uppercase;
+
+      @media( min-width: $breakpoint-md-min ) {
+        background: none;
+        display: block;
+        max-width: 470px;
+        padding: 0;
+      }
+    }
+
+    h1 {
+      background: $color-primary;
+
+      span {
+        display: inline;
+
+        @media( min-width: $breakpoint-md-min ) {
+          background: $color-primary;
+          display: inline-block;
+          padding: 10px 20px;
+        }
+      }
+    }
+
+    h2 {
+      background: $color-secondary;
+      margin-bottom: 0;
+
+      span {
+        display: inline;
+
+        @media( min-width: $breakpoint-md-min ) {
+          background: $color-secondary;
+          display: inline-block;
+          padding: 5px 10px;
+
+          &:first-child {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+
+    &__caption {
+      margin-top: 10px;
+
+      @media(min-width: $breakpoint-lg-min ) {
+        bottom: 30px;
+        margin-top: 0;
+        position: absolute;
+        right: 30px;
+      }
+
+      @media(min-width: $breakpoint-xl-min ) {
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+  }
+}

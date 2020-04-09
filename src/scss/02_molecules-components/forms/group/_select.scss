@@ -1,0 +1,26 @@
+.form {
+  &__group {
+    &--select {
+      position: relative;
+
+      &::after {
+        color: $color-secondary;
+        content: '\e804';
+        font-family: fontello; /* stylelint-disable-line sh-waqar/declaration-use-variable, font-family-no-missing-generic-family-keyword */
+        font-size: 12px;
+        position: absolute;
+        right: 11px;
+        top: 6px;
+      }
+
+      select {
+        -moz-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
+        -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
+
+        &::-ms-expand {
+          display: none;
+        }
+      }
+    }
+  }
+}

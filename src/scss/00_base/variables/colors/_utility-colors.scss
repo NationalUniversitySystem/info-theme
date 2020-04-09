@@ -1,0 +1,24 @@
+$colors: (
+  'black': #000,
+  'red': #df0523,
+  'blue': #003161,
+  'blue-19': #1a3660,
+  'light-blue': #398ece,
+  'orange': #ffa500,
+  'green': #63b00f,
+  'green-dark': #008000,
+  'white': #fff,
+  'gray': #f1f1f1
+);
+
+$all-colors: map-merge($colors, $brand-colors);
+
+// Utility Colors
+$success: map-get($colors, 'green');
+$error: map-get($colors, 'red');
+$text-body: map-get($colors, 'black');
+
+$color-white: map-get($colors, 'white');
+$color-black: map-get($colors, 'black');
+$color-green: map-get($colors, 'green-dark');
+$color-blue-19: map-get($colors, 'blue-19');

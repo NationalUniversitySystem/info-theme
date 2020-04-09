@@ -1,0 +1,83 @@
+.section {
+  &--content {
+    /* stylelint-disable selector-max-compound-selectors, max-nesting-depth */
+    form {
+      ul {
+        @include make-row();
+
+        li {
+          @include make-col-ready();
+          @include make-col(12);
+          margin-bottom: 15px;
+          padding: 0;
+
+          &::before {
+            display: none;
+          }
+
+          &.gfield {
+            @include make-col(12);
+            list-style-type: none;
+
+            @media(min-width: $breakpoint-md-min ) {
+              @include make-col(6);
+            }
+
+            &_checkbox {
+              display: block;
+              margin: 0;
+
+              li {
+                padding: 0;
+                width: 100%;
+              }
+            }
+
+            &_html {
+              @include make-col(12);
+              margin-top: 30px;
+
+              &:not(:first-child) {
+                margin-top: 40px;
+              }
+            }
+          }
+
+          &.form__group--gdpr,
+          &.form__group--tooltip {
+            @include make-col(12);
+          }
+
+          &.field {
+            &--textarea {
+              @include make-col(12);
+
+              textarea {
+                min-height: 200px;
+              }
+            }
+
+            &--small {
+              @media(min-width: $breakpoint-md-min ) {
+                @include make-col(3);
+              }
+            }
+          }
+
+          &.form__group--select {
+            &::after {
+              right: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__form {
+    @media ( min-width: $breakpoint-md-min ) and ( max-width: $breakpoint-md-max ) { // stylelint-disable-line media-feature-name-whitelist
+      @include make-col(5.5);
+      padding-left: 0;
+    }
+  }
+}

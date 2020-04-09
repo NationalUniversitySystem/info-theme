@@ -1,0 +1,75 @@
+.icon,
+[class^='icon-'],
+[class*=' icon-'],
+[class*=' icon--'] {
+  &::before,
+  &::after {
+    display: inline-block;
+    font-family: fontello; /* stylelint-disable-line sh-waqar/declaration-use-variable, font-family-no-missing-generic-family-keyword */
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1em;
+    margin-left: .2em;
+    margin-right: .2em;
+    speak: none;
+    text-align: center;
+    text-decoration: inherit;
+    text-transform: none;
+    width: 1em;
+  }
+}
+
+.icon-attention-circled::before {
+  content: '\e800';
+}
+
+.icon-cancel::before {
+  content: '\e801';
+}
+
+.icon-ok::before {
+  content: '\e803';
+}
+
+.icon-down-open::before {
+  content: '\e804';
+}
+
+.icon-twitter::before {
+  content: '\f099';
+}
+
+.icon-facebook::before {
+  content: '\f09a';
+}
+
+.icon-linkedin::before {
+  content: '\f0e1';
+}
+
+.icon-youtube-play::before {
+  content: '\f16a';
+}
+
+.icon-instagram::before {
+  content: '\f16d';
+}
+
+.icon {
+  &--question-circle {
+    &::before {
+      content: '\e802';
+    }
+  }
+
+  &--spin {
+    &::after {
+      animation: spin 1s infinite linear;
+      color: $color-accent;
+      content: '\e838';
+    }
+  }
+}

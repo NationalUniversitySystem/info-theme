@@ -1,0 +1,10 @@
+.hero {
+  &__caption {
+    color: $white;
+
+    strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+}

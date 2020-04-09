@@ -1,42 +1,7 @@
 // ------------------------------
-// Bootstrap Overrides
-// ------------------------------
-// $grid-gutter-width: 32px;
-$spacer: 1rem;
-$spacers:(
-  0: 0,
-  1: ($spacer * .25),
-  2: ($spacer * .5),
-  3: ($spacer * .75),
-  4: $spacer,
-  5: ($spacer * 1.25),
-  6: ($spacer * 1.5),
-  7: ($spacer * 1.75),
-  8: ($spacer * 2)
-);
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
-);
-
-// Grid containers
-//
-// Define the maximum width of `.container` for different screen sizes.
-
-$container-max-widths: (
-  sm: 1000px,
-  md: 1100px,
-  lg: 1200px,
-  xl: 1210px
-);
-
-// ------------------------------
 // Vendor Styles
 // ------------------------------
+@import '00_base/bootstrap-overrides';
 @import 'node_modules/bootstrap/scss/functions';
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/mixins';
@@ -52,44 +17,89 @@ $container-max-widths: (
 @import 'vendor/wordpress';
 
 // ------------------------------
-// Global Styles
+// Base
 // ------------------------------
-@import 'includes/variables';
-@import 'includes/animations';
-@import 'includes/font-faces';
-@import 'includes/global';
-@import 'includes/utility-classes';
+@import '00_base/variables/colors/brand-colors';
+@import '00_base/variables/colors/utility-colors';
+@import '00_base/variables/breakpoints';
+@import '00_base/variables/fonts/font-faces';
+@import '00_base/variables/fonts/font-sizes';
+@import '00_base/variables/fonts/fonts';
+@import '00_base/mixins';
+@import '00_base/global';
+@import '00_base/utility-classes';
+@import '00_base/animations';
+@import '00_base/placeholders/focus';
+@import '00_base/placeholders/heading';
+@import '00_base/placeholders/link';
 
 // ------------------------------
-// Components
+// Atom - Elements
 // ------------------------------
-@import 'components/accolades';
-@import 'components/buttons';
-@import 'components/hero';
-@import 'components/iframe';
-@import 'components/section';
-@import 'components/lists';
-@import 'components/modal';
-@import 'components/quote';
-@import 'components/tables';
-@import 'components/widget';
-@import 'components/forms';
+@import '01_atoms-elements/form/input';
+@import '01_atoms-elements/form/select';
+@import '01_atoms-elements/form/textarea';
+@import '01_atoms-elements/logo/logo-header';
+@import '01_atoms-elements/button';
+@import '01_atoms-elements/heading';
+@import '01_atoms-elements/icon';
+@import '01_atoms-elements/link';
+@import '01_atoms-elements/list';
+@import '01_atoms-elements/paragraph';
+@import '01_atoms-elements/table';
 
 // ------------------------------
-// Layout
+// Molecules - Components
 // ------------------------------
-@import 'layout/header';
-@import 'layout/footer';
+@import '02_molecules-components/forms/group/military';
+@import '02_molecules-components/forms/group/select';
+@import '02_molecules-components/forms/chainedselect';
+@import '02_molecules-components/forms/checkbox';
+@import '02_molecules-components/forms/consent';
+@import '02_molecules-components/forms/footer';
+@import '02_molecules-components/forms/gdpr';
+@import '02_molecules-components/forms/gform-hidden';
+@import '02_molecules-components/forms/intro';
+@import '02_molecules-components/forms/label';
+@import '02_molecules-components/forms/spinner';
+@import '02_molecules-components/forms/validation';
+@import '02_molecules-components/navigation/primary/desktop/desktop-nav';
+@import '02_molecules-components/navigation/primary/mobile/mobile-nav';
+@import '02_molecules-components/navigation/primary/mobile/burger';
+@import '02_molecules-components/navigation/footer/social';
+@import '02_molecules-components/hero/hero';
+@import '02_molecules-components/hero/copy';
+@import '02_molecules-components/hero/caption';
+@import '02_molecules-components/iframe';
+@import '02_molecules-components/modal';
+@import '02_molecules-components/section';
+@import '02_molecules-components/tooltip';
 
 // ------------------------------
-// Pages & Page Templates
+// Organisms - Blocks
 // ------------------------------
-@import 'pages/thank-you';
-@import 'pages/full-width-hero';
-@import 'pages/full-width-content';
-@import 'pages/404';
+@import '03_organisms-blocks/form/form';
+@import '03_organisms-blocks/form/inner';
+@import '03_organisms-blocks/form/section-title';
+@import '03_organisms-blocks/accolades';
+@import '03_organisms-blocks/footer';
+@import '03_organisms-blocks/header';
+@import '03_organisms-blocks/quote';
+@import '03_organisms-blocks/widget';
+
+// ------------------------------
+// Templates
+// ------------------------------
+@import '04_templates/full-width-content';
+@import '04_templates/full-width-hero';
+
+// ------------------------------
+// Pages
+// ------------------------------
+@import '05_pages/404';
+@import '05_pages/thank-you';
 
 // ------------------------------
 // A/B Tests
 // ------------------------------
-@import 'testing/2.0-theme';
+@import 'testing/2-dot-0-theme';
