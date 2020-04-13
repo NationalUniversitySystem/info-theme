@@ -20,11 +20,12 @@ if ( $awards ) {
 				<div class="accolades__wrap col d-md-flex justify-content-around p-0">
 					<?php
 					foreach ( $awards as $award ) {
-						$award = is_int( $award ) ? wp_get_attachment_url( $award ) : $award;
+						$award_alt = get_post_meta( $award, '_wp_attachment_image_alt', true );
+						$award     = is_int( $award ) ? wp_get_attachment_image( $award, 'full' ) : $award;
 						?>
-						<div class="accolade col-md align-items-md-center justify-content-md-center p-0">
-							<img src="<?php echo esc_url( $award ); ?>" />
-						</div>
+						<article class="accolade col-md align-items-md-center justify-content-md-center p-0" aria-label="Accolade <?php echo $award_alt; ?>">
+							<?php echo wp_kses_post( $award ); ?>
+						</article>
 						<?php
 					}
 					?>
