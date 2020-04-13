@@ -1,6 +1,7 @@
 {
 	"name": "nationaluniversitysystem/info-theme",
 	"type": "wordpress-theme",
+	"version": "2.1.0",
 	"require": {
 		"composer/installers": "~1.0"
 	},
