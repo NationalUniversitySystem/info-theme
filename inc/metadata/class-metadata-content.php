@@ -50,6 +50,7 @@ class Metadata_Content {
 					'label'           => 'Content Columns',
 					'limit'           => 2,
 					'description'     => 'If using an initial heading, use an H2 tag and add ID attribute "content-area-{column number}. e.g. id="content-area-1. If using main WYSIWYG, offset column # by 1.',
+					'add_more_label'  => 'Add column',
 					'editor_settings' => [
 						'media_buttons' => false,
 						'editor_height' => 200,

@@ -88,8 +88,8 @@ class NUSA_Theme_Setup {
 	 * Enqueues the necessary css and js files when the WordPress admin is loaded.
 	 */
 	public function enqueue_admin_assets() {
-		wp_enqueue_style( 'nusa', get_stylesheet_directory_uri() . '/assets/css/wp-admin.min.css', [], filemtime( get_template_directory() . '/assets/css/wp-admin.min.css' ) );
-		wp_enqueue_script( 'nusa', get_stylesheet_directory_uri() . '/assets/js/wp-admin.min.js', [ 'jquery', 'media-upload' ], filemtime( get_template_directory() . '/assets/js/wp-admin.min.js' ), true );
+		wp_enqueue_style( 'nusa', get_template_directory_uri() . '/assets/css/wp-admin.min.css', [], filemtime( get_template_directory() . '/assets/css/wp-admin.min.css' ) );
+		wp_enqueue_script( 'nusa', get_template_directory_uri() . '/assets/js/wp-admin.min.js', [ 'jquery', 'media-upload' ], filemtime( get_template_directory() . '/assets/js/wp-admin.min.js' ), true );
 	}
 
 	/**
@@ -99,7 +99,7 @@ class NUSA_Theme_Setup {
 	 */
 	public function enqueue_assets() {
 		$theme_path = get_template_directory();
-		$theme_uri  = get_stylesheet_directory_uri();
+		$theme_uri  = get_template_directory_uri();
 
 		// Styles.
 		wp_enqueue_style( 'nusa', $theme_uri . '/assets/css/theme.min.css', [], filemtime( $theme_path . '/assets/css/theme.min.css' ) );
