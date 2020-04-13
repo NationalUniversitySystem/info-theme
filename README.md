@@ -78,6 +78,7 @@ The below numbers correspond to the [Numbered Map](Info-Theme-Numbered-Guide.jpg
   <tr>
     <td align="center"><a href="https://github.com/mestradanu"><img src="https://avatars1.githubusercontent.com/u/44380612?v=4" width="100px;" alt=""/><br /><sub><b>Mike Estrada</b></sub></a><br /><a href="https://github.com/NationalUniversitySystem/info-theme/commits?author=mestradanu" title="Code">💻</a> <a href="#projectManagement-mestradanu" title="Project Management">📆</a> <a href="https://github.com/NationalUniversitySystem/info-theme/pulls?q=is%3Apr+reviewed-by%3Amestradanu" title="Reviewed Pull Requests">👀</a> <a href="#maintenance-mestradanu" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/agameronu"><img src="https://avatars3.githubusercontent.com/u/44380858?v=4" width="100px;" alt=""/><br /><sub><b>Alex Gamero</b></sub></a><br /><a href="https://github.com/NationalUniversitySystem/info-theme/commits?author=agameronu" title="Code">💻</a> <a href="#tool-agameronu" title="Tools">🔧</a></td>
+    <td align="center"><a href="https://github.com/cmaustnu"><img src="https://avatars1.githubusercontent.com/u/44381935?v=4" width="100px;" alt=""/><br /><sub><b>Chris Maust</b></sub></a><br /><a href="https://github.com/NationalUniversitySystem/info-theme/commits?author=cmaustnu" title="Code">💻</a> <a href="#a11y-cmaustnu" title="Accessibility">️️️️♿️</a></td>
   </tr>
 </table>
 
