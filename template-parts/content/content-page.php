@@ -7,7 +7,7 @@
 
 ?>
 
-<article <?php post_class( 'col-12' ); ?>>
+<article <?php post_class( 'col-12' ); ?> aria-label="Content area #1">
 	<?php if ( is_page_template( 'page-templates/thank-you.php' ) ) { ?>
 		<div class="entry-title">
 			<?php the_title( '<h1>', '</h1>' ); ?>

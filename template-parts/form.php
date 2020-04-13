@@ -15,7 +15,7 @@ $gform_id = $gform_id ? $gform_id : get_theme_mod( 'rfi_sidebar_form_id' );
 // Same for lead-in text.
 $form_intro_text = $form_intro_text ? $form_intro_text : get_theme_mod( 'form_intro' );
 ?>
-<div class="section__form col-12 col-lg-4 pl-md-0" id="page-form">
+<article class="section__form col-12 col-lg-4 pl-md-0" id="page-form" aria-label="Request for information form">
 	<div class="form__inner">
 		<div class="form__intro"><?php echo wp_kses_post( $form_intro_text ); ?></div>
 		<?php
@@ -24,4 +24,4 @@ $form_intro_text = $form_intro_text ? $form_intro_text : get_theme_mod( 'form_in
 		}
 		?>
 	</div>
-</div>
+</article>

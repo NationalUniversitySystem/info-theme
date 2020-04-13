@@ -1,0 +1,12 @@
+// Mixin call to create borders with different border widths
+// Note: $color is first parameter but second variable used because most of the time we'll leave the border-width as is.
+@mixin border-color($color: $color-primary, $width: 1px) {
+  border: #{$width} solid #{$color};
+}
+
+@mixin font-size($size) {
+  $rem-value: $size / 16;
+  $px-value: ($size);
+  font-size: $px-value + px;
+  font-size: $rem-value + rem;
+}

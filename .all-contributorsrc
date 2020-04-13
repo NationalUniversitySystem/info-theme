@@ -1,0 +1,47 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "mestradanu",
+      "name": "Mike Estrada",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/44380612?v=4",
+      "profile": "https://github.com/mestradanu",
+      "contributions": [
+        "code",
+        "projectManagement",
+        "review",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "agameronu",
+      "name": "Alex Gamero",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/44380858?v=4",
+      "profile": "https://github.com/agameronu",
+      "contributions": [
+        "code",
+        "tool"
+      ]
+    },
+    {
+      "login": "cmaustnu",
+      "name": "Chris Maust",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/44381935?v=4",
+      "profile": "https://github.com/cmaustnu",
+      "contributions": [
+        "code",
+        "a11y"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "info-theme",
+  "projectOwner": "NationalUniversitySystem",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

@@ -17,18 +17,20 @@ get_header();
 			</div>
 		</section>
 
-		<section class="section section--content">
-			<div class="container">
-				<div class="row">
-					<?php
-					while ( have_posts() ) :
-						the_post();
-						get_template_part( 'template-parts/content/content', 'page' );
-					endwhile; // End of the loop.
-					?>
+		<?php if ( ! empty( get_the_content( null, false, get_the_ID() ) ) ) { ?>
+			<section class="section section--content">
+				<div class="container">
+					<div class="row">
+						<?php
+						while ( have_posts() ) :
+							the_post();
+							get_template_part( 'template-parts/content/content', 'page' );
+						endwhile; // End of the loop.
+						?>
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		<?php } ?>
 
 		<?php get_template_part( 'template-parts/widgets' ); ?>
 

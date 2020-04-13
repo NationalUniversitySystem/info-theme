@@ -1,7 +1,7 @@
 {
   "name": "nusa-info-theme",
   "description": "An 'info' subdomain WordPress theme designed and developed specifically for NUSA.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": "National University System Agency",
   "homepage": "https://www.nusagency.org/",
   "repository": {
@@ -11,7 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "@babel/register": "^7.9.0",
     "@wordpress/eslint-plugin": "^4.1.0",
     "babel-eslint": "^10.1.0",
@@ -29,12 +29,12 @@
     "gulp-sass": "^4.0.2",
     "gulp-stylelint": "^13.0.0",
     "node-sass": "^4.13.1",
-    "stylelint": "^13.3.0",
+    "stylelint": "^13.3.2",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-declaration-use-variable": "^1.7.2",
     "stylelint-media-use-custom-media": "^1.0.0",
     "stylelint-order": "^4.0.0",
-    "stylelint-scss": "^3.16.0",
+    "stylelint-scss": "^3.16.1",
     "terser-webpack-plugin": "^2.3.5",
     "vinyl-named": "^1.1.0",
     "webpack-stream": "^5.2.1"

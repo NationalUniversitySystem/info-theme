@@ -1,0 +1,18 @@
+.hero {
+  &__copy {
+    line-height: 1;
+    padding: 30px;
+    width: 100%;
+
+    @media( min-width: $breakpoint-md-min ) {
+      background-image: linear-gradient(to top, rgba(0, 0, 0, .8) 0%, rgba(0, 0, 0, .62) 66%, rgba(0, 0, 0, 0) 100%);
+      bottom: 0;
+      left: 0;
+      position: absolute;
+    }
+
+    @media( min-width: $breakpoint-xl-min ) {
+      padding: 50px 15px 15px;
+    }
+  }
+}

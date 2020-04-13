@@ -1,4 +1,7 @@
 # NUS WP Info Theme
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Overview
 This WordPress theme was created so that all of the National University affiliate info websites would have a standardized codebase to work with.
@@ -66,3 +69,21 @@ The below numbers correspond to the [Numbered Map](Info-Theme-Numbered-Guide.jpg
 19. Sets the global “Why Choose” column content.
 
 ![Info Theme Numbered Guide](Info-Theme-Numbered-Guide.jpg)
+
+## Contributors ✨
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/mestradanu"><img src="https://avatars1.githubusercontent.com/u/44380612?v=4" width="100px;" alt=""/><br /><sub><b>Mike Estrada</b></sub></a><br /><a href="https://github.com/NationalUniversitySystem/info-theme/commits?author=mestradanu" title="Code">💻</a> <a href="#projectManagement-mestradanu" title="Project Management">📆</a> <a href="https://github.com/NationalUniversitySystem/info-theme/pulls?q=is%3Apr+reviewed-by%3Amestradanu" title="Reviewed Pull Requests">👀</a> <a href="#maintenance-mestradanu" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/agameronu"><img src="https://avatars3.githubusercontent.com/u/44380858?v=4" width="100px;" alt=""/><br /><sub><b>Alex Gamero</b></sub></a><br /><a href="https://github.com/NationalUniversitySystem/info-theme/commits?author=agameronu" title="Code">💻</a> <a href="#tool-agameronu" title="Tools">🔧</a></td>
+    <td align="center"><a href="https://github.com/cmaustnu"><img src="https://avatars1.githubusercontent.com/u/44381935?v=4" width="100px;" alt=""/><br /><sub><b>Chris Maust</b></sub></a><br /><a href="https://github.com/NationalUniversitySystem/info-theme/commits?author=cmaustnu" title="Code">💻</a> <a href="#a11y-cmaustnu" title="Accessibility">️️️️♿️</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+The [Emoji Key](https://allcontributors.org/docs/en/emoji-key) ✨ (and Contribution Types) can be found on [allcontributors.org](https://allcontributors.org)

@@ -1,0 +1,14 @@
+.header {
+  &__logo {
+    a {
+      background: url('../../images/logo-mobile.svg') top left no-repeat;
+      height: 40px;
+      max-width: 400px;
+
+      @media( min-width: $breakpoint-md-min ) {
+        background-image: url('../../images/logo.svg');
+        height: 70px;
+      }
+    }
+  }
+}

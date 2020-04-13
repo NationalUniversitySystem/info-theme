@@ -1,0 +1,29 @@
+// Loop through all our colors and create our basic utility classes
+@each $name, $color in map-merge($colors, $brand-colors) {
+  // Border class
+  .border--#{$name} {
+    @include border-color($color);
+  }
+
+  // Background
+  .bg--#{$name} {
+    background-color: $color;
+  }
+
+  // Text color
+  .text--#{$name} {
+    color: $color;
+  }
+}
+
+@each $i in $font-sizes { /* stylelint-disable-line at-rule-empty-line-before */
+  // Font size class.
+  .font--#{$i} {
+    #{--font-size}: #{$i}px;
+    font-size: #{$i}px !important; /* stylelint-disable-line declaration-no-important */
+  }
+}
+
+.text--centered {
+  text-align: center;
+}
