@@ -29,7 +29,7 @@ if ( has_post_thumbnail() ) {
 }
 ?>
 
-<div class="hero col-12<?php echo esc_attr( $hero_classes ); ?>"><?php // "md" breakpoint styles are in SCSS files since we needed a 6.5 column. ?>
+<article class="hero col-12<?php echo esc_attr( $hero_classes ); ?>" aria-label="Page hero image and title"><?php // "md" breakpoint styles are in SCSS files since we needed a 6.5 column. ?>
 	<div class="hero__background d-none d-md-block position-relative"></div>
 	<div class="hero__copy ml-md-4">
 		<?php if ( $hero_title ) { ?>
@@ -55,5 +55,5 @@ if ( has_post_thumbnail() ) {
 		}
 		?>
 	</div>
-</div>
+</article>
 
