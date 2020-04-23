@@ -23,7 +23,7 @@ if ( $awards ) {
 						$award_alt = get_post_meta( $award, '_wp_attachment_image_alt', true );
 						$award     = is_int( $award ) ? wp_get_attachment_image( $award, 'full' ) : $award;
 						?>
-						<article class="accolade col-md align-items-md-center justify-content-md-center p-0" aria-label="Accolade <?php echo $award_alt; ?>">
+						<article class="accolade col-md align-items-md-center justify-content-md-center p-0" aria-label="Accolade <?php echo esc_attr( $award_alt ); ?>">
 							<?php echo wp_kses_post( $award ); ?>
 						</article>
 						<?php
