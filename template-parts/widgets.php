@@ -7,8 +7,8 @@
 
 // First two widgets.
 $columns = get_post_meta( get_the_ID(), '_columns', true );
-if ( empty( $columns ) ) {
-	get_theme_mod( 'why_choose' ) ? $columns[] = get_theme_mod( 'why_choose' ) : '';
+if ( empty( $columns ) && get_theme_mod( 'why_choose' ) ) {
+	$columns[] = get_theme_mod( 'why_choose' );
 }
 
 // Widget with border.
