@@ -66,6 +66,9 @@ class Metadata_Quote {
 						'size'      => 50,
 					],
 				] ),
+				'_quote_image'    => new Fieldmanager_Media( 'Quotee\'s Headshot', [
+					'description' => 'Please limit to an image no wider or taller than 300px each.',
+				] ),
 			],
 		] );
 
