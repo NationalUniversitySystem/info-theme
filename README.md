@@ -1,7 +1,5 @@
 # NUS WP Info Theme
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=NationalUniversitySystem/info-theme)](https://dependabot.com) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Overview
 This WordPress theme was created so that all of the National University affiliate info websites would have a standardized codebase to work with.
