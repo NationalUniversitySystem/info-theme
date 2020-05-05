@@ -6,17 +6,22 @@
 
 		submitButton = submitButton || form.querySelector( '.gform_footer input[type="submit"]' );
 
-		if ( checkbox && submitButton ) {
-			submitButton.setAttribute( 'disabled', 'disabled' );
-			checkbox.addEventListener( 'change', function() {
-				const isChecked = checkbox.checked;
+		if ( checkbox && submitButton && ( checkbox.hasAttribute( 'aria-required' ) || checkbox.hasAttribute( 'required' ) ) ) {
+			const required = checkbox.getAttribute( 'required' );
+			const ariaRequired = checkbox.getAttribute( 'aria-required' );
 
-				if ( isChecked ) {
-					submitButton.removeAttribute( 'disabled' );
-				} else {
-					submitButton.setAttribute( 'disabled', 'disabled' );
-				}
-			}, false );
+			if ( required || 'true' === ariaRequired ) {
+				submitButton.setAttribute( 'disabled', 'disabled' );
+				checkbox.addEventListener( 'change', function() {
+					const isChecked = checkbox.checked;
+
+					if ( isChecked ) {
+						submitButton.removeAttribute( 'disabled' );
+					} else {
+						submitButton.setAttribute( 'disabled', 'disabled' );
+					}
+				}, false );
+			}
 		}
 	}
 
