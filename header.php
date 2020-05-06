@@ -29,6 +29,11 @@ $phone_number      = ! empty( trim( $page_phone_number ) ) ? $page_phone_number 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nusa' ); ?></a>
 
 	<header class="header py-4" role="banner">
+		<!-- <div class="site-header__value-props">
+			<div class="container">
+				<span>4-Week Classes</span> <span>On Campus or Online</span> <span>WSCUC Accredited</span>
+			</div>
+		</div> -->
 		<div class="container">
 			<div class="row">
 				<div class="header__logo col-8">
@@ -44,3 +49,9 @@ $phone_number      = ! empty( trim( $page_phone_number ) ) ? $page_phone_number 
 			</div>
 		</div><!-- .container -->
 	</header>
+
+	<?php
+	if ( is_page_template( 'page-templates/terms.php' ) ) {
+		get_template_part( 'template-parts/fixed-cta-terms' );
+	}
+	?>
