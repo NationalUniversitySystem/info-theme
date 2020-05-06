@@ -1,0 +1,14 @@
+// stylelint-disable max-nesting-depth
+.page-template-stacked {
+  .section {
+    &--fluid {
+      .container {
+        &--fluid {
+          @media (min-width: $breakpoint-md-min) {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+// stylelint-disable selector-max-id
+
+#fixed-cta {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  transition: .2s all ease;
+  width: 100%;
+  z-index: 99;
+
+  .row {
+    background: $color-white;
+    box-shadow: 0 -6px 6px 1px rgba(0, 0, 0, .2);
+
+    img {
+      width: 28px;
+    }
+  }
+
+  .button {
+    display: block !important; /* stylelint-disable declaration-no-important */
+    font-family: $font-secondary;
+
+    &:hover,
+    &:active {
+      color: $color-white;
+    }
+  }
+
+  &.hide-me {
+    bottom: -100%;
+    opacity: 0;
+  }
+}

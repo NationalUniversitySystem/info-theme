@@ -31,7 +31,7 @@ export const getCookie = function( cookieName ) {
 
 export const getDomain = function() {
 	const hostName = location.host;
-	let domain = hostName;
+	let domain     = hostName;
 
 	if ( hostName !== null ) {
 		const parts = hostName.split( '.' ).reverse();
@@ -84,8 +84,8 @@ export const debounce = function( func, wait, immediate ) {
 	let timeout;
 	return function() {
 		const context = this;
-		const args = arguments;
-		const later = function() {
+		const args    = arguments;
+		const later   = function() {
 			timeout = null;
 			if ( ! immediate ) {
 				func.apply( context, args );

@@ -1,0 +1,13 @@
+// stylelint-disable selector-no-qualifying-type
+.page-template-stacked {
+  button,
+  input[type='submit'] {
+    @media (min-width: $breakpoint-md-min) {
+      color: $color-primary;
+      font-size: 18px;
+      max-width: 180px;
+      padding: 15px;
+      transition: $transition-opacity;
+    }
+  }
+}

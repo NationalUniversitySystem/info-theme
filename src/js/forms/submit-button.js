@@ -1,13 +1,13 @@
 ( function( d, $ ) {
 	function toggleSubmitButton( formId ) {
-		const form = d.querySelector( '#gform_wrapper_' + formId );
-		const checkbox = form.querySelector( '.ginput_container_consent input' );
+		const form       = d.querySelector( '#gform_wrapper_' + formId );
+		const checkbox   = form.querySelector( '.ginput_container_consent input' );
 		let submitButton = form.querySelector( ' .gform_footer button' );
 
 		submitButton = submitButton || form.querySelector( '.gform_footer input[type="submit"]' );
 
 		if ( checkbox && submitButton && ( checkbox.hasAttribute( 'aria-required' ) || checkbox.hasAttribute( 'required' ) ) ) {
-			const required = checkbox.getAttribute( 'required' );
+			const required     = checkbox.getAttribute( 'required' );
 			const ariaRequired = checkbox.getAttribute( 'aria-required' );
 
 			if ( required || 'true' === ariaRequired ) {

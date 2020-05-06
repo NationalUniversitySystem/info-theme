@@ -5,15 +5,15 @@
  * @package info.*.edu
  */
 
-$awards = get_post_meta( get_the_ID(), '_awards_list', true );
+$awards  = get_post_meta( get_the_ID(), '_awards_list', true );
+$spacing = is_page_template( 'page-templates/stacked.php' ) ? '' : 'py-6';
 
 if ( $awards ) {
 	$awards_count = count( $awards );
 	?>
 
-	<section class="section accolades py-6 position-relative">
+	<section class="section accolades section--accolades <?php echo esc_attr( $spacing ); ?> position-relative">
 		<h2 class="mb-5">Accreditations</h2>
-
 		<div class="container">
 			<div class="row">
 				<button type="button" role="presentation" class="d-md-none position-absolute accolades__nav accolades__nav--prev" aria-label="Previous">‹</button>

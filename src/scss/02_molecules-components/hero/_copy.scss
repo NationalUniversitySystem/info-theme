@@ -1,7 +1,8 @@
+// stylelint-disable media-feature-name-whitelist
+
 .hero {
   &__copy {
     line-height: 1;
-    padding: 30px;
     width: 100%;
 
     @media( min-width: $breakpoint-md-min ) {
@@ -13,6 +14,25 @@
 
     @media( min-width: $breakpoint-xl-min ) {
       padding: 50px 15px 15px;
+    }
+
+    h1 {
+      @media (max-width: 767px) {
+        color: $color-blue-19;
+        font-family: $font-primary;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 42px;
+      }
+    }
+
+    h2 {
+      @media (max-width: 767px) {
+        color: $color-black;
+        font-family: $font-secondary;
+        font-weight: 700;
+        line-height: 30px;
+      }
     }
   }
 }

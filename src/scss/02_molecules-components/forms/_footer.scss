@@ -1,9 +1,32 @@
+// stylelint-disable media-feature-name-whitelist, selector-no-qualifying-type, declaration-no-important
 .gform {
   &_footer {
-    button {
-      @extend .button; /* stylelint-disable-line scss/at-extend-no-missing-placeholder */
-      @extend .button--yellow; /* stylelint-disable-line scss/at-extend-no-missing-placeholder */
+    button,
+    input[type='submit'] {
+      @extend %button;
+      @extend %button--yellow;
       max-width: 100%;
+
+      @media (max-width: 767px) {
+        border-radius: 5px;
+        color: $color-primary;
+        display: block;
+        font-family: $font-secondary;
+        font-size: 16px;
+        padding: 15px;
+
+        &:hover {
+          background: $color-accent;
+          border: $color-accent;
+          color: $color-primary !important;
+        }
+
+        &:active {
+          background: $color-primary;
+          color: $color-white !important;
+          text-decoration: none;
+        }
+      }
     }
   }
 }

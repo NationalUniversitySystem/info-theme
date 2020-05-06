@@ -1,22 +1,40 @@
+// stylelint-disable media-feature-name-whitelist
+
 .widget {
+  $root: &;
+
   h2,
   h3 {
     color: $color-secondary;
     font-size: 17px;
     font-weight: 700;
+
+    @media (max-width: 767px) {
+      color: $color-blue-19;
+      font-family: $font-secondary;
+      font-size: 18px;
+      font-weight: 700;
+    }
   }
 
   &--alt {
-    border: 2px solid darken($color-alt, 12%);
     text-align: center;
+
+    #{$root} {
+      &__border {
+        border: 2px solid darken($color-alt, 12%);
+        height: 100%;
+      }
+    }
 
     img {
       display: block;
       margin-bottom: 15px;
       margin-left: auto;
       margin-right: auto;
+      max-width: 65px;
 
-      @media( min-width: $breakpoint-md-min ) and ( max-width: $breakpoint-md-max ) { // stylelint-disable-line media-feature-name-whitelist
+      @media( min-width: $breakpoint-md-min ) and ( max-width: $breakpoint-md-max ) {
         margin-bottom: 0;
         margin-right: 40px;
       }
@@ -38,8 +56,12 @@
   &__content {
     text-align: center;
 
-    @media( min-width: $breakpoint-md-min ) and ( max-width: $breakpoint-md-max ) { // stylelint-disable-line media-feature-name-whitelist
+    @media( min-width: $breakpoint-md-min ) and ( max-width: $breakpoint-md-max ) {
       text-align: left;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 16px;
     }
   }
 }

@@ -15,8 +15,8 @@
 		];
 
 		// Build out markup that will be inserted into yt-embed div.
-		const thumbnail       = document.createElement( 'div' );
-		const thumbnailImage  = document.createElement( 'div' );
+		const thumbnail = document.createElement( 'div' );
+		const thumbnailImage = document.createElement( 'div' );
 		const thumbnailButton = document.createElement( 'div' );
 
 		thumbnail.className = 'thumbnail';
@@ -24,7 +24,7 @@
 		thumbnailButton.className = 'thumbnail__button';
 
 		// Create image to load.
-		let imageToLoad      = 0;
+		let imageToLoad        = 0;
 		const downloadingImage = new Image();
 
 		// onload event has to be defined/attached to the new image before we set the src.

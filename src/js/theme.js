@@ -6,6 +6,9 @@ import './theme/accolades-carousel.js';
 import './theme/set-start-anchors.js';
 import './theme/skip-link-focus-fix.js';
 import './theme/youtube-embed.js';
+import './theme/input-active.js';
+import './theme/fixed-cta.js';
+import './theme/slider.js';
 
 import './forms-tracking/set-cookies.js';
 import './forms-tracking/set-forms-fields.js';
@@ -15,3 +18,4 @@ import './forms-tracking/optimizely-attributes.js';
 import './forms/submit-button.js';
 import './forms/modal-trigger.js';
 import './forms/degree-type-select.js';
+import './forms/military-tooltip.js';

@@ -6,7 +6,7 @@ import { getDomain, getCookie, getParameterByName } from '../theme/functions';
 
 	// When a user first arrives to the site, track how and where they landed on the site.
 	let initialReferrerCookie = getCookie( 'initial_referrer' );
-	const landingPageCookie     = getCookie( 'initial_landing_page' );
+	const landingPageCookie = getCookie( 'initial_landing_page' );
 
 	// Make sure this was not a direct visit or the referrer is not from the same URL.
 	if ( '' === initialReferrerCookie && '' !== document.referrer && -1 === document.referrer.indexOf( location.protocol + '//' + location.host ) ) {

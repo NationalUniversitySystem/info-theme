@@ -1,9 +1,14 @@
+// stylelint-disable media-feature-name-whitelist, selector-no-qualifying-type, declaration-no-important, selector-class-pattern, max-nesting-depth
+
 .form {
   &__group {
     &--military {
-      /* stylelint-disable selector-class-pattern */
       margin-bottom: 0;
       position: relative;
+
+      @media (max-width: 767px) {
+        font-size: 12px;
+      }
 
       .ginput_container {
         display: inline-block;
@@ -17,6 +22,50 @@
           font-size: 16px;
           opacity: .7;
           padding-left: 10px;
+
+          @media (max-width: 767px) {
+            color: $color-mid-blue;
+            opacity: 1 !important;
+          }
+        }
+      }
+
+      .tooltip {
+        background: $color-white;
+        border: 1px solid $color-black;
+        bottom: 100%;
+        color: $color-mid-gray;
+        display: none;
+        font-size: 12px;
+        height: auto;
+        left: 67px;
+        margin-bottom: 5px;
+        margin-top: 10px;
+        max-width: 280px;
+        opacity: 1;
+        overflow: inherit;
+        padding: 5px 10px;
+        position: absolute;
+        visibility: visible;
+
+        &::after {
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 5px solid $black;
+          bottom: -5px;
+          content: '';
+          height: 0;
+          position: absolute;
+          right: 38px;
+          width: 0;
+        }
+
+        @media (min-width: $breakpoint-md-min) {
+          left: -3px;
+        }
+
+        &.show {
+          display: block;
         }
       }
     }
