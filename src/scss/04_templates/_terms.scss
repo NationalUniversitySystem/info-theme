@@ -1,0 +1,736 @@
+// sass-lint:disable no-important
+.page-template-terms {
+  $container-width--large: 1200px;
+  $container-width--medium: 992px;
+  $container-width--small: 768px;
+
+  $font-primary: 'Leitura News Roman 3', serif;
+  $font-secondary: 'HK Grotesk', arial, sans-serif;
+
+  $color-primary-light: #315fa3;
+  $color-mid-gray: #4d535b;
+
+  $transition-color: color .25s ease;
+  $transition-opacity: opacity .25s ease;
+
+  font-family: $font-secondary;
+
+  %nu-container {
+    @media (min-width: $breakpoint-md-min) {
+      @include make-container;
+
+      max-width: $container-width--small;
+      position: relative;
+    }
+
+    @media (min-width: $breakpoint-lg-min) {
+      max-width: $container-width--medium;
+    }
+
+    @media (min-width: $breakpoint-xl-min) {
+      max-width: $container-width--large;
+    }
+  }
+
+  %nu-container--small {
+    @extend %nu-container;
+
+    @media (min-width: $breakpoint-md-min) {
+      max-width: $container-width--small;
+    }
+  }
+
+  .header {
+    .container {
+      @extend %nu-container;
+    }
+
+    &__logo {
+      a {
+        @media (min-width: $breakpoint-md-min) {
+          background-image: url('../../images/nu-terms-logo.svg');
+        }
+      }
+    }
+
+    &__phone {
+      a {
+        @media (min-width: $breakpoint-md-min) {
+          color: $color-white;
+          transition: $transition-color;
+
+          &:hover {
+            color: $color-accent;
+          }
+        }
+      }
+    }
+  }
+
+  .fixed-cta--terms {
+    @media (min-width: $breakpoint-md-min) {
+      background: $color-primary-light;
+      display: block !important;
+      left: 0;
+      position: fixed;
+      text-align: center;
+      top: 100px;
+      width: 100%;
+      z-index: 5;
+
+      .row {
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+      }
+
+      h3 {
+        color: $color-white;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 0;
+        margin-right: 20px;
+      }
+
+      a {
+        color: $color-primary;
+        font-size: 16px;
+        padding: 10px 20px;
+        width: auto;
+
+        &:hover {
+          background: $color-primary;
+          color: $color-white;
+        }
+
+        @media (hover: none) {
+          &:hover {
+            background: $color-accent;
+            color: $color-primary;
+          }
+
+          &:active {
+            background: $color-primary;
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+
+  .section {
+    &--fluid {
+      .container {
+        &--fluid {
+          @media (min-width: $breakpoint-md-min) {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    .hero {
+      @media (min-width: $breakpoint-md-min) {
+        @include make-col(12);
+
+        padding: 0;
+        z-index: 9;
+      }
+
+      .hero {
+        &__background {
+          @media (min-width: $breakpoint-md-min) {
+            min-height: 400px;
+          }
+
+          @media (min-width: $breakpoint-lg-min) {
+            min-height: 550px;
+          }
+        }
+
+        &__copy {
+          @media (min-width: $breakpoint-md-min) {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, .7) 44%, rgba(0, 0, 0, .8) 100%);
+            margin: 0;
+            padding: 150px 0 30px;
+          }
+
+          @media (min-width: $breakpoint-lg-min) {
+            padding: 150px 0 60px;
+          }
+
+          h1 {
+            @media (min-width: $breakpoint-md-min) {
+              font-family: $font-primary;
+              font-size: 36px;
+              font-weight: 400;
+              margin-bottom: 5px;
+            }
+
+            @media (min-width: $breakpoint-lg-min) {
+              font-size: 42px;
+              margin-bottom: 20px;
+            }
+
+            @media (min-width: $breakpoint-xl-min) {
+              font-size: 50px;
+            }
+          }
+
+          h2 {
+            @media (min-width: $breakpoint-md-min) {
+              font-size: 18px;
+              font-weight: 700;
+            }
+
+            @media (min-width: $breakpoint-lg-min) {
+              font-size: 22px;
+            }
+
+            @media (min-width: $breakpoint-xl-min) {
+              font-size: 24px;
+            }
+          }
+        }
+
+        &__terms-container {
+          @extend %nu-container;
+
+          position: static;
+
+          @media (min-width: $breakpoint-md-min) {
+            position: relative;
+          }
+        }
+
+        &__cta {
+          @media (min-width: $breakpoint-md-min) {
+            @include make-col-ready;
+            @include make-col(3.5);
+
+            bottom: -5px;
+            display: block !important;
+            padding: 0 0 0 15px;
+            position: absolute;
+            right: 15px;
+          }
+
+          @media (min-width: $breakpoint-lg-min) {
+            @include make-col(4);
+          }
+
+          @media (min-width: $breakpoint-xl-min) {
+            bottom: -20px;
+          }
+
+          .cta {
+            &__inner {
+              @media (min-width: $breakpoint-md-min) {
+                background: $color-white;
+                padding: 15px;
+              }
+
+              @media (min-width: $breakpoint-xl-min) {
+                padding: 25px;
+              }
+            }
+          }
+
+          h3 {
+            @media (min-width: $breakpoint-md-min) {
+              color: $color-primary;
+              font-family: $font-primary;
+              font-size: 20px;
+              margin-bottom: 15px;
+            }
+
+            @media (min-width: $breakpoint-lg-min) {
+              font-size: 24px;
+            }
+          }
+
+          p {
+            color: $color-mid-gray;
+            font-family: $font-secondary;
+            font-weight: 700;
+
+            @media (min-width: $breakpoint-md-min) {
+              font-size: 15px;
+            }
+
+            @media (min-width: $breakpoint-lg-min) {
+              font-size: 18px;
+            }
+          }
+
+          .button {
+            @media (min-width: $breakpoint-md-min) {
+              background: $color-accent;
+              color: $color-primary;
+              font-size: 15px;
+              padding: 15px;
+
+              &:hover {
+                background: $color-primary;
+                color: $color-white;
+              }
+
+              @media (hover: none) {
+                &:hover {
+                  background: $color-accent;
+                  color: $color-primary;
+                }
+
+                &:active {
+                  background: $color-primary;
+                  color: $color-white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // sass-lint:disable-block  no-ids
+    #form-offset {
+      display: block;
+      position: relative;
+      top: -100px;
+      visibility: hidden;
+    }
+
+    &__form {
+      @media (min-width: $breakpoint-md-min) {
+        @include make-col(12);
+
+        background: $color-primary-light;
+        order: 9;
+        padding-left: 15px;
+        z-index: 9;
+      }
+
+      .form {
+        &__inner {
+          @extend %nu-container--small;
+
+          @media (min-width: $breakpoint-md-min) {
+            background: none;
+            padding: 50px 15px 15px;
+          }
+        }
+
+
+        .gfield_label {
+          @media (min-width: $breakpoint-md-min) {
+            clip: auto;
+            clip-path: none;
+            cursor: text;
+            display: block;
+            font-size: 16px;
+            height: auto;
+            left: 15px;
+            margin: 0;
+            overflow: visible;
+            pointer-events: none;
+            position: absolute;
+            top: 19px;
+            transition: all .2s ease;
+            width: auto;
+          }
+        }
+
+        &__intro {
+          @media (min-width: $breakpoint-md-min) {
+            display: none;
+          }
+        }
+
+        &__header {
+          @media (min-width: $breakpoint-md-min) {
+            display: block !important;
+          }
+
+          .form {
+            &__subtitle {
+              @media (min-width: $breakpoint-md-min) {
+                color: $color-white;
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                line-height: 1.29em;
+                opacity: .8;
+              }
+            }
+
+            &__title {
+              @media (min-width: $breakpoint-md-min) {
+                color: $color-white;
+                font-family: $font-primary;
+                font-size: 30px;
+              }
+            }
+          }
+        }
+      }
+
+      // sass-lint:disable-block  class-name-format
+      .gfield_consent_description {
+        @media (min-width: $breakpoint-md-min) {
+          color: $color-white;
+          display: block !important;
+          margin-top: 30px;
+        }
+
+        h4 {
+          @media (min-width: $breakpoint-md-min) {
+            font-size: 15px;
+            font-weight: 700;
+          }
+        }
+
+        p {
+          @media (min-width: $breakpoint-md-min) {
+            font-size: 11px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        a {
+          text-decoration: underline;
+
+          @media (min-width: $breakpoint-md-min) {
+            color: $color-white;
+            transition: $transition-color;
+
+            &:hover {
+              color: $color-accent;
+            }
+          }
+        }
+
+        br {
+          display: none;
+        }
+      }
+
+      .col-wrapper {
+        @media (min-width: $breakpoint-md-min) {
+          @include make-row;
+
+          margin-bottom: 10px;
+        }
+
+        .terms-flex {
+          @media (min-width: $breakpoint-md-min) {
+            @include make-col-ready;
+            @include make-col(6);
+
+            display: flex;
+            flex-wrap: wrap;
+          }
+        }
+
+        li {
+          @include make-col(12);
+
+          &.input--active {
+            label {
+              font-size: 12px;
+              top: 5px;
+            }
+
+            select {
+              color: $color-black;
+            }
+          }
+
+          // sass-lint:disable class-name-format
+          &.first_name,
+          &.last_name {
+            @media (min-width: $breakpoint-md-min) {
+              @include make-col-ready;
+              @include make-col(6);
+
+              padding-left: 0;
+            }
+          }
+
+          &.last_name {
+            @media (min-width: $breakpoint-md-min) {
+              padding-right: 0;
+            }
+          }
+
+          &.gfield_html {
+            @media (min-width: $breakpoint-md-min) {
+              margin: 0;
+            }
+          }
+
+          &.disabled {
+            &:after {
+              @media (min-width: $breakpoint-md-min) {
+                animation: spin 1s infinite linear;
+                content: '\e838';
+                display: block;
+                font-family: 'fontello';
+                font-size: 18px;
+                opacity: .7;
+                position: absolute;
+                right: 11px;
+                top: 18px;
+              }
+            }
+
+            select {
+              @media (min-width: $breakpoint-md-min) {
+                background-image: none;
+              }
+            }
+          }
+
+          input,
+          select {
+            @media (min-width: $breakpoint-md-min) {
+              border: none;
+              font-size: 16px;
+              height: 58px;
+              line-height: 42px;
+              padding: 20px 15px 5px;
+              transition: $transition-opacity;
+
+              &:disabled {
+                cursor: not-allowed;
+                opacity: .2;
+              }
+
+              // sass-lint:disable-block  no-vendor-prefixes
+              &::placeholder {
+                color: $color-white;
+              }
+
+              &:-ms-input-placeholder {
+                color: $color-white;
+              }
+
+              & ::-ms-input-placeholder {
+                color: $color-white;
+              }
+            }
+          }
+
+          select {
+            @media (min-width: $breakpoint-md-min) {
+              background-image: url('../../images/icon-down-black.svg');
+              color: $color-white;
+              padding-top: 16px;
+
+              option {
+                color: $color-black;
+              }
+            }
+          }
+        }
+      }
+
+      input {
+        &:checked {
+          &+label {
+            &::before {
+              @media (min-width: $breakpoint-md-min) {
+                background: $color-accent !important;
+                color: $color-primary !important;
+                font-size: 14px !important;
+                line-height: 19px !important;
+                transform: translateY(2px) !important;
+              }
+            }
+          }
+        }
+      }
+
+      .icon--question-circle {
+        &:before {
+          @media (min-width: $breakpoint-md-min) {
+            color: $color-white !important;
+          }
+        }
+      }
+
+      .ginput_container_checkbox,
+      .form__terms {
+        label {
+          @media (min-width: $breakpoint-md-min) {
+            color: $color-white;
+            font-size: 14px;
+          }
+
+          &:before {
+            @media (min-width: $breakpoint-md-min) {
+              background: $color-white;
+              height: 19px;
+              margin-right: 11px;
+              overflow: hidden;
+              width: 19px;
+            }
+          }
+        }
+
+        a {
+          @media (min-width: $breakpoint-md-min) {
+            color: $color-white;
+          }
+        }
+      }
+
+      .gfield_consent_label {
+        a {
+          color: $color-white;
+          text-decoration: none;
+        }
+      }
+
+      button {
+        @media (min-width: $breakpoint-md-min) {
+          color: $color-primary;
+          font-size: 18px;
+          max-width: 180px;
+          padding: 15px;
+          transition: $transition-opacity;
+        }
+
+        &:not(.icon--spin) {
+          &:after {
+            @media (min-width: $breakpoint-md-min) {
+              content: '\f178';
+              font-family: 'fontello';
+              padding-left: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    &--widgets {
+      @extend %nu-container;
+
+      @media (min-width: $breakpoint-md-min) {
+        font-size: 16px;
+        padding: 50px 15px;
+      }
+
+      h2,
+      h3 {
+        @media (min-width: $breakpoint-md-min) {
+          color: $color-primary;
+          font-size: 18px;
+        }
+      }
+    }
+
+    &--quote {
+      @media (min-width: $breakpoint-md-min) {
+        left: 0;
+        margin-left: 0;
+        padding: 50px 30px;
+        width: 100%;
+      }
+
+      img {
+        @media (min-width: $breakpoint-md-min) {
+          border: 5px solid $color-white;
+          border-radius: 100%;
+          display: block !important;
+          height: 120px;
+          margin: 0 auto 10px;
+          width: 120px;
+        }
+      }
+
+      blockquote {
+        max-width: 600px;
+      }
+
+      p {
+        @media (min-width: $breakpoint-md-min) {
+          font-family: $font-primary;
+          font-size: 24px;
+          font-style: italic;
+        }
+      }
+
+      cite {
+        @media (min-width: $breakpoint-md-min) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &--accolades {
+      @media (min-width: $breakpoint-md-min) {
+        background: $color-white;
+        padding: 50px 15px;
+        z-index: 9;
+      }
+
+      h2 {
+        @media (min-width: $breakpoint-md-min) {
+          color: $color-primary;
+          font-size: 18px;
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+      }
+
+      img {
+        filter: grayscale(100%) brightness(900%);
+
+        @media( min-width: $breakpoint-md-min ) {
+          filter: grayscale(0) brightness(100%);
+        }
+
+        &[src*='Money-Best'],
+        &[src*='mbc'] {
+          filter: grayscale(0) brightness(100%);
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding: 0;
+
+    @media (min-width: $breakpoint-md-min) {
+      background: $color-primary-light;
+      color: $color-white;
+      padding: 0 15px 80px;
+    }
+
+    .container {
+      @extend %nu-container--small;
+      padding: 0 10px;
+
+      a {
+        @media (min-width: $breakpoint-md-min) {
+          border-color: $color-white;
+          color: $color-white;
+          text-decoration: underline;
+          transition: $transition-color;
+
+          &:hover {
+            color: $color-accent;
+          }
+        }
+      }
+    }
+  }
+
+
+  .newChat { // sass-lint:disable-line class-name-format
+    z-index: 9;
+  }
+}

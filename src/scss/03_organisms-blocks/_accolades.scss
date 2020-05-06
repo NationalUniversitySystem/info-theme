@@ -3,6 +3,17 @@
   text-align: center;
   width: 100%;
 
+  @media(min-width: $breakpoint-xl-min) {
+    left: 50%;
+    margin-left: -50vw;
+    position: relative;
+    width: 100vw;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+
   h2 {
     color: $color-white;
     font-size: 22px;
