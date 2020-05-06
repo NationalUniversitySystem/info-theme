@@ -4,11 +4,13 @@ $colors: (
   'blue': #003161,
   'blue-19': #1a3660,
   'light-blue': #398ece,
+  'mid-blue': #315fa3,
   'orange': #ffa500,
   'green': #63b00f,
   'green-dark': #008000,
   'white': #fff,
-  'gray': #f1f1f1
+  'gray': #f1f1f1,
+  'mid-gray': #4d535b
 );
 
 $all-colors: map-merge($colors, $brand-colors);
@@ -22,3 +24,6 @@ $color-white: map-get($colors, 'white');
 $color-black: map-get($colors, 'black');
 $color-green: map-get($colors, 'green-dark');
 $color-blue-19: map-get($colors, 'blue-19');
+
+$color-mid-blue: map-get($colors, 'mid-blue');
+$color-mid-gray: map-get($colors, 'mid-gray');

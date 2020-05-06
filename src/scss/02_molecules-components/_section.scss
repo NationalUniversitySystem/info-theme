@@ -1,5 +1,12 @@
+// stylelint-disable media-feature-name-whitelist
 .section {
   &--fluid {
+    @media (max-width: 767px) {
+      > .row {
+        flex-direction: column;
+      }
+    }
+
     .container {
       max-width: 100%;
       padding: 0;
@@ -19,6 +26,12 @@
       @media( min-width: $breakpoint-xl-min ) {
         padding: 0 15px;
       }
+    }
+  }
+
+  &--widgets {
+    @media (max-width: 767px) {
+      padding: 0 35px 35px;
     }
   }
 }

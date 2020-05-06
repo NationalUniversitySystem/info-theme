@@ -17,7 +17,6 @@ import { getParameterByName, getCookie } from './functions';
 
 	externalLinks.forEach( link => {
 		const hrefUrl = link.href;
-
 		// If the external link has an anchor down link,
 		// don't attach the starter string since it'll cause weird browser behavior.
 		if ( hrefUrl.indexOf( '#' ) !== -1 ) {
@@ -33,8 +32,8 @@ import { getParameterByName, getCookie } from './functions';
 } )( document );
 
 function getStarterString() {
-	let string = 'start=' + window.location.hostname;
-	const parameters = [];
+	let string          = 'start=' + window.location.hostname;
+	const parameters    = [];
 	const trackersToUse = [
 		'utm_source',
 		'utm_medium',

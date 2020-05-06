@@ -1,12 +1,9 @@
 .tooltip {
-  background: $color-white;
-  border: 1px solid $error;
-  color: #333;  /* stylelint-disable-line sh-waqar/declaration-use-variable */
   font-size: 11px;
   margin-bottom: 5px;
   margin-top: 10px;
   max-width: 280px;
-  padding: 5px 10px;
+  z-index: 99;
 
   &::after {
     border-left: 5px solid transparent;
@@ -16,7 +13,24 @@
     content: '';
     height: 0;
     position: absolute;
-    right: 38px;
+    right: 50%;
+    transform: translateX(-50%);
     width: 0;
+  }
+
+  .tooltip-inner {
+    background-color: $error;
+    border: 1px solid $error;
+    border-radius: 10px;
+    color: $color-white;
+    padding: 10px;
+    text-align: center;
+
+    span {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
   }
 }

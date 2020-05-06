@@ -1,0 +1,16 @@
+// stylelint-disable selector-class-pattern, media-feature-name-whitelist
+.page-template-stacked {
+  .newChat {
+    z-index: 9;
+
+    @media (max-width: 767px) {
+      background-color: $color-blue-19;
+      bottom: 130px;
+      transition: .2s all ease;
+
+      &.move-down {
+        bottom: 10px;
+      }
+    }
+  }
+}

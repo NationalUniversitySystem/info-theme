@@ -1,0 +1,44 @@
+// stylelint-disable declaration-no-important
+.page-template-stacked {
+  .section {
+    &--quote {
+      padding: 30px;
+      width: 100%;
+
+      @media (min-width: $breakpoint-md-min) {
+        left: 0;
+        margin-left: 0;
+        padding: 50px 30px;
+      }
+
+      img {
+        @media (min-width: $breakpoint-md-min) {
+          border: 5px solid $color-white;
+          border-radius: 100%;
+          display: block !important;
+          height: 120px;
+          margin: 0 auto 10px;
+          width: 120px;
+        }
+      }
+
+      blockquote {
+        max-width: 600px;
+      }
+
+      p {
+        @media (min-width: $breakpoint-md-min) {
+          font-family: $font-primary;
+          font-size: 24px;
+          font-style: italic;
+        }
+      }
+
+      cite {
+        @media (min-width: $breakpoint-md-min) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

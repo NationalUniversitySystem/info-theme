@@ -1,7 +1,19 @@
+// stylelint-disable selector-no-qualifying-type
 .accolades {
   background: $color-primary;
   text-align: center;
   width: 100%;
+
+  @media(min-width: $breakpoint-xl-min) {
+    left: 50%;
+    margin-left: -50vw;
+    position: relative;
+    width: 100vw;
+  }
+
+  .container {
+    max-width: 900px;
+  }
 
   h2 {
     color: $color-white;
@@ -11,10 +23,17 @@
 
   .accolade {
     img {
+      filter: grayscale(100%) brightness(900%);
       max-width: 100%;
 
       @media( min-width: $breakpoint-md-min ) {
         max-width: 150px;
+      }
+
+      &[src*='Money-Best'],
+      &[src*='mbc'],
+      &[src*='ceph'] {
+        filter: grayscale(0) brightness(100%);
       }
     }
   }

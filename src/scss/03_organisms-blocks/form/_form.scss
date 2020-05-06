@@ -1,6 +1,6 @@
+// stylelint-disable selector-max-compound-selectors, max-nesting-depth, media-feature-name-whitelist
 .section {
   &--content {
-    /* stylelint-disable selector-max-compound-selectors, max-nesting-depth */
     form {
       ul {
         @include make-row();
@@ -75,9 +75,13 @@
   }
 
   &__form {
-    @media ( min-width: $breakpoint-md-min ) and ( max-width: $breakpoint-md-max ) { // stylelint-disable-line media-feature-name-whitelist
+    @media ( min-width: $breakpoint-md-min ) and ( max-width: $breakpoint-md-max ) {
       @include make-col(5.5);
       padding-left: 0;
+    }
+
+    @media (max-width: 767px) {
+      order: 9;
     }
   }
 }

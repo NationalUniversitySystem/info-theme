@@ -7,3 +7,5 @@ $breakpoint-xl-min: map-get($grid-breakpoints, xl);
 $breakpoint-sm-max: ($breakpoint-md-min - 1);
 $breakpoint-md-max: ($breakpoint-lg-min - 1);
 $breakpoint-lg-max: ($breakpoint-xl-min - 1);
+
+$breakpoint-mobile-layout: 767px;

@@ -1,0 +1,47 @@
+// stylelint-disable selector-class-pattern, selector-max-compound-selectors
+
+.page-template-stacked {
+  form {
+    li {
+      .gfield_label,
+      .form__label {
+        @media (min-width: $breakpoint-md-min) {
+          clip: auto;
+          clip-path: none;
+          cursor: text;
+          display: block;
+          font-size: 16px;
+          height: auto;
+          left: 15px;
+          margin: 0;
+          overflow: visible;
+          pointer-events: none;
+          position: absolute;
+          top: 19px;
+          transition: all .2s ease;
+          width: auto;
+        }
+      }
+
+      &.input--active {
+        label {
+          font-size: 12px;
+          top: 5px;
+        }
+
+        select {
+          color: $color-black;
+        }
+      }
+
+      &.military_checkbox,
+      &.form__terms {
+        .gfield_label {
+          height: 1px;
+          overflow: hidden;
+          width: 1px;
+        }
+      }
+    }
+  }
+}
