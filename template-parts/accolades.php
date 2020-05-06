@@ -11,7 +11,7 @@ if ( $awards ) {
 	$awards_count = count( $awards );
 	?>
 
-	<section class="section accolades py-6 position-relative">
+	<section class="section accolades section--accolades py-6 position-relative">
 		<h2 class="mb-5">Accreditations</h2>
 
 		<div class="container">

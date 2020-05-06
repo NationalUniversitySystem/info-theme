@@ -16,7 +16,12 @@ $gform_id = $gform_id ? $gform_id : get_theme_mod( 'rfi_sidebar_form_id' );
 $form_intro_text = $form_intro_text ? $form_intro_text : get_theme_mod( 'form_intro' );
 ?>
 <article class="section__form col-12 col-lg-4 pl-md-0" id="page-form" aria-label="Request for information form">
+	<a id="form-offset" href="#" aria-hidden="true"></a>
 	<div class="form__inner">
+		<div class="form__header d-none">
+			<div class="form__subtitle">Take the first step</div>
+			<h2 class="form__title">Request Information</h2>
+		</div>
 		<div class="form__intro"><?php echo wp_kses_post( $form_intro_text ); ?></div>
 		<?php
 		if ( function_exists( 'gravity_form' ) ) {

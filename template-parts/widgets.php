@@ -21,7 +21,7 @@ if ( empty( $columns ) && empty( $callout_text ) ) {
 }
 ?>
 <section class="section section--widgets">
-	<div class="container p-7">
+	<div class="container py-7 px-xl-4 px-8">
 		<div class="row">
 			<?php
 			if ( $columns ) {
@@ -38,7 +38,7 @@ if ( empty( $columns ) && empty( $callout_text ) ) {
 
 			if ( $callout_text ) {
 				?>
-				<article class="widget widget--alt col-12 col-lg-4 p-5 d-md-flex flex-lg-wrap align-items-md-center align-content-lg-center" aria-label="Callout area">
+				<article class="widget widget--alt col-12 col-lg-4 pl-lg-0" aria-label="Callout area">
 					<?php echo wp_kses_post( $callout_text ); ?>
 				</article>
 				<?php
