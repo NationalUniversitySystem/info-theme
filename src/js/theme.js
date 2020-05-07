@@ -7,6 +7,7 @@ import './theme/functions.js';
 import './theme/set-start-anchors.js';
 import './theme/skip-link-focus-fix.js';
 import './theme/youtube-embed.js';
+import './theme/input-active.js';
 
 import './forms-tracking/set-cookies.js';
 import './forms-tracking/set-forms-fields.js';

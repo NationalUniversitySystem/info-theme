@@ -1,17 +1,17 @@
-// sass-lint:disable no-important
+/* stylelint-disable */
 .page-template-terms {
   $container-width--large: 1200px;
   $container-width--medium: 992px;
   $container-width--small: 768px;
 
-  $font-primary: 'Leitura News Roman 3', serif;
-  $font-secondary: 'HK Grotesk', arial, sans-serif;
+  $font-primary: "Leitura News Roman 3", serif;
+  $font-secondary: "HK Grotesk", arial, sans-serif;
 
   $color-primary-light: #315fa3;
   $color-mid-gray: #4d535b;
 
-  $transition-color: color .25s ease;
-  $transition-opacity: opacity .25s ease;
+  $transition-color: color 0.25s ease;
+  $transition-opacity: opacity 0.25s ease;
 
   font-family: $font-secondary;
 
@@ -48,7 +48,7 @@
     &__logo {
       a {
         @media (min-width: $breakpoint-md-min) {
-          background-image: url('../../images/nu-terms-logo.svg');
+          background-image: url("../../images/nu-terms-logo.svg");
         }
       }
     }
@@ -150,7 +150,7 @@
 
         &__copy {
           @media (min-width: $breakpoint-md-min) {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, .7) 44%, rgba(0, 0, 0, .8) 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0.7) 44%, rgba(0, 0, 0, 0.8) 100%);
             margin: 0;
             padding: 150px 0 30px;
           }
@@ -318,25 +318,47 @@
             background: none;
             padding: 50px 15px 15px;
           }
-        }
 
+          li {
+            .gfield_label,
+            .form__label {
+              @media (min-width: $breakpoint-md-min) {
+                clip: auto;
+                clip-path: none;
+                cursor: text;
+                display: block;
+                font-size: 16px;
+                height: auto;
+                left: 15px;
+                margin: 0;
+                overflow: visible;
+                pointer-events: none;
+                position: absolute;
+                top: 19px;
+                transition: all .2s ease;
+                width: auto;
+              }
+            }
 
-        .gfield_label {
-          @media (min-width: $breakpoint-md-min) {
-            clip: auto;
-            clip-path: none;
-            cursor: text;
-            display: block;
-            font-size: 16px;
-            height: auto;
-            left: 15px;
-            margin: 0;
-            overflow: visible;
-            pointer-events: none;
-            position: absolute;
-            top: 19px;
-            transition: all .2s ease;
-            width: auto;
+            &.input--active {
+              label {
+                font-size: 12px;
+                top: 5px;
+              }
+
+              select {
+                color: $color-black;
+              }
+            }
+
+            &.military_checkbox,
+            &.form__terms {
+              .gfield_label {
+                height: 1px;
+                width: 1px;
+                overflow: hidden;
+              }
+            }
           }
         }
 
@@ -437,17 +459,6 @@
         li {
           @include make-col(12);
 
-          &.input--active {
-            label {
-              font-size: 12px;
-              top: 5px;
-            }
-
-            select {
-              color: $color-black;
-            }
-          }
-
           // sass-lint:disable class-name-format
           &.first_name,
           &.last_name {
@@ -525,7 +536,7 @@
 
           select {
             @media (min-width: $breakpoint-md-min) {
-              background-image: url('../../images/icon-down-black.svg');
+              background-image: url("../../images/icon-down-black.svg");
               color: $color-white;
               padding-top: 16px;
 
@@ -539,10 +550,14 @@
 
       input {
         &:checked {
-          &+label {
+          & + label {
             &::before {
               @media (min-width: $breakpoint-md-min) {
-                background: $color-accent !important;
+                background-color: $color-accent !important;
+                background-image: url('../../images/icon-check.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 13px;
                 color: $color-primary !important;
                 font-size: 14px !important;
                 line-height: 19px !important;
@@ -594,23 +609,14 @@
         }
       }
 
-      button {
+      button,
+      input[type='submit'] {
         @media (min-width: $breakpoint-md-min) {
           color: $color-primary;
           font-size: 18px;
           max-width: 180px;
           padding: 15px;
           transition: $transition-opacity;
-        }
-
-        &:not(.icon--spin) {
-          &:after {
-            @media (min-width: $breakpoint-md-min) {
-              content: '\f178';
-              font-family: 'fontello';
-              padding-left: 5px;
-            }
-          }
         }
       }
     }
@@ -689,7 +695,7 @@
       img {
         filter: grayscale(100%) brightness(900%);
 
-        @media( min-width: $breakpoint-md-min ) {
+        @media (min-width: $breakpoint-md-min) {
           filter: grayscale(0) brightness(100%);
         }
 
@@ -712,6 +718,7 @@
 
     .container {
       @extend %nu-container--small;
+
       padding: 0 10px;
 
       a {
@@ -728,7 +735,6 @@
       }
     }
   }
-
 
   .newChat { // sass-lint:disable-line class-name-format
     z-index: 9;
