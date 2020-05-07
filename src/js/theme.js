@@ -3,7 +3,6 @@ import 'bootstrap/js/dist/modal';
 
 import './theme/header.js';
 import './theme/accolades-carousel.js';
-import './theme/functions.js';
 import './theme/set-start-anchors.js';
 import './theme/skip-link-focus-fix.js';
 import './theme/youtube-embed.js';
@@ -14,8 +13,5 @@ import './forms-tracking/optimizely-tracking.js';
 import './forms-tracking/optimizely-attributes.js';
 
 import './forms/submit-button.js';
-import './forms/tooltip.js';
 import './forms/modal-trigger.js';
 import './forms/degree-type-select.js';
-import './forms/validation-functions.js';
-import './forms/validation.js';
