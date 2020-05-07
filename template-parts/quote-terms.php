@@ -15,7 +15,7 @@ $quote_img      = wp_get_attachment_image( $quote_img_id, 'full', false, ['class
 
 if ( $quote_text && $quote_citation && $quote_title ) :
 	?>
-	<section class="section section--quote py-6">
+	<section class="section section--quote">
 		<div class="container">
 			<div class="row">
 				<blockquote class="quote mx-auto mb-0">
