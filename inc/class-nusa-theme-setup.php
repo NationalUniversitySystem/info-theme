@@ -105,8 +105,14 @@ class NUSA_Theme_Setup {
 		wp_enqueue_style( 'nusa', $theme_uri . '/assets/css/theme.min.css', [], filemtime( $theme_path . '/assets/css/theme.min.css' ) );
 
 		// Scripts.
-		wp_enqueue_script( 'polyfill-service', 'https://polyfill.io/v3/polyfill.min.js?flags=gated&features=Array.prototype.forEach%2CNodeList.prototype.forEach%2CElement.prototype.matches', [], '3.0.0', true );
-		wp_enqueue_script( 'nusa', $theme_uri . '/assets/js/theme.min.js', [ 'jquery', 'polyfill-service' ], filemtime( $theme_path . '/assets/js/theme.min.js' ), true );
+		$script_dependencies = [
+			'jquery',
+		];
+		if ( wp_script_is( 'polyfill-service', 'registered' ) ) {
+			$script_dependencies[] = 'polyfill-service';
+		}
+
+		wp_enqueue_script( 'nusa', $theme_uri . '/assets/js/theme.min.js', $script_dependencies, filemtime( $theme_path . '/assets/js/theme.min.js' ), true );
 		wp_localize_script( 'nusa', 'InfoAjaxObject', [ 'ajax_url' => admin_url( 'admin-ajax.php' ) ] );
 	}
 
@@ -126,9 +132,7 @@ class NUSA_Theme_Setup {
 	 */
 	public function do_script_loader_tag( $tag, $handle, $src ) {
 		// Add crossorigin attribute to specific scripts.
-		$crossorigin_scripts = [
-			'polyfill-service',
-		];
+		$crossorigin_scripts = [];
 		if ( in_array( $handle, $crossorigin_scripts, true ) ) {
 			$tag = str_replace( ' src', ' crossorigin="anonymous" src', $tag );
 		}
