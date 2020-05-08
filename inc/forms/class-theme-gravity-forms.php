@@ -73,7 +73,7 @@ class Theme_Gravity_Forms {
 			}
 
 			// Ok, now check if there's ONE choice and if it's completely empty, AND has our very specific class, because if that's not the case. GTFO.
-			if ( ! empty( $field->choices[0] ) || false === strpos( $field->cssClass, 'dynamically-populate-degrees' ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+			if ( ! empty( $field->choices[0] ) || false === strpos( $field->cssClass, 'dynamically-populate-degrees' ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 				continue;
 			}
 
@@ -123,7 +123,7 @@ class Theme_Gravity_Forms {
 			}
 
 			// Ok, now check if there's ONE choice and if it's completely empty, AND has our very specific class, because if that's not the case. GTFO.
-			if ( empty( $field->choices[0] ) || false === strpos( $field->cssClass, 'populate-program-metadata' ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+			if ( empty( $field->choices[0] ) || false === strpos( $field->cssClass, 'populate-program-metadata' ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 				continue;
 			}
 
@@ -304,7 +304,7 @@ class Theme_Gravity_Forms {
 					'no_found_rows'          => true,
 					'update_post_meta_cache' => false,
 					'update_post_term_cache' => false,
-					'tax_query'              => [
+					'tax_query'              => [ // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 						[
 							'taxonomy' => 'degree-type',
 							'field'    => 'slug',

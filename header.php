@@ -32,7 +32,7 @@ $phone_number      = ! empty( trim( $page_phone_number ) ) ? $page_phone_number 
 		<div class="container">
 			<div class="row">
 				<div class="header__logo col-8">
-					<a class="d-block" href="<?php echo esc_url( network_home_url() ); ?>" rel="home"></a>
+					<a class="d-block" href="<?php echo esc_url( trailingslashit( network_home_url() ) ); ?>" rel="home"></a>
 				</div>
 
 				<?php if ( $phone_number ) { ?>
