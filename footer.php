@@ -8,6 +8,7 @@
  */
 
 ?>
+	<?php get_template_part( 'template-parts/fixed-cta' ); ?>
 
 	<footer class="footer py-5">
 		<div class="container">
