@@ -28,12 +28,12 @@ $phone_number      = ! empty( trim( $page_phone_number ) ) ? $page_phone_number 
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nusa' ); ?></a>
 
-	<header class="header py-4" role="banner">
-		<!-- <div class="site-header__value-props">
+	<header class="header py-md-4 pb-4 pt-0" role="banner">
+		<div class="header__value-props d-md-none d-block">
 			<div class="container">
 				<span>4-Week Classes</span> <span>On Campus or Online</span> <span>WSCUC Accredited</span>
 			</div>
-		</div> -->
+		</div>
 		<div class="container">
 			<div class="row">
 				<div class="header__logo col-8">
@@ -41,7 +41,7 @@ $phone_number      = ! empty( trim( $page_phone_number ) ) ? $page_phone_number 
 				</div>
 
 				<?php if ( $phone_number ) { ?>
-				<div class="header__contact col-4 d-flex align-items-center justify-content-end">
+				<div class="header__contact col-4 d-md-flex d-none align-items-center justify-content-end">
 					<a href="tel:+1-<?php echo esc_attr( $phone_number ); ?>" class="phone__number d-none d-md-block pr-5"><?php echo esc_html( $phone_number ); ?></a>
 					<a href="tel:+1-<?php echo esc_attr( $phone_number ); ?>" class="phone__icon"></a>
 				</div>

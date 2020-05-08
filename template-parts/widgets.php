@@ -20,8 +20,8 @@ if ( empty( $columns ) && empty( $callout_text ) ) {
 	return;
 }
 ?>
-<section class="section section--widgets">
-	<div class="container py-7 px-xl-4 px-8">
+<section class="section section--widgets px-md-0 px-1">
+	<div class="container py-md-7 px-xl-4 px-md-8 px-8">
 		<div class="row">
 			<?php
 			if ( $columns ) {
