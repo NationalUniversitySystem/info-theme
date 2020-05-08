@@ -8,6 +8,7 @@ import './theme/set-start-anchors.js';
 import './theme/skip-link-focus-fix.js';
 import './theme/youtube-embed.js';
 import './theme/input-active.js';
+import './theme/fixed-cta.js';
 
 import './forms-tracking/set-cookies.js';
 import './forms-tracking/set-forms-fields.js';
