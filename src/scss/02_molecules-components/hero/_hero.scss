@@ -63,6 +63,9 @@
   &__background {
     background-size: cover;
     height: 100%;
-    min-height: 405px;
+
+    @media( min-width: $breakpoint-md-min ) {
+      min-height: 405px;
+    }
   }
 }

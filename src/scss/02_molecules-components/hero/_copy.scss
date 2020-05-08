@@ -1,7 +1,6 @@
 .hero {
   &__copy {
     line-height: 1;
-    padding: 30px;
     width: 100%;
 
     @media( min-width: $breakpoint-md-min ) {
