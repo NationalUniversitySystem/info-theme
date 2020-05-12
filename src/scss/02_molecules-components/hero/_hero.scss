@@ -1,5 +1,7 @@
+// stylelint-disable media-feature-name-whitelist
+
 .hero {
-  @media( min-width: $breakpoint-md-min) and ( max-width: $breakpoint-md-max ) { // stylelint-disable-line media-feature-name-whitelist
+  @media( min-width: $breakpoint-md-min) and ( max-width: $breakpoint-md-max ) {
     @include make-col(6.5);
   }
 
@@ -63,6 +65,11 @@
   &__background {
     background-size: cover;
     height: 100%;
+
+    @media (max-width: 767px) {
+      background-size: cover;
+      height: 200px;
+    }
 
     @media( min-width: $breakpoint-md-min ) {
       min-height: 405px;

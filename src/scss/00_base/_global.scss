@@ -1,3 +1,4 @@
+// stylelint-disable media-feature-name-whitelist
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -9,6 +10,13 @@ body {
   font-weight: 400;
   letter-spacing: normal;
   overflow-x: hidden;
+
+  @media (max-width: 767px) {
+    color: $color-mid-gray;
+    font-family: $font-secondary;
+    font-size: 16px;
+    padding-top: 0 !important; /* stylelint-disable declaration-no-important */
+  }
 }
 
 .clearfix {

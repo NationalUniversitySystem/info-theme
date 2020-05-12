@@ -1,0 +1,9 @@
+// stylelint-disable selector-class-pattern
+
+.newChat {
+  display: none;
+
+  @media( min-width: 767px ) {
+    display: block;
+  }
+}

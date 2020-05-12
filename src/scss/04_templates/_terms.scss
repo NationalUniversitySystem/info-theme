@@ -4,11 +4,6 @@
   $container-width--medium: 992px;
   $container-width--small: 768px;
 
-  $font-primary: "Leitura News Roman 3", serif;
-  $font-secondary: "HK Grotesk", arial, sans-serif;
-
-  $color-primary-light: #315fa3;
-  $color-mid-gray: #4d535b;
 
   $transition-color: color 0.25s ease;
   $transition-opacity: opacity 0.25s ease;
@@ -738,5 +733,15 @@
 
   .newChat { // sass-lint:disable-line class-name-format
     z-index: 9;
+
+    @media (max-width: 767px) {
+      background-color: $color-blue-19;
+      bottom: 130px;
+      transition: .2s all ease;
+
+      &.move-down {
+        bottom: 10px;
+      }
+    }
   }
 }

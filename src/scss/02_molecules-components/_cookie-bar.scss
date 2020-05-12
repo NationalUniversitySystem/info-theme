@@ -1,0 +1,26 @@
+// stylelint-disable selector-max-id
+
+#cookieBar {
+  @media( min-width: 767px ) {
+    background: $color-blue-19;
+    z-index: 999;
+
+    .gdpr-header {
+      color: $color-white;
+      margin: 10px 0 0;
+      padding: 0 15px;
+      width: 90%;
+
+      a {
+        color: $color-white;
+        text-decoration: underline;
+      }
+
+      .gdpr-close {
+        color: $color-white;
+        font-size: 22px;
+        top: -18px;
+      }
+    }
+  }
+}

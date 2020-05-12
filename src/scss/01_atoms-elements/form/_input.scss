@@ -1,4 +1,6 @@
-input { /* stylelint-disable-line selector-no-qualifying-type */
+// stylelint-disable selector-no-qualifying-type, media-feature-name-whitelist
+
+input {
   &[type='text'],
   &[type='email'] {
     background: $color-white;
@@ -8,6 +10,12 @@ input { /* stylelint-disable-line selector-no-qualifying-type */
     font-weight: 200;
     height: 34px;
     padding: 7px 10px;
-    width: 100% !important; /* stylelint-disable-line declaration-no-important */
+    width: 100% !important; /* stylelint-disable declaration-no-important */
+
+    @media (max-width: 767px) {
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      height: 40px;
+    }
   }
 }

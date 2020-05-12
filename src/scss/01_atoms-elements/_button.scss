@@ -7,7 +7,7 @@
   }
 
   &--yellow {
-   @extend %button;
-   @extend %button--yellow;
+    @extend %button;
+    @extend %button--yellow;
   }
 }

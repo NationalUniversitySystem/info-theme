@@ -1,7 +1,14 @@
+// stylelint-disable media-feature-name-whitelist
 .header {
   background: $color-primary;
   width: 100%;
   z-index: 99;
+
+  @media (max-width: 767px) {
+    background: $color-white;
+    padding: 0 0 11px;
+    position: static;
+  }
 
   .logged-in & {
     top: 46px;
@@ -23,9 +30,59 @@
       height: 30px;
       width: 30px;
 
+      @media (max-width: 767px) {
+        background-image: url('../../images/phone.svg');
+      }
+
       @media( min-width: $breakpoint-md-min ) {
         height: 35px;
         width: 35px;
+      }
+    }
+  }
+
+  &__value-props {
+    background: $color-primary;
+    color: $color-white;
+    display: block;
+    margin-bottom: 8px;
+    padding: 9px 0;
+
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    span {
+      border-right: 1px solid $color-white;
+      display: inline-block;
+      font-size: 12px;
+      line-height: 1;
+      padding: 0 7px;
+      text-align: center;
+
+      &:last-child {
+        border: none;
+        padding-right: 0;
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__logo {
+    @media (max-width: 767px) {
+      @include make-col(12);
+
+      a {
+        background-image: url('../../images/logo-alt-mobile.svg');
+        background-position: left center;
+        background-repeat: no-repeat;
+        height: 45px;
+        margin: 0 auto;
+        max-width: 100%;
       }
     }
   }

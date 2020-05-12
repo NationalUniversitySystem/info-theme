@@ -1,6 +1,20 @@
+// stylelint-disable media-feature-name-whitelist, selector-no-qualifying-type, declaration-no-important
 .footer {
   background: $color-alt;
   font-size: 12px;
+
+  @media (max-width: 767px) {
+    background: $color-blue-19;
+    color: $color-white;
+    padding: 15px 10px;
+  }
+
+  a {
+    @media (max-width: 767px) {
+      color: $color-white;
+      text-decoration: underline;
+    }
+  }
 
   nav {
     ul {

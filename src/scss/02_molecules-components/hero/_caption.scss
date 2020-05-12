@@ -1,6 +1,20 @@
+// stylelint-disable media-feature-name-whitelist
 .hero {
   &__caption {
     color: $white;
+
+    @media (max-width: 767px) {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, .32) 44%, rgba(0, 0, 0, .6) 100%);
+      color: $color-white;
+      display: block;
+      font-size: 12px;
+      padding: 30px 30px 15px;
+      position: absolute;
+      right: 0;
+      text-align: right;
+      top: 126px;
+      width: 100%;
+    }
 
     strong {
       display: block;

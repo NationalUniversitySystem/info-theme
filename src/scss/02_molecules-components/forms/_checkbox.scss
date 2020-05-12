@@ -1,7 +1,13 @@
+// stylelint-disable max-nesting-depth, selector-max-compound-selectors, media-feature-name-whitelist, sh-waqar/declaration-use-variable, font-family-no-missing-generic-family-keyword
+
 .ginput {
   &_container {
     &_checkbox {
       font-size: 11px;
+
+      @media (max-width: $breakpoint-md-max) {
+        font-size: 12px;
+      }
 
       li {
         margin-bottom: 0;
@@ -10,6 +16,10 @@
       a {
         color: $color-black;
         text-decoration: underline;
+
+        @media (max-width: $breakpoint-md-max) {
+          color: $color-mid-blue;
+        }
       }
 
       label {
@@ -24,6 +34,46 @@
           margin-right: 5px;
           transform: translateY(2px);
           width: 14px;
+
+          @media (max-width: $breakpoint-md-max) {
+            display: none;
+          }
+        }
+
+        @media (max-width: $breakpoint-md-max) {
+          font-size: 13px;
+          line-height: 1.3;
+          margin-bottom: 25px;
+          padding-left: 55px;
+          position: relative;
+        }
+      }
+
+      .slider {
+        @media (max-width: $breakpoint-md-max) {
+          background-color: #dbdbdb;
+          border-radius: 20px;
+          bottom: 0;
+          cursor: pointer;
+          height: 25px;
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          transition: .2s;
+          width: 45px;
+
+          &::before {
+            background-color: $color-white;
+            border-radius: 100%;
+            bottom: 0;
+            content: '';
+            height: 25px;
+            left: 0;
+            position: absolute;
+            transition: .2s;
+            width: 25px;
+          }
         }
       }
 
@@ -37,7 +87,14 @@
         position: absolute;
         width: 1px;
 
-        /* stylelint-disable max-nesting-depth */
+        @media (max-width: $breakpoint-md-max) {
+          clip: rect(0, 0, 0, 0);
+          height: 0;
+          opacity: 0;
+          position: absolute;
+          width: 0;
+        }
+
         &:checked {
           label {
             &::before {
@@ -45,7 +102,7 @@
               border-color: $color-secondary;
               color: $color-white;
               content: '\e803';
-              font-family: fontello; /* stylelint-disable-line sh-waqar/declaration-use-variable, font-family-no-missing-generic-family-keyword */
+              font-family: fontello;
               font-size: 11px;
               -webkit-font-smoothing: antialiased;
               font-style: normal;
@@ -56,6 +113,26 @@
               text-align: right;
               text-transform: none;
               transform: translateY(-3px);
+            }
+          }
+
+          + label {
+            .slider {
+              @media (max-width: $breakpoint-md-max) {
+                background-color: $color-blue-19;
+
+                &::before {
+                  transform: translateX(22px);
+                }
+              }
+            }
+          }
+        }
+
+        &:focus + label {
+          .slider {
+            @media (max-width: $breakpoint-md-max) {
+              box-shadow: 0 0 4px #2196f3;
             }
           }
         }

@@ -1,3 +1,5 @@
+// stylelint-disable media-feature-name-whitelist
+
 .section {
   &--quote {
     background: $color-alt;
@@ -13,6 +15,16 @@
 
     .quote {
       text-align: center;
+
+      img {
+        @media (max-width: 767px) {
+          border: 5px solid $color-white;
+          border-radius: 100%;
+          height: 120px;
+          margin: 0 auto 10px;
+          width: 120px;
+        }
+      }
 
       p {
         font-size: 17px;
