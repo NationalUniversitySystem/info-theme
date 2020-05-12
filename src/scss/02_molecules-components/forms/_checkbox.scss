@@ -1,62 +1,59 @@
-.ginput {
-  &_container {
-    &_checkbox {
-      font-size: 11px;
+.gfield {
+  &_checkbox {
+    font-size: 11px;
 
-      li {
-        margin-bottom: 0;
+    li {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $color-black;
+      text-decoration: underline;
+    }
+
+    label {
+      cursor: pointer;
+
+      &::before {
+        border: 1px solid #aaa;
+        content: '';
+        display: inline-block;
+        height: 14px;
+        line-height: 12px;
+        margin-right: 5px;
+        transform: translateY(2px);
+        width: 14px;
       }
+    }
 
-      a {
-        color: $color-black;
-        text-decoration: underline;
-      }
+    input {
+      border: none;
+      clip: rect(0, 0, 0, 0);
+      height: 0;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
 
-      label {
-        cursor: pointer;
-
-        &::before {
-          border: 1px solid #aaa;
-          content: '';
-          display: inline-block;
-          height: 14px;
-          line-height: 12px;
-          margin-right: 5px;
-          transform: translateY(2px);
-          width: 14px;
-        }
-      }
-
-      input {
-        border: none;
-        clip: rect(0, 0, 0, 0);
-        height: 0;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-
-        /* stylelint-disable max-nesting-depth */
-        &:checked {
-          label {
-            &::before {
-              background: $color-secondary;
-              border-color: $color-secondary;
-              color: $color-white;
-              content: '\e803';
-              font-family: fontello; /* stylelint-disable-line sh-waqar/declaration-use-variable, font-family-no-missing-generic-family-keyword */
-              font-size: 11px;
-              -webkit-font-smoothing: antialiased;
-              font-style: normal;
-              font-variant: normal;
-              font-weight: 400;
-              line-height: 12px;
-              speak: none;
-              text-align: right;
-              text-transform: none;
-              transform: translateY(-3px);
-            }
+      &:checked {
+        label {
+          &::before {
+            background: $color-secondary;
+            border-color: $color-secondary;
+            color: $color-white;
+            content: '\e803';
+            font-family: fontello; /* stylelint-disable-line sh-waqar/declaration-use-variable, font-family-no-missing-generic-family-keyword */
+            font-size: 11px;
+            -webkit-font-smoothing: antialiased;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 12px;
+            speak: none;
+            text-align: right;
+            text-transform: none;
+            transform: translateY(-3px);
           }
         }
       }
