@@ -10,7 +10,7 @@ $page_phone_number = get_post_meta( get_the_ID(), '_page_contact_phone_number', 
 $phone_number      = ! empty( trim( $page_phone_number ) ) ? $page_phone_number : $phone_number;
 ?>
 
-<div class="d-none" id="fixed-cta">
+<div class="d-block d-md-none" id="fixed-cta">
 	<div class="btn-wrap">
 		<a href="#page-form" class="button button--yellow">Request Info</a>
 	</div>
