@@ -14,7 +14,7 @@ function isVisible( ele ) {
 }
 
 // Set our vars.
-var fixedCTA = document.getElementById( 'fixed-cta' );
+const fixedCTA = document.getElementById( 'fixed-cta' );
 
 // Check if our main element exists.
 const triggerField = document.querySelector( '.form__terms' );
@@ -38,7 +38,6 @@ if ( fixedCTA && triggerField ) {
 	} );
 }
 
-
 /**
  * Add span elements to checkbox labels
  */
@@ -46,7 +45,7 @@ jQuery( document ).on( 'gform_post_render', function() {
 	const elementsToAddSliderTo = [
 		'.form__label--checkbox',
 		'.form__group--military ul label',
-		'.ginput_container_consent label'
+		'.ginput_container_consent label',
 	];
 
 	elementsToAddSliderTo.forEach( function( domString ) {
