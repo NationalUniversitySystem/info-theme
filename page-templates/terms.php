@@ -11,7 +11,7 @@ get_header();
 		<section class="section section--fluid">
 			<div class="container--fluid">
 				<div class="row">
-					<?php get_template_part( 'template-parts/hero' ); ?>
+					<?php get_template_part( 'template-parts/hero', 'terms' ); ?>
 					<?php get_template_part( 'template-parts/form' ); ?>
 
 					<?php if ( ! empty( get_the_content( null, false, get_the_ID() ) ) ) { ?>
