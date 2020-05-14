@@ -1,0 +1,13 @@
+.page-template-terms {
+  .section {
+    &--fluid {
+      .container {
+        &--fluid {
+          @media (min-width: $breakpoint-md-min) {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+.page-template-terms {
+  .col-wrapper {
+    @media (min-width: $breakpoint-md-min) {
+      @include make-row;
+
+      margin-bottom: 10px;
+    }
+
+    .terms-flex {
+      @media (min-width: $breakpoint-md-min) {
+        @include make-col-ready;
+        @include make-col(6);
+
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    li {
+      @include make-col(12);
+
+      // sass-lint:disable class-name-format
+      &.first_name,
+      &.last_name {
+        @media (min-width: $breakpoint-md-min) {
+          @include make-col-ready;
+          @include make-col(6);
+
+          padding-left: 0;
+        }
+      }
+
+      &.last_name {
+        @media (min-width: $breakpoint-md-min) {
+          padding-right: 0;
+        }
+      }
+
+      &.gfield_html {
+        @media (min-width: $breakpoint-md-min) {
+          margin: 0;
+        }
+      }
+
+      &.disabled {
+        &:after {
+          @media (min-width: $breakpoint-md-min) {
+            animation: spin 1s infinite linear;
+            content: '\e838';
+            display: block;
+            font-family: 'fontello';
+            font-size: 18px;
+            opacity: .7;
+            position: absolute;
+            right: 11px;
+            top: 18px;
+          }
+        }
+
+        select {
+          @media (min-width: $breakpoint-md-min) {
+            background-image: none;
+          }
+        }
+      }
+
+      input,
+      select {
+        @media (min-width: $breakpoint-md-min) {
+          border: none;
+          font-size: 16px;
+          height: 58px;
+          line-height: 42px;
+          padding: 20px 15px 5px;
+          transition: $transition-opacity;
+
+          &:disabled {
+            cursor: not-allowed;
+            opacity: .2;
+          }
+
+          // sass-lint:disable-block  no-vendor-prefixes
+          &::placeholder {
+            color: $color-white;
+          }
+
+          &:-ms-input-placeholder {
+            color: $color-white;
+          }
+
+          & ::-ms-input-placeholder {
+            color: $color-white;
+          }
+        }
+      }
+
+      select {
+        @media (min-width: $breakpoint-md-min) {
+          background-image: url("../../images/icon-down-black.svg");
+          color: $color-white;
+          padding-top: 16px;
+
+          option {
+            color: $color-black;
+          }
+        }
+      }
+    }
+  }
+}

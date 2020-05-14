@@ -1,0 +1,28 @@
+.page-template-terms {
+  .header {
+    .container {
+      @extend %nu-container;
+    }
+
+    &__logo {
+      a {
+        @media (min-width: $breakpoint-md-min) {
+          background-image: url('../../images/nu-terms-logo.svg');
+        }
+      }
+    }
+
+    .phone {
+      &__number {
+        @media (min-width: $breakpoint-md-min) {
+          color: $color-white;
+          transition: $transition-color;
+
+          &:hover {
+            color: $color-accent;
+          }
+        }
+      }
+    }
+  }
+}

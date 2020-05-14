@@ -1,0 +1,30 @@
+.page-template-terms {
+  .footer {
+    padding: 0;
+
+    @media (min-width: $breakpoint-md-min) {
+      background: $color-mid-blue;
+      color: $color-white;
+      padding: 0 15px 80px;
+    }
+
+    .container {
+      @extend %nu-container--small;
+
+      padding: 0 10px;
+
+      a {
+        @media (min-width: $breakpoint-md-min) {
+          border-color: $color-white;
+          color: $color-white;
+          text-decoration: underline;
+          transition: $transition-color;
+
+          &:hover {
+            color: $color-accent;
+          }
+        }
+      }
+    }
+  }
+}

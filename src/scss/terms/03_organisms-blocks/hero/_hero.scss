@@ -1,0 +1,12 @@
+.page-template-terms {
+  .hero {
+    @media (min-width: $breakpoint-md-min) {
+      @include make-col(12);
+
+      padding: 0;
+      z-index: 9;
+    }
+
+
+  }
+}

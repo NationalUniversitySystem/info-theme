@@ -1,0 +1,90 @@
+.page-template-terms {
+  .hero {
+    &__cta {
+      @media (min-width: $breakpoint-md-min) {
+        @include make-col-ready;
+        @include make-col(3.5);
+
+        bottom: -5px;
+        display: block !important;
+        padding: 0 0 0 15px;
+        position: absolute;
+        right: 15px;
+      }
+
+      @media (min-width: $breakpoint-lg-min) {
+        @include make-col(4);
+      }
+
+      @media (min-width: $breakpoint-xl-min) {
+        bottom: -20px;
+      }
+
+      .cta {
+        &__inner {
+          @media (min-width: $breakpoint-md-min) {
+            background: $color-white;
+            padding: 15px;
+          }
+
+          @media (min-width: $breakpoint-xl-min) {
+            padding: 25px;
+          }
+        }
+      }
+
+      h3 {
+        @media (min-width: $breakpoint-md-min) {
+          color: $color-primary;
+          font-family: $font-primary;
+          font-size: 20px;
+          margin-bottom: 15px;
+        }
+
+        @media (min-width: $breakpoint-lg-min) {
+          font-size: 24px;
+        }
+      }
+
+      p {
+        color: $color-mid-gray;
+        font-family: $font-secondary;
+        font-weight: 700;
+
+        @media (min-width: $breakpoint-md-min) {
+          font-size: 15px;
+        }
+
+        @media (min-width: $breakpoint-lg-min) {
+          font-size: 18px;
+        }
+      }
+
+      .button {
+        @media (min-width: $breakpoint-md-min) {
+          background: $color-accent;
+          color: $color-primary;
+          font-size: 15px;
+          padding: 15px;
+
+          &:hover {
+            background: $color-primary;
+            color: $color-white;
+          }
+
+          @media (hover: none) {
+            &:hover {
+              background: $color-accent;
+              color: $color-primary;
+            }
+
+            &:active {
+              background: $color-primary;
+              color: $color-white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

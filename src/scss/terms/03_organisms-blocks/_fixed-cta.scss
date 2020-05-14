@@ -1,0 +1,52 @@
+.page-template-terms {
+  .fixed-cta--terms {
+    @media (min-width: $breakpoint-md-min) {
+      background: $color-primary-light;
+      display: block !important;
+      left: 0;
+      position: fixed;
+      text-align: center;
+      top: 100px;
+      width: 100%;
+      z-index: 5;
+
+      .row {
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+      }
+
+      h3 {
+        color: $color-white;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 0;
+        margin-right: 20px;
+      }
+
+      a {
+        color: $color-primary;
+        font-size: 16px;
+        padding: 10px 20px;
+        width: auto;
+
+        &:hover {
+          background: $color-primary;
+          color: $color-white;
+        }
+
+        @media (hover: none) {
+          &:hover {
+            background: $color-accent;
+            color: $color-primary;
+          }
+
+          &:active {
+            background: $color-primary;
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.page-template-terms {
+  input {
+    &:checked {
+      & + label {
+        &::before {
+          @media (min-width: $breakpoint-md-min) {
+            background-color: $color-accent !important;
+            background-image: url('../../images/icon-check.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 13px;
+            color: $color-primary !important;
+            font-size: 14px !important;
+            line-height: 19px !important;
+            transform: translateY(2px) !important;
+          }
+        }
+      }
+    }
+  }
+
+  .icon--question-circle {
+    &:before {
+      @media (min-width: $breakpoint-md-min) {
+        color: $color-white !important;
+      }
+    }
+  }
+
+  .ginput_container_checkbox,
+  .form__terms {
+    label {
+      @media (min-width: $breakpoint-md-min) {
+        color: $color-white;
+        font-size: 14px;
+      }
+
+      &:before {
+        @media (min-width: $breakpoint-md-min) {
+          background: $color-white;
+          height: 19px;
+          margin-right: 11px;
+          overflow: hidden;
+          width: 19px;
+        }
+      }
+    }
+
+    a {
+      @media (min-width: $breakpoint-md-min) {
+        color: $color-white;
+      }
+    }
+  }
+
+  .gfield_consent_label {
+    a {
+      color: $color-white;
+      text-decoration: none;
+    }
+  }
+}

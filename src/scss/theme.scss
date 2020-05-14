@@ -97,7 +97,7 @@
 // ------------------------------
 @import '04_templates/full-width-content';
 @import '04_templates/full-width-hero';
-@import '04_templates/terms';
+
 
 // ------------------------------
 // Pages
@@ -109,3 +109,37 @@
 // A/B Tests
 // ------------------------------
 @import 'testing/2-dot-0-theme';
+
+
+// ------------------------------
+// Terms Template Specific
+// ------------------------------
+
+// Base
+@import 'terms/00_base/variables/vars';
+@import 'terms/00_base/fonts';
+@import 'terms/00_base/placeholders';
+
+// Molecules - Components
+@import 'terms/02_molecules-components/form/checkbox';
+@import 'terms/02_molecules-components/form/column';
+@import 'terms/02_molecules-components/form/consent';
+@import 'terms/02_molecules-components/form/fields';
+@import 'terms/02_molecules-components/form/header';
+@import 'terms/02_molecules-components/form/intro';
+@import 'terms/02_molecules-components/form/li';
+@import 'terms/02_molecules-components/form/submit';
+
+// Organisms - Blocks
+@import 'terms/03_organisms-blocks/header';
+@import 'terms/03_organisms-blocks/fixed-cta';
+@import 'terms/03_organisms-blocks/hero/hero';
+@import 'terms/03_organisms-blocks/hero/background';
+@import 'terms/03_organisms-blocks/hero/copy';
+@import 'terms/03_organisms-blocks/hero/cta';
+@import 'terms/03_organisms-blocks/section';
+@import 'terms/03_organisms-blocks/form';
+@import 'terms/03_organisms-blocks/widgets';
+@import 'terms/03_organisms-blocks/quote';
+@import 'terms/03_organisms-blocks/accolades';
+@import 'terms/03_organisms-blocks/footer';

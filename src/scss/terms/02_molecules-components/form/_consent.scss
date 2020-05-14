@@ -1,0 +1,44 @@
+.page-template-terms {
+   // sass-lint:disable-block  class-name-format
+   .gfield_consent_description {
+    @media (min-width: $breakpoint-md-min) {
+      color: $color-white;
+      display: block !important;
+      margin-top: 30px;
+    }
+
+    h4 {
+      @media (min-width: $breakpoint-md-min) {
+        font-size: 15px;
+        font-weight: 700;
+      }
+    }
+
+    p {
+      @media (min-width: $breakpoint-md-min) {
+        font-size: 11px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    a {
+      text-decoration: underline;
+
+      @media (min-width: $breakpoint-md-min) {
+        color: $color-white;
+        transition: $transition-color;
+
+        &:hover {
+          color: $color-accent;
+        }
+      }
+    }
+
+    br {
+      display: none;
+    }
+  }
+}

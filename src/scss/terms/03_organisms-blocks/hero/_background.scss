@@ -1,0 +1,13 @@
+.page-template-terms {
+  .hero {
+    &__background {
+      @media (min-width: $breakpoint-md-min) {
+        min-height: 400px;
+      }
+
+      @media (min-width: $breakpoint-lg-min) {
+        min-height: 550px;
+      }
+    }
+  }
+}

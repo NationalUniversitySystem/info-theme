@@ -1,0 +1,33 @@
+.page-template-terms {
+  // sass-lint:disable-block  no-ids
+  #form-offset {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+  }
+
+  .section {
+    &__form {
+      @media (min-width: $breakpoint-md-min) {
+        @include make-col(12);
+
+        background: $color-mid-blue;
+        order: 9;
+        padding-left: 15px;
+        z-index: 9;
+      }
+
+      .form {
+        &__inner {
+          @extend %nu-container--small;
+
+          @media (min-width: $breakpoint-md-min) {
+            background: none;
+            padding: 50px 15px 15px;
+          }
+        }
+      }
+    }
+  }
+}

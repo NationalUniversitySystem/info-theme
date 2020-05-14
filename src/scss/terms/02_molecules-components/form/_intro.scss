@@ -1,0 +1,9 @@
+.page-template-terms {
+  .form {
+    &__intro {
+      @media (min-width: $breakpoint-md-min) {
+        display: none;
+      }
+    }
+  }
+}
