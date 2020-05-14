@@ -1,3 +1,5 @@
+// stylelint-disable selector-class-pattern, selector-max-compound-selectors
+
 .page-template-terms {
   form {
     li {
@@ -36,8 +38,8 @@
       &.form__terms {
         .gfield_label {
           height: 1px;
-          width: 1px;
           overflow: hidden;
+          width: 1px;
         }
       }
     }

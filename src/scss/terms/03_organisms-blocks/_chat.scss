@@ -1,5 +1,6 @@
+// stylelint-disable selector-class-pattern, media-feature-name-whitelist
 .page-template-terms {
-  .newChat { // sass-lint:disable-line class-name-format
+  .newChat {
     z-index: 9;
 
     @media (max-width: 767px) {

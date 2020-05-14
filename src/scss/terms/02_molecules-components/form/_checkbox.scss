@@ -1,7 +1,8 @@
+// stylelint-disable no-descending-specificity, declaration-no-important, selector-class-pattern
 .page-template-terms {
   input {
     &:checked {
-      & + label {
+      + label {
         &::before {
           @media (min-width: $breakpoint-md-min) {
             background-color: $color-accent !important;
@@ -20,7 +21,7 @@
   }
 
   .icon--question-circle {
-    &:before {
+    &::before {
       @media (min-width: $breakpoint-md-min) {
         color: $color-white !important;
       }
@@ -30,12 +31,7 @@
   .ginput_container_checkbox,
   .form__terms {
     label {
-      @media (min-width: $breakpoint-md-min) {
-        color: $color-white;
-        font-size: 14px;
-      }
-
-      &:before {
+      &::before {
         @media (min-width: $breakpoint-md-min) {
           background: $color-white;
           height: 19px;
@@ -43,6 +39,11 @@
           overflow: hidden;
           width: 19px;
         }
+      }
+
+      @media (min-width: $breakpoint-md-min) {
+        color: $color-white;
+        font-size: 14px;
       }
     }
 

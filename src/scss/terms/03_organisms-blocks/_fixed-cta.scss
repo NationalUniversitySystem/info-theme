@@ -1,3 +1,4 @@
+// stylelint-disable declaration-no-important, selector-class-pattern, media-feature-name-whitelist
 .page-template-terms {
   .fixed-cta--terms {
     @media (min-width: $breakpoint-md-min) {
@@ -30,11 +31,6 @@
         padding: 10px 20px;
         width: auto;
 
-        &:hover {
-          background: $color-primary;
-          color: $color-white;
-        }
-
         @media (hover: none) {
           &:hover {
             background: $color-accent;
@@ -45,6 +41,11 @@
             background: $color-primary;
             color: $color-white;
           }
+        }
+
+        &:hover {
+          background: $color-primary;
+          color: $color-white;
         }
       }
     }

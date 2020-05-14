@@ -4,14 +4,6 @@
       @extend %nu-container;
     }
 
-    &__logo {
-      a {
-        @media (min-width: $breakpoint-md-min) {
-          background-image: url('../../images/nu-terms-logo.svg');
-        }
-      }
-    }
-
     .phone {
       &__number {
         @media (min-width: $breakpoint-md-min) {
@@ -21,6 +13,14 @@
           &:hover {
             color: $color-accent;
           }
+        }
+      }
+    }
+
+    &__logo {
+      a {
+        @media (min-width: $breakpoint-md-min) {
+          background-image: url('../../images/nu-terms-logo.svg');
         }
       }
     }

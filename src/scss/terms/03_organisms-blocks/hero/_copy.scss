@@ -2,7 +2,7 @@
   .hero {
     &__copy {
       @media (min-width: $breakpoint-md-min) {
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0.7) 44%, rgba(0, 0, 0, 0.8) 100%);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, .7) 44%, rgba(0, 0, 0, .8) 100%);
         margin: 0;
         padding: 150px 0 30px;
       }
@@ -47,7 +47,6 @@
 
     &__terms-container {
       @extend %nu-container;
-
       position: static;
 
       @media (min-width: $breakpoint-md-min) {

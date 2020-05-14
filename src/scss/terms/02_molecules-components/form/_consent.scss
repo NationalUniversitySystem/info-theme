@@ -1,6 +1,6 @@
+// stylelint-disable selector-class-pattern, declaration-no-important
 .page-template-terms {
-   // sass-lint:disable-block  class-name-format
-   .gfield_consent_description {
+  .gfield_consent_description {
     @media (min-width: $breakpoint-md-min) {
       color: $color-white;
       display: block !important;
