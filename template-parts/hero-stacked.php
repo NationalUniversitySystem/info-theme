@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for Displaying Hero
+ * Template for Displaying Hero on Stacked Template
  *
  * @package info.*.edu
  */
@@ -14,7 +14,7 @@ $headings_tags  = [
 ];
 
 $hero_classes = ! is_page_template( 'page-templates/full-width-hero.php' ) ? ' col-lg-8 pr-md-0' : '';
-$copy_classes = ! is_page_template( 'page-templates/terms.php' ) ? ' ml-md-4' : '';
+$copy_classes = ! is_page_template( 'page-templates/stacked.php' ) ? ' ml-md-4' : '';
 
 
 if ( has_post_thumbnail() ) {

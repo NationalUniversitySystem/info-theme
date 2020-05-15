@@ -6,7 +6,7 @@
  */
 ?>
 
-<div class="fixed-cta--terms d-none">
+<div class="fixed-cta--stacked d-none">
 	<div class="container">
 		<div class="row">
 			<h3>

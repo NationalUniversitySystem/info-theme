@@ -6,7 +6,7 @@
  */
 
 $awards  = get_post_meta( get_the_ID(), '_awards_list', true );
-$spacing = is_page_template( 'page-templates/terms.php' ) ? '' : 'py-6';
+$spacing = is_page_template( 'page-templates/stacked.php' ) ? '' : 'py-6';
 
 if ( $awards ) {
 	$awards_count = count( $awards );

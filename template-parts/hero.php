@@ -14,8 +14,6 @@ $headings_tags  = [
 ];
 
 $hero_classes = ! is_page_template( 'page-templates/full-width-hero.php' ) ? ' col-lg-8 pr-md-0' : '';
-$copy_classes = ! is_page_template( 'page-templates/terms.php' ) ? ' ml-md-4' : '';
-
 
 if ( has_post_thumbnail() ) {
 	$hero_background_image = get_the_post_thumbnail_url();
@@ -31,7 +29,7 @@ if ( has_post_thumbnail() ) {
 
 <article class="hero col-12<?php echo esc_attr( $hero_classes ); ?>" aria-label="Page hero image and title"><?php // "md" breakpoint styles are in SCSS files since we needed a 6.5 column. ?>
 	<div class="hero__background position-relative"></div>
-	<div class="hero__copy<?php echo esc_attr( $copy_classes ); ?> p-md-4 py-4 px-5">
+	<div class="hero__copy ml-md-4 p-md-4 py-4 px-5">
 		<div class="hero__terms-container">
 			<?php if ( $hero_title ) { ?>
 				<h1><?php echo wp_kses( $hero_title, $headings_tags ); ?></h1>

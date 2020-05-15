@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for Displaying Quote on the Terms template
+ * Template for Displaying Quote on the Stacked template
  *
  * @package info.*.edu
  */

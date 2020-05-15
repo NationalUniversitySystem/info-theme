@@ -1,6 +1,6 @@
 // stylelint-disable declaration-no-important, selector-class-pattern, media-feature-name-whitelist
 .page-template-stacked {
-  .fixed-cta--terms {
+  .fixed-cta--stacked {
     @media (min-width: $breakpoint-md-min) {
       background: $color-primary-light;
       display: block !important;

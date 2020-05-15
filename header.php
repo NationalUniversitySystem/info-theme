@@ -53,7 +53,7 @@ $phone_number      = ! empty( trim( $page_phone_number ) ) ? $page_phone_number 
 	</header>
 
 	<?php
-	if ( is_page_template( 'page-templates/terms.php' ) ) {
-		get_template_part( 'template-parts/fixed-cta-terms' );
+	if ( is_page_template( 'page-templates/stacked.php' ) ) {
+		get_template_part( 'template-parts/fixed-cta-stacked' );
 	}
 	?>

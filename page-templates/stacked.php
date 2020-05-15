@@ -11,7 +11,7 @@ get_header();
 		<section class="section section--fluid">
 			<div class="container--fluid">
 				<div class="row">
-					<?php get_template_part( 'template-parts/hero', 'terms' ); ?>
+					<?php get_template_part( 'template-parts/hero', 'stacked' ); ?>
 					<?php get_template_part( 'template-parts/form' ); ?>
 
 					<?php if ( ! empty( get_the_content( null, false, get_the_ID() ) ) ) { ?>
@@ -31,7 +31,7 @@ get_header();
 
 					<?php get_template_part( 'template-parts/widgets' ); ?>
 
-					<?php get_template_part( 'template-parts/quote', 'terms' ); ?>
+					<?php get_template_part( 'template-parts/quote', 'stacked' ); ?>
 
 					<?php get_template_part( 'template-parts/accolades' ); ?>
 				</div>
