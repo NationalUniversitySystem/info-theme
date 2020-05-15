@@ -2,11 +2,13 @@
 .page-template-terms {
   .section {
     &--quote {
+      padding: 30px;
+      width: 100%;
+
       @media (min-width: $breakpoint-md-min) {
         left: 0;
         margin-left: 0;
         padding: 50px 30px;
-        width: 100%;
       }
 
       img {

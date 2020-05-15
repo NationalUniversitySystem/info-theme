@@ -28,7 +28,7 @@ $phone_number      = ! empty( trim( $page_phone_number ) ) ? $page_phone_number 
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nusa' ); ?></a>
 
-	<header class="header py-md-4 pb-4 pt-0" role="banner">
+	<header class="header py-md-4 pb-md-4 pt-0" role="banner">
 		<div class="header__value-props d-md-none d-block">
 			<div class="container">
 				<span>4-Week Classes</span> <span>On Campus or Online</span> <span>WSCUC Accredited</span>
