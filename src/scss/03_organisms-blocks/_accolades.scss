@@ -1,3 +1,4 @@
+// stylelint-disable selector-no-qualifying-type
 .accolades {
   background: $color-primary;
   text-align: center;
@@ -22,10 +23,16 @@
 
   .accolade {
     img {
+      filter: grayscale(100%) brightness(900%);
       max-width: 100%;
 
       @media( min-width: $breakpoint-md-min ) {
         max-width: 150px;
+      }
+
+      &[src*='Money-Best'],
+      &[src*='mbc'] {
+        filter: grayscale(0) brightness(100%);
       }
     }
   }

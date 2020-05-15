@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Terms
+ * Template Name: Stacked
  *
  * @package nusa
  */

@@ -1,5 +1,5 @@
 // stylelint-disable selector-class-pattern, sh-waqar/declaration-use-variable, max-nesting-depth, selector-max-compound-selectors, no-descending-specificity, selector-no-vendor-prefix, font-family-name-quotes, font-family-no-missing-generic-family-keyword
-.page-template-terms {
+.page-template-stacked {
   .col-wrapper {
     @media (min-width: $breakpoint-md-min) {
       @include make-row;

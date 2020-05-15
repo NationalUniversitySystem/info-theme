@@ -110,34 +110,34 @@
 @import 'testing/2-dot-0-theme';
 
 // ------------------------------
-// Terms Template Specific
+// Stacked Template Specific
 // ------------------------------
 
 // Base
-@import 'terms/00_base/variables/vars';
-@import 'terms/00_base/fonts';
-@import 'terms/00_base/placeholders';
+@import 'stacked/00_base/variables/vars';
+@import 'stacked/00_base/fonts';
+@import 'stacked/00_base/placeholders';
 
 // Molecules - Components
-@import 'terms/02_molecules-components/form/checkbox';
-@import 'terms/02_molecules-components/form/column';
-@import 'terms/02_molecules-components/form/consent';
-@import 'terms/02_molecules-components/form/fields';
-@import 'terms/02_molecules-components/form/header';
-@import 'terms/02_molecules-components/form/intro';
-@import 'terms/02_molecules-components/form/li';
-@import 'terms/02_molecules-components/form/submit';
+@import 'stacked/02_molecules-components/form/checkbox';
+@import 'stacked/02_molecules-components/form/column';
+@import 'stacked/02_molecules-components/form/consent';
+@import 'stacked/02_molecules-components/form/fields';
+@import 'stacked/02_molecules-components/form/header';
+@import 'stacked/02_molecules-components/form/intro';
+@import 'stacked/02_molecules-components/form/li';
+@import 'stacked/02_molecules-components/form/submit';
 
 // Organisms - Blocks
-@import 'terms/03_organisms-blocks/header';
-@import 'terms/03_organisms-blocks/fixed-cta';
-@import 'terms/03_organisms-blocks/hero/hero';
-@import 'terms/03_organisms-blocks/hero/background';
-@import 'terms/03_organisms-blocks/hero/copy';
-@import 'terms/03_organisms-blocks/hero/cta';
-@import 'terms/03_organisms-blocks/section';
-@import 'terms/03_organisms-blocks/form';
-@import 'terms/03_organisms-blocks/widgets';
-@import 'terms/03_organisms-blocks/quote';
-@import 'terms/03_organisms-blocks/accolades';
-@import 'terms/03_organisms-blocks/footer';
+@import 'stacked/03_organisms-blocks/header';
+@import 'stacked/03_organisms-blocks/fixed-cta';
+@import 'stacked/03_organisms-blocks/hero/hero';
+@import 'stacked/03_organisms-blocks/hero/background';
+@import 'stacked/03_organisms-blocks/hero/copy';
+@import 'stacked/03_organisms-blocks/hero/cta';
+@import 'stacked/03_organisms-blocks/section';
+@import 'stacked/03_organisms-blocks/form';
+@import 'stacked/03_organisms-blocks/widgets';
+@import 'stacked/03_organisms-blocks/quote';
+@import 'stacked/03_organisms-blocks/accolades';
+@import 'stacked/03_organisms-blocks/footer';
