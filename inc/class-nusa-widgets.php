@@ -55,6 +55,16 @@ class NUSA_Widgets {
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		] );
+
+		register_sidebar( [
+			'name'          => __( 'Mobile Header Value Props', 'nusa' ),
+			'id'            => 'value-props',
+			'description'   => __( 'Add widgets here.', 'nusa' ),
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '',
+			'after_title'   => '',
+		] );
 	}
 
 	/**

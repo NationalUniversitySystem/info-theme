@@ -46,11 +46,12 @@
     color: $color-white;
     display: block;
     margin-bottom: 8px;
-    padding: 9px 0;
 
     .container {
-      display: flex;
-      justify-content: center;
+      > div {
+        display: flex;
+        justify-content: center;
+      }
     }
 
     span {
