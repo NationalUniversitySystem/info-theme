@@ -100,7 +100,7 @@ const reload = done => {
  *    2. Lints theme files to keep code up to standards and consistent
  */
 export const sassLinter = () => {
-	return src( 'src/scss/**/*.scss' )
+	return src( './src/scss/**/*.scss' )
 		.pipe( plumber( errorHandler ) )
 		.pipe( styleLint( {
 			syntax: 'scss',
@@ -110,7 +110,7 @@ export const sassLinter = () => {
 			} ],
 		} ) );
 };
-sassLinter.description = 'Lint through all our SCSS files so our code is consistent across files.';
+sassLinter.description = 'Lint through all our SASS/SCSS files so our code is consistent across files.';
 
 /**
  * Task: `css`.
@@ -129,14 +129,14 @@ sassLinter.description = 'Lint through all our SCSS files so our code is consist
 export const css = done => {
 	del( './assets/css/*' );
 
-	src( 'src/scss/wp-*.scss', { sourcemaps: true } )
+	src( './src/scss/wp-*.scss', { sourcemaps: true } )
 		.pipe( plumber( errorHandler ) )
 		.pipe( sass( { outputStyle: 'compressed' } ).on( 'error', sass.logError ) )
 		.pipe( rename( { suffix: '.min' } ) )
 		.pipe( dest( './assets/css', { sourcemaps: '.' } ) );
 
 	src( [
-		'src/scss/*.scss',
+		'./src/scss/*.scss',
 		'!src/scss/wp-*.scss',
 	], { sourcemaps: true } )
 		.pipe( plumber( errorHandler ) )
@@ -186,7 +186,7 @@ jsLinter.description = 'Linter for JavaScript';
  *     1. Gets the source folder for JS files
  *     2. Concatenates all the files and generates *.js
  *     3. Renames the JS file with suffix .min.js
- *     4. Uglifes/Minifies the JS file and generates *.min.js
+ *     4. Uglifies/Minifies the JS file and generates *.min.js
  */
 export const js = () => {
 	// Clean up old files.
@@ -206,12 +206,13 @@ js.description = 'Run all JS compression and sourcemap work.';
 
 export const styles  = series( sassLinter, css );
 export const scripts = series( jsLinter, js );
-export const build   = parallel( styles, scripts );
+export const lint    = parallel( sassLinter, jsLinter );
+export const build   = parallel( css, js );
 
 /**
  * Watch Tasks.
  */
-export const dev = series( build, browsersync, () => {
+export const dev = series( lint, build, browsersync, () => {
 	watch( './**/*.php', reload ); // Reload on PHP file changes.
 	watch( './src/scss/**/*.scss', styles ); // Reload on SCSS file changes.
 	watch( './src/js/**/*.js', scripts ); // Reload on JS file changes.
