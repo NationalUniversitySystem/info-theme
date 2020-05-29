@@ -6,8 +6,14 @@ import { getParameterByName, getCookie } from './functions';
 ( function( d ) {
 	const starterQueryString = getStarterString();
 	const links = d.querySelectorAll( 'a' );
+	const externalLinks = [];
 
-	const externalLinks = [ ...links ].filter( link => link.href && ! ( link.href.startsWith( window.location.href ) || link.getAttribute( 'href' ).match( /^(#|mailto|tel)/ ) ) );
+	// Not using spread/ES6 methods due to a babel script breaking IE11.
+	links.forEach( link => {
+		if ( link.href && ! ( link.href.startsWith( window.location.href ) || link.getAttribute( 'href' ).match( /^(#|mailto|tel)/ ) ) ) {
+			externalLinks.push( link );
+		}
+	} );
 
 	externalLinks.forEach( link => {
 		const hrefUrl = link.href;
