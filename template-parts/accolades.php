@@ -9,7 +9,6 @@ $awards  = get_post_meta( get_the_ID(), '_awards_list', true );
 $spacing = is_page_template( 'page-templates/stacked.php' ) ? '' : 'py-6';
 
 if ( $awards ) {
-	$awards_count = count( $awards );
 	?>
 
 	<section class="section accolades section--accolades <?php echo esc_attr( $spacing ); ?> position-relative">

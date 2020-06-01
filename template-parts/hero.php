@@ -16,7 +16,7 @@ $headings_tags  = [
 $hero_classes = ! is_page_template( 'page-templates/full-width-hero.php' ) ? ' col-lg-8 pr-md-0' : '';
 
 if ( has_post_thumbnail() ) {
-	$hero_background_image = get_the_post_thumbnail_url();
+	$hero_background_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0];
 	?>
 	<style>
 		.hero__background {
@@ -42,9 +42,8 @@ if ( has_post_thumbnail() ) {
 			<?php } ?>
 			<?php
 			if ( has_post_thumbnail() ) {
-				$image_id      = get_post_thumbnail_id();
 				$image_caption = get_the_post_thumbnail_caption();
-				$image_text    = ! empty( $image_caption ) ? $image_caption : get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+				$image_text    = ! empty( $image_caption ) ? $image_caption : get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
 				?>
 				<div class="hero__caption">
 					<?php echo wp_kses_post( $image_text ); ?>
