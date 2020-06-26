@@ -26,7 +26,7 @@ $phone_number      = ! empty( trim( $page_phone_number ) ) ? $page_phone_number 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nusa' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'nusa' ); ?></a>
 
 	<header class="header py-md-4 pb-md-4 pt-0" role="banner">
 		<?php if ( is_active_sidebar( 'value-props' ) ) { ?>
