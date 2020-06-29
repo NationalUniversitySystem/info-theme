@@ -1,0 +1,16 @@
+// stylelint-disable max-nesting-depth
+.page-template-stacked {
+  .form {
+    &__group {
+      &--military {
+        .tooltip {
+          left: 67px;
+
+          @media (min-width: $breakpoint-md-min) {
+            left: 61px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -31,26 +31,21 @@ import { getCookie, getParameterByName, setInputValue } from '../theme/functions
 			const utmCookie = getCookie( utmName + '1' );
 			const utmParam  = getParameterByName( utmName );
 			const utmValue  = utmCookie || utmParam;
-
 			if ( '' !== utmValue ) {
 				setInputValue( '.' + utmName, utmValue, form );
 			}
 		} );
-
 		cookieParamSet.forEach( cookieParamName => {
 			const cookieValue = getCookie( cookieParamName );
 			const paramValue  = getParameterByName( cookieParamName );
 			const inputValue  = cookieValue || paramValue;
-
 			if ( '' !== inputValue ) {
 				setInputValue( '.' + cookieParamName, inputValue, form );
 			}
 		} );
-
 		// These values do not need parameter checked.
 		cookieCheck.forEach( cookieName => {
-			const cookieValue  = getCookie( cookieName );
-
+			const cookieValue = getCookie( cookieName );
 			if ( '' !== cookieValue ) {
 				setInputValue( '.' + cookieName, cookieValue, form );
 			}

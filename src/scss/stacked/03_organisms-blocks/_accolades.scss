@@ -1,0 +1,36 @@
+// stylelint-disable selector-no-qualifying-type
+.page-template-stacked {
+  .section {
+    &--accolades {
+      padding: 30px 15px;
+
+      @media (min-width: $breakpoint-md-min) {
+        background: $color-white;
+        padding: 50px 15px;
+        z-index: 9;
+      }
+
+      h2 {
+        @media (min-width: $breakpoint-md-min) {
+          color: $color-primary;
+          font-size: 18px;
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+      }
+
+      img {
+        filter: grayscale(100%) brightness(900%);
+
+        @media (min-width: $breakpoint-md-min) {
+          filter: grayscale(0) brightness(100%);
+        }
+
+        &[src*='Money-Best'],
+        &[src*='mbc'] {
+          filter: grayscale(0) brightness(100%);
+        }
+      }
+    }
+  }
+}

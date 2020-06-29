@@ -1,0 +1,23 @@
+%nu-container {
+  @media (min-width: $breakpoint-md-min) {
+    @include make-container;
+    max-width: $container-width--small;
+    position: relative;
+  }
+
+  @media (min-width: $breakpoint-lg-min) {
+    max-width: $container-width--medium;
+  }
+
+  @media (min-width: $breakpoint-xl-min) {
+    max-width: $container-width--large;
+  }
+}
+
+%nu-container--small {
+  @extend %nu-container;
+
+  @media (min-width: $breakpoint-md-min) {
+    max-width: $container-width--small;
+  }
+}

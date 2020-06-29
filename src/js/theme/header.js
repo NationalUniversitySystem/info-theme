@@ -7,7 +7,7 @@
 ( function( w, d ) {
 	if ( d.querySelector( 'header' ) !== null ) {
 		const header = d.querySelector( 'header' );
-		const body = d.querySelector( 'body' );
+		const body   = d.querySelector( 'body' );
 
 		body.style.paddingTop = header.offsetHeight + 'px';
 

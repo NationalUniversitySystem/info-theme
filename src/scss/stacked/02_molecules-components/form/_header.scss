@@ -1,0 +1,31 @@
+// stylelint-disable max-nesting-depth, declaration-no-important
+.page-template-stacked {
+  .form {
+    &__header {
+      @media (min-width: $breakpoint-md-min) {
+        display: block !important;
+      }
+
+      .form {
+        &__subtitle {
+          @media (min-width: $breakpoint-md-min) {
+            color: $color-white;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            line-height: 1.29em;
+            opacity: .8;
+          }
+        }
+
+        &__title {
+          @media (min-width: $breakpoint-md-min) {
+            color: $color-white;
+            font-family: $font-primary;
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+}

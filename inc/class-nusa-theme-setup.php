@@ -6,7 +6,7 @@
  */
 
 /**
- * NUSA_Theme_Setup class
+ * NUSA_Theme_Setup class.
  */
 class NUSA_Theme_Setup {
 	/**

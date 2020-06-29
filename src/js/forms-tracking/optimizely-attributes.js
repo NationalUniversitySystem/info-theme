@@ -17,10 +17,9 @@ import { getCookie, getParameterByName } from '../theme/functions';
 	const trackingObject = {};
 
 	utmParams.forEach( utmName => {
-		const utmCookie = getCookie( utmName + '1' );
-		const utmParam  = getParameterByName( utmName );
-		const utmValue  = utmCookie || utmParam;
-
+		const utmCookie           = getCookie( utmName + '1' );
+		const utmParam            = getParameterByName( utmName );
+		const utmValue            = utmCookie || utmParam;
 		trackingObject[ utmName ] = utmValue;
 	} );
 

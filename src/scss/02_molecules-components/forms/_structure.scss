@@ -1,0 +1,15 @@
+form {
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 15px;
+      padding: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
