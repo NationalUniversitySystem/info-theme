@@ -1,4 +1,3 @@
-
 import { getParameterByName, getCookie } from './functions';
 /**
  * This file builds a query string to attach to anchor links so that we can track data on our other domains.
@@ -10,7 +9,7 @@ import { getParameterByName, getCookie } from './functions';
 
 	// Not using spread/ES6 methods due to a babel script breaking IE11.
 	links.forEach( link => {
-		if ( link.href && ! ( link.href.startsWith( window.location.href ) || link.getAttribute( 'href' ).match( /^(#|mailto|tel)/ ) ) ) {
+		if ( link.href && ! ( link.href.startsWith( window.location.origin ) || link.getAttribute( 'href' ).match( /^(#|mailto|tel)/ ) ) ) {
 			externalLinks.push( link );
 		}
 	} );
