@@ -17,12 +17,12 @@ $phone_number      = ! empty( trim( $page_phone_number ) ) ? $page_phone_number 
 	<div class="row p-4">
 		<div class="col-6">
 			<a href="tel:+1-<?php echo esc_attr( $phone_number ); ?>">
-				<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/icon-phone.svg" alt="Phone Icon" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/icon-phone.svg" alt="Phone Icon" />
 			</a>
 		</div>
 		<div class="col-6">
 			<a href="#" id="chat-trigger">
-				<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/icon-chat.svg" alt="Chat Icon" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/icon-chat.svg" alt="Chat Icon" />
 			</a>
 		</div>
 	</div>
