@@ -191,28 +191,30 @@ class NUSA_Theme_Setup {
 	 */
 	public function preload_fonts() {
 		?>
-		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/fontello/fontello.svg?36463184">
-		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/fontello/fontello.ttf?36463184">
-		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/fontello/fontello.woff?36463184">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/fontello/fontello.eot?36463184">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/fontello/fontello.eot?36463184#iefix">
 		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/fontello/fontello.woff2?36463184">
-		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-bold-webfont.woff">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/fontello/fontello.woff?36463184">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/fontello/fontello.ttf?36463184">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/fontello/fontello.svg?36463184">
 		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-bold-webfont.woff2">
-		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-extrabold-webfont.woff">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-bold-webfont.woff">
 		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-extrabold-webfont.woff2">
-		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-light-webfont.woff">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-extrabold-webfont.woff">
 		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-light-webfont.woff2">
-		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-regular-webfont.woff">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-light-webfont.woff">
 		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-regular-webfont.woff2">
-		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-semibold-webfont.woff">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-regular-webfont.woff">
 		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-semibold-webfont.woff2">
-		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/oswald/oswald-bold-webfont.woff">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans/opensans-semibold-webfont.woff">
 		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/oswald/oswald-bold-webfont.woff2">
-		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/oswald/oswald-heavy-webfont.woff">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/oswald/oswald-bold-webfont.woff">
 		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/oswald/oswald-heavy-webfont.woff2">
-		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/oswald/oswald-medium-webfont.woff">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/oswald/oswald-heavy-webfont.woff">
 		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/oswald/oswald-medium-webfont.woff2">
-		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/oswald/oswald-regular-webfont.woff">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/oswald/oswald-medium-webfont.woff">
 		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/oswald/oswald-regular-webfont.woff2">
+		<link rel="preload" as="font" crossorigin="anonymous" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/fonts/oswald/oswald-regular-webfont.woff">
 		<?php
 	}
 
