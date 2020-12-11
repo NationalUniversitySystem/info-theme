@@ -1,0 +1,10 @@
+# git files
+.gitattributes export-ignore
+.gitignore export-ignore
+
+# source files
+.editorconfig export-ignore
+cypress export-ignore
+cypress.json export-ignore
+README.md export-ignore
+utilities.sh export-ignore
