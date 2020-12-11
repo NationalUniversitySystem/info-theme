@@ -4,7 +4,8 @@
  */
 ( function( $ ) {
 	$( document ).ready( function() {
-		$( '.section__form' ).on( 'change', '.field__degree-type select', programsFinder );
+		$( '.section__form' ).on( 'change', '.field__degree-type select:visible', programsFinder );
+		$( '.info-section__form' ).on( 'change', '.field__degree-type select:visible', programsFinder );
 	} );
 
 	function programsFinder() {
@@ -24,7 +25,7 @@
 			},
 			success( programs ) { // The WP PHP AJAX action returns a list of programs as a string.
 				// Remove all previously added programs as options from "Degree Program" select.
-				$( '.populate-program-metadata select' ).find( 'option:not([disabled="disabled"])' ).remove();
+				$( '.populate-program-metadata select' ).find( 'option:not([disabled="disabled"]), optgroup' ).remove();
 
 				// Add all of our program posts as options to the "Degree Program" select.
 				$( programs ).appendTo( '.populate-program-metadata select' );
@@ -38,4 +39,3 @@
 		} );
 	}
 } )( jQuery );
-
