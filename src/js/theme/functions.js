@@ -122,3 +122,14 @@ export const getClass = function( classPartial, classList ) {
 
 	return theClass;
 };
+
+// Function to check if element is visible in the viewport.
+export const isVisible = function( element ) {
+	const { top, bottom } = element.getBoundingClientRect();
+	const vHeight         = ( window.innerHeight || document.documentElement.clientHeight );
+
+	return (
+		( top > 0 || bottom > 0 ) &&
+		top < vHeight
+	);
+};
