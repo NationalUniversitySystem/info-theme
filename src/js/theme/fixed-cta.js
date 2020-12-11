@@ -1,28 +1,19 @@
-/**
- * Check if form is in the viewport
- */
+import { isVisible, debounce } from './functions';
 
-// Function to check if element is visible in the viewport.
-function isVisible( ele ) {
-	const { top, bottom } = ele.getBoundingClientRect();
-	const vHeight         = ( window.innerHeight || document.documentElement.clientHeight );
+( function() {
+	// Set our vars.
+	const fixedCTA = document.getElementById( 'fixed-cta' );
 
-	return (
-		( top > 0 || bottom > 0 ) &&
-		top < vHeight
-	);
-}
+	// Check if our main element exists.
+	const triggerField = document.querySelector( '.gform_body' );
+	const footer       = document.querySelector( '.footer' );
 
-// Set our vars.
-const fixedCTA = document.getElementById( 'fixed-cta' );
-
-// Check if our main element exists.
-const triggerField = document.querySelector( '.form__terms' );
-const footer       = document.querySelector( '.footer' );
-
-if ( fixedCTA && triggerField ) {
-	// On scroll.
-	window.addEventListener( 'scroll', function() {
+	/**
+	 * On scroll, toggle hide animation class on the fixed-cta element
+	 * depending on whether or not the trigger field is visible (includes phone and chat icons).
+	 * - Uses debounce so scroll does not hog browser resources
+	 */
+	const hideFixedCTA = debounce( () => {
 		// If elem is visible.
 		if ( isVisible( triggerField ) ) {
 			// Add our classes.
@@ -35,5 +26,9 @@ if ( fixedCTA && triggerField ) {
 			// Remove our classes.
 			fixedCTA.classList.remove( 'hide-me' );
 		}
-	} );
-}
+	}, 150 );
+
+	if ( fixedCTA && ( triggerField || footer ) ) {
+		window.addEventListener( 'scroll', hideFixedCTA );
+	}
+} )();
