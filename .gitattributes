@@ -8,3 +8,6 @@ cypress export-ignore
 cypress.json export-ignore
 README.md export-ignore
 utilities.sh export-ignore
+
+# Do not use diff when looking at built asset files, treating them as binary.
+assets/**/*.* -diff
