@@ -55,7 +55,7 @@ get_header();
 						</div>
 
 						<div class="widget widget--alt col-12 p-5 d-md-flex flex-lg-wrap align-items-md-center align-content-lg-center">
-							<img class="icon" src="/wp-content/themes/info-theme/images/nonprofit.svg" alt="Non-profits">
+							<img class="icon" src="<?php get_template_directory_uri(); ?>/images/nonprofit.svg" alt="Non-profits">
 							<div class="widget__content">
 								<h3>Why "Nonprofit" Matters</h3> As a nonprofit, we're proud to put our students first, reinvesting in quality education, experienced faculty, and dedicated support services.
 							</div>
