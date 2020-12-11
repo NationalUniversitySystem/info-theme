@@ -10,6 +10,10 @@
 	function programsFinder() {
 		const degreeType = $( this ).val();
 
+		$( '.field__program select' ).prop( 'disabled', true );
+
+		$( '.field__program' ).addClass( 'disabled' );
+
 		// Begin our ajax call.
 		$.ajax( {
 			type: 'POST',
@@ -26,6 +30,10 @@
 				$( programs ).appendTo( '.populate-program-metadata select' );
 
 				$( '.populate-program-metadata select' ).append( '<optgroup label="" class="d-none"></optgroup>' );
+
+				$( '.field__program select' ).prop( 'disabled', false );
+
+				$( '.field__program' ).removeClass( 'disabled' );
 			},
 		} );
 	}
