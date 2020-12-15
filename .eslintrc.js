@@ -5,9 +5,13 @@ module.exports = {
 		"node": true,
 		"jquery": true
 	},
+	"plugins": [
+		"no-jquery"
+	],
 	"extends": [
 		"eslint:recommended",
-		"plugin:@wordpress/eslint-plugin/recommended-with-formatting"
+		"plugin:@wordpress/eslint-plugin/recommended-with-formatting",
+		"plugin:no-jquery/deprecated",
 	],
 	"parserOptions": {
 		"ecmaVersion": 2018,
@@ -23,7 +27,7 @@ module.exports = {
 				"max": 8
 			}
 		],
-		"eqeqeq": [ "error", "smart"] ,
+		"eqeqeq": [ "error", "smart" ],
 		"lines-around-comment": "off",
 		"space-in-parens": [ "warn", "always" ],
 		"no-empty-function": [
