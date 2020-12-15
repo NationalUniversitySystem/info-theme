@@ -19,7 +19,7 @@
   }
 
   .button {
-    display: block !important; /* stylelint-disable declaration-no-important */
+    display: block !important; // stylelint-disable declaration-no-important
     font-family: $font-secondary;
 
     &:hover,

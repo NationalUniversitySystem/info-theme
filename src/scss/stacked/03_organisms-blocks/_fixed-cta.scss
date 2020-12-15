@@ -1,4 +1,4 @@
-// stylelint-disable declaration-no-important, selector-class-pattern, media-feature-name-whitelist
+// stylelint-disable declaration-no-important, selector-class-pattern, media-feature-name-allowed-list
 .page-template-stacked {
   .fixed-cta--stacked {
     @media (min-width: $breakpoint-md-min) {
