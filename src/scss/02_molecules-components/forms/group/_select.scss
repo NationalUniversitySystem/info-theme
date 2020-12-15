@@ -4,8 +4,8 @@
       position: relative;
 
       select {
-        -moz-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
-        -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
+        -moz-appearance: none; // stylelint-disable-line property-no-vendor-prefix
+        -webkit-appearance: none; // stylelint-disable-line property-no-vendor-prefix
         background-image: url('../../images/down-open.svg');
         background-position: 96% 50%;
         background-repeat: no-repeat;

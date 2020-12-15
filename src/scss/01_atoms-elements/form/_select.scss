@@ -1,4 +1,4 @@
-// stylelint-disable media-feature-name-whitelist
+// stylelint-disable media-feature-name-allowed-list
 
 select {
   background: $color-white;
@@ -8,7 +8,7 @@ select {
   font-weight: 200;
   height: 34px;
   padding: 7px 10px;
-  width: 100% !important; /* stylelint-disable-line declaration-no-important */
+  width: 100% !important; // stylelint-disable-line declaration-no-important
 
   @media (max-width: 767px) {
     border: 1px solid #aaa;

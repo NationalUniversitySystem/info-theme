@@ -5,7 +5,7 @@
   &::before,
   &::after {
     display: inline-block;
-    font-family: fontello; /* stylelint-disable-line sh-waqar/declaration-use-variable, font-family-no-missing-generic-family-keyword */
+    font-family: fontello; // stylelint-disable-line sh-waqar/declaration-use-variable, font-family-no-missing-generic-family-keyword
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-style: normal;

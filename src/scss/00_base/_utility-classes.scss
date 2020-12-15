@@ -16,11 +16,11 @@
   }
 }
 
-@each $i in $font-sizes { /* stylelint-disable-line at-rule-empty-line-before */
+@each $i in $font-sizes { // stylelint-disable-line at-rule-empty-line-before
   // Font size class.
   .font--#{$i} {
     #{--font-size}: #{$i}px;
-    font-size: #{$i}px !important; /* stylelint-disable-line declaration-no-important */
+    font-size: #{$i}px !important; // stylelint-disable-line declaration-no-important
   }
 }
 
