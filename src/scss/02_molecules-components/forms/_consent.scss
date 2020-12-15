@@ -1,4 +1,4 @@
-// stylelint-disable max-nesting-depth, selector-max-compound-selectors, media-feature-name-whitelist, no-descending-specificity, selector-class-pattern
+// stylelint-disable max-nesting-depth, selector-max-compound-selectors, media-feature-name-allowed-list, no-descending-specificity, selector-class-pattern
 .ginput {
   &_container {
     &_consent {
@@ -69,7 +69,7 @@
               border-color: $color-secondary;
               color: $color-white;
               content: '\e803';
-              font-family: fontello;  /* stylelint-disable-line sh-waqar/declaration-use-variable, font-family-no-missing-generic-family-keyword */
+              font-family: fontello;  // stylelint-disable-line sh-waqar/declaration-use-variable, font-family-no-missing-generic-family-keyword
               font-size: 11px;
               -webkit-font-smoothing: antialiased;
               font-style: normal;

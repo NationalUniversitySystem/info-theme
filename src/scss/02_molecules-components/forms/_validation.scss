@@ -1,11 +1,11 @@
 .validation {
   &_error {
-    display: none !important; /* stylelint-disable-line declaration-no-important */
+    display: none !important; // stylelint-disable-line declaration-no-important
   }
 }
 
 .gfield {
-  /* stylelint-disable selector-no-qualifying-type */
+  // stylelint-disable selector-no-qualifying-type
   &_error {
     input[type='text'],
     select {

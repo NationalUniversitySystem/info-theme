@@ -1,4 +1,4 @@
-// stylelint-disable media-feature-name-whitelist
+// stylelint-disable media-feature-name-allowed-list
 
 .hero {
   @media( min-width: $breakpoint-md-min) and ( max-width: $breakpoint-md-max ) {
