@@ -40,7 +40,7 @@
 		} );
 	} );
 
-	$( document ).ready( function() {
+	$( function() {
 		'use strict';
 		/**
 		 * TinyMCE Custom Control

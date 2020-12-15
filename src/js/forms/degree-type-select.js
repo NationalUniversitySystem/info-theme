@@ -3,7 +3,7 @@
  * Attach even listeners to degree type/level & program dropdowns
  */
 ( function( $ ) {
-	$( document ).ready( function() {
+	$( function() {
 		$( '.section__form' ).on( 'change', '.field__degree-type select:visible', programsFinder );
 		$( '.info-section__form' ).on( 'change', '.field__degree-type select:visible', programsFinder );
 	} );
