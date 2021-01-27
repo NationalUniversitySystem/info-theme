@@ -26,7 +26,6 @@ module.exports = {
 				},
 			},
 			extractComments: false,
-			sourceMap: true,
 		} ) ],
 	},
 	stats: {
