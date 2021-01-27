@@ -19,6 +19,7 @@
     "browser-sync": "^2.26.14",
     "del": "^6.0.0",
     "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-no-jquery": "^2.5.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
