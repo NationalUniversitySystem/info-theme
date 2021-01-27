@@ -142,6 +142,7 @@ export const css = done => {
 	], { sourcemaps: true } )
 		.pipe( plumber( errorHandler ) )
 		.pipe( sass( { outputStyle: 'expanded' } ).on( 'error', sass.logError ) )
+		.pipe( dest( './assets/css' ) )
 		.pipe( autoprefixer( {
 			cascade: false,
 		} ) )
