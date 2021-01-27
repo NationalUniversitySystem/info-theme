@@ -10,7 +10,7 @@ module.exports = {
 		],
 	},
 	mode: 'production',
-	devtool: 'source-map',
+	devtool: 'nosources-source-map',
 	externals: {
 		jquery: 'jQuery',
 	},
