@@ -37,7 +37,8 @@ import styleLint from 'gulp-stylelint';
 // JS related plugins.
 import eslint from 'gulp-eslint';
 import named from 'vinyl-named';
-import webpack from 'webpack-stream';
+import webpack from 'webpack';
+import webpackStream from 'webpack-stream';
 import webpackConfig from './webpack.config.js';
 
 // Utility related plugins.
@@ -195,7 +196,7 @@ export const js = () => {
 	return src( './src/js/*.js' )
 		.pipe( plumber( errorHandler ) )
 		.pipe( named() )
-		.pipe( webpack( webpackConfig ) )
+		.pipe( webpackStream( webpackConfig, webpack ) )
 		.pipe( dest( './assets/js/' ) )
 		.pipe( server.reload( {
 			match: '**/*.js', // Sourcemap is in stream so match for actual JS files
