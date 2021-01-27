@@ -1,6 +1,6 @@
 import { isVisible, debounce } from './functions';
 
-( function() {
+( function( w ) {
 	// Set our vars.
 	const fixedCTA = document.getElementById( 'fixed-cta' );
 
@@ -29,6 +29,6 @@ import { isVisible, debounce } from './functions';
 	}, 150 );
 
 	if ( fixedCTA && ( triggerField || footer ) ) {
-		window.addEventListener( 'scroll', hideFixedCTA );
+		w.addEventListener( 'scroll', hideFixedCTA );
 	}
-} )();
+} )( window );
