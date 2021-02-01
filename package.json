@@ -16,7 +16,7 @@
     "@wordpress/eslint-plugin": "^7.3.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.26.14",
     "del": "^6.0.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-no-jquery": "^2.5.0",
