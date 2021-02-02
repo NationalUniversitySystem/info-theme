@@ -24,20 +24,21 @@ import { getDomain, getCookie, getParameterByName } from '../theme/functions';
 	// If the visitor landing on the site from one of the domain we want to capture,
 	// set a cookie for the referrer's domain.
 	if ( domainMatch ) {
-		const domainMatchUrlCookie = getCookie( 'referringDomain' );
+		const domainMatchUrlCookie = getCookie( 'referring_domain' );
 		if ( '' === domainMatchUrlCookie ) {
-			document.cookie = 'referringDomain=' + initialReferrerCookie.match( domainRegEx ) + '; path=/; Domain=' + cookieDomain;
+			document.cookie = 'referring_domain=' + initialReferrerCookie.match( domainRegEx ) + '; path=/; Domain=' + cookieDomain;
 		}
 	}
 
-	// Set the gclid cookie.
-	const gclidCookie = getCookie( 'gclid' );
-	const gclidParam  = getParameterByName( 'gclid' );
-	if ( '' === gclidCookie && '' !== gclidParam ) {
+	// Set the click ID through gclid || msclkid parameter.
+	const gclidParam = getParameterByName( 'gclid' );
+	const msclkidParam = getParameterByName( 'msclkid' );
+	if ( '' !== gclidParam || '' !== msclkidParam ) {
+		const clickIdValue = gclidParam || msclkidParam;
 		const gclidDate = new Date();
-		gclidDate.setTime( gclidDate.getTime() + ( 90 * 24 * 60 * 60 * 1000 ) );
+		gclidDate.setTime( gclidDate.getTime() + ( 90 * 24 * 60 * 60 * 1000 ) ); // 3 months.
 		const gclidExpires = '' + gclidDate.toGMTString();
-		document.cookie = 'gclid=' + gclidParam + '; expires=' + gclidExpires + ';path=/';
+		document.cookie = 'gclid=' + clickIdValue + '; expires=' + gclidExpires + ';path=/';
 	}
 
 	/**
@@ -81,8 +82,9 @@ import { getDomain, getCookie, getParameterByName } from '../theme/functions';
 			document.cookie = 'track1=' + track + '; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
 		}
 	} else if ( domainMatch === true ) {
-		document.cookie = 'utm_source1=; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
-		document.cookie = 'utm_medium1=; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
+		const domainMatchUrlCookie = getCookie( 'referring_domain' );
+		document.cookie = 'utm_source1=' + domainMatchUrlCookie + '; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
+		document.cookie = 'utm_medium1=OrganicSearch; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
 		document.cookie = 'utm_term1=; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
 		document.cookie = 'utm_content1=; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
 		document.cookie = 'utm_campaign1=; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;

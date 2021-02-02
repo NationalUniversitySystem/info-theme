@@ -5,11 +5,11 @@
  *
  * Learn more: https://git.io/vWdr2
  */
-( function() {
+( function( w ) {
 	const isIe = /(trident|msie)/i.test( navigator.userAgent );
 
 	if ( isIe && document.getElementById && window.addEventListener ) {
-		window.addEventListener( 'hashchange', function() {
+		w.addEventListener( 'hashchange', function() {
 			const id = location.hash.substring( 1 );
 
 			if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
@@ -27,4 +27,4 @@
 			}
 		}, false );
 	}
-} )();
+} )( window );

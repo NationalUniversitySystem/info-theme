@@ -1,5 +1,5 @@
 import Siema from 'siema';
-( function() {
+( function( w ) {
 	if ( document.querySelector( '.accolades__wrap' ) !== null ) {
 		// Setup our Siema object.
 		const mySiema = new Siema( {
@@ -24,7 +24,7 @@ import Siema from 'siema';
 		}
 
 		// When we resize the browser.
-		window.addEventListener( 'resize', function() {
+		w.addEventListener( 'resize', function() {
 			// Get the newly resized browser width.
 			const windowResizeWidth = window.innerWidth;
 
@@ -38,4 +38,4 @@ import Siema from 'siema';
 			}
 		} );
 	}
-} )();
+} )( window );

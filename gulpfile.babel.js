@@ -32,12 +32,14 @@ import { dest, parallel, src, series, watch } from 'gulp';
 import autoprefixer from 'gulp-autoprefixer';
 import cleanCSS from 'gulp-clean-css';
 import sass from 'gulp-sass';
+import sourcemaps from 'gulp-sourcemaps';
 import styleLint from 'gulp-stylelint';
 
 // JS related plugins.
 import eslint from 'gulp-eslint';
 import named from 'vinyl-named';
-import webpack from 'webpack-stream';
+import webpack from 'webpack';
+import webpackStream from 'webpack-stream';
 import webpackConfig from './webpack.config.js';
 
 // Utility related plugins.
@@ -129,18 +131,25 @@ sassLinter.description = 'Lint through all our SASS/SCSS files so our code is co
 export const css = done => {
 	del( './assets/css/*' );
 
-	src( './src/scss/wp-*.scss', { sourcemaps: true } )
+	src( './src/scss/wp-*.scss' )
+		.pipe( sourcemaps.init() )
 		.pipe( plumber( errorHandler ) )
 		.pipe( sass( { outputStyle: 'compressed' } ).on( 'error', sass.logError ) )
 		.pipe( rename( { suffix: '.min' } ) )
-		.pipe( dest( './assets/css', { sourcemaps: '.' } ) );
+		.pipe( sourcemaps.write( '.', {
+			includeContent: false,
+			sourceRoot: '../../src/scss',
+		} ) )
+		.pipe( dest( './assets/css' ) );
 
 	src( [
 		'./src/scss/*.scss',
 		'!src/scss/wp-*.scss',
-	], { sourcemaps: true } )
+	] )
+		.pipe( sourcemaps.init() )
 		.pipe( plumber( errorHandler ) )
 		.pipe( sass( { outputStyle: 'expanded' } ).on( 'error', sass.logError ) )
+		.pipe( dest( './assets/css' ) )
 		.pipe( autoprefixer( {
 			cascade: false,
 		} ) )
@@ -154,7 +163,11 @@ export const css = done => {
 			},
 		} ) )
 		.pipe( rename( { suffix: '.min' } ) )
-		.pipe( dest( './assets/css', { sourcemaps: '.' } ) )
+		.pipe( sourcemaps.write( '.', {
+			includeContent: false,
+			sourceRoot: '../../src/scss',
+		} ) )
+		.pipe( dest( './assets/css' ) )
 		.pipe( server.stream( {
 			match: '**/*.css', // Sourcemap is in stream so match for actual CSS files
 		} ) );
@@ -195,7 +208,7 @@ export const js = () => {
 	return src( './src/js/*.js' )
 		.pipe( plumber( errorHandler ) )
 		.pipe( named() )
-		.pipe( webpack( webpackConfig ) )
+		.pipe( webpackStream( webpackConfig, webpack ) )
 		.pipe( dest( './assets/js/' ) )
 		.pipe( server.reload( {
 			match: '**/*.js', // Sourcemap is in stream so match for actual JS files

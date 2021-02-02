@@ -11,7 +11,7 @@
 
 	// Get the experiments depending on which version is being used
 	// and then manipulate the returned object for use on our hand-off in our forms.
-	let activeExperiments = ( 'undefined' !== typeof w.optimizelyEdge ) ? w.optimizelyEdge.get( 'state' ).getActiveExperiments() : w.optimizely.get( 'state' ).getCampaignStates( { 'isActive': true } );
+	let activeExperiments = ( 'undefined' !== typeof w.optimizelyEdge ) ? w.optimizelyEdge.get( 'state' ).getActiveExperiments() : w.optimizely.get( 'state' ).getCampaignStates( { isActive: true } );
 
 	activeExperiments = formatExperiments( activeExperiments );
 
@@ -31,8 +31,8 @@
 	function formatExperiments( fullObject ) {
 		const experimentsObject = [];
 
-		for ( let campaignId in fullObject ) {
-			let theCampaign = fullObject[ campaignId ];
+		for ( const campaignId in fullObject ) {
+			const theCampaign = fullObject[ campaignId ];
 			const experimentId = theCampaign.experiment ? theCampaign.experiment.id : theCampaign.id;
 
 			experimentsObject.push( experimentId + '|' + theCampaign.variation.id );
