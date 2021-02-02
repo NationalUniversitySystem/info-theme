@@ -12,11 +12,11 @@ import { getCookie, getParameterByName, setInputValue } from '../theme/functions
 	];
 
 	const cookieParamSet = [
-		'gclid',
 		'_ga',
 	];
 
 	const cookieCheck = [
+		'gclid',
 		'initial_referrer',
 		'referring_domain',
 		'initial_landing_page',
@@ -43,7 +43,8 @@ import { getCookie, getParameterByName, setInputValue } from '../theme/functions
 				setInputValue( '.' + cookieParamName, inputValue, form );
 			}
 		} );
-		// These values do not need parameter checked.
+		// These values do not need parameter checked since the cookie was set already
+		// right before this attempt at setting the fields..
 		cookieCheck.forEach( cookieName => {
 			const cookieValue = getCookie( cookieName );
 			if ( '' !== cookieValue ) {
