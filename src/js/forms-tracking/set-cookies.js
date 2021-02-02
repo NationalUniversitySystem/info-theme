@@ -24,9 +24,9 @@ import { getDomain, getCookie, getParameterByName } from '../theme/functions';
 	// If the visitor landing on the site from one of the domain we want to capture,
 	// set a cookie for the referrer's domain.
 	if ( domainMatch ) {
-		const domainMatchUrlCookie = getCookie( 'referringDomain' );
+		const domainMatchUrlCookie = getCookie( 'referring_domain' );
 		if ( '' === domainMatchUrlCookie ) {
-			document.cookie = 'referringDomain=' + initialReferrerCookie.match( domainRegEx ) + '; path=/; Domain=' + cookieDomain;
+			document.cookie = 'referring_domain=' + initialReferrerCookie.match( domainRegEx ) + '; path=/; Domain=' + cookieDomain;
 		}
 	}
 
@@ -82,8 +82,9 @@ import { getDomain, getCookie, getParameterByName } from '../theme/functions';
 			document.cookie = 'track1=' + track + '; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
 		}
 	} else if ( domainMatch === true ) {
-		document.cookie = 'utm_source1=; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
-		document.cookie = 'utm_medium1=; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
+		const domainMatchUrlCookie = getCookie( 'referring_domain' );
+		document.cookie = 'utm_source1=' + domainMatchUrlCookie + '; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
+		document.cookie = 'utm_medium1=OrganicSearch; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
 		document.cookie = 'utm_term1=; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
 		document.cookie = 'utm_content1=; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
 		document.cookie = 'utm_campaign1=; expires=' + expirationTime + '; path=/; Domain=' + cookieDomain;
