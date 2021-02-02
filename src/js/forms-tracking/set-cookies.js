@@ -30,14 +30,15 @@ import { getDomain, getCookie, getParameterByName } from '../theme/functions';
 		}
 	}
 
-	// Set the gclid cookie.
-	const gclidCookie = getCookie( 'gclid' );
-	const gclidParam  = getParameterByName( 'gclid' );
-	if ( '' === gclidCookie && '' !== gclidParam ) {
+	// Set the click ID through gclid || msclkid parameter.
+	const gclidParam = getParameterByName( 'gclid' );
+	const msclkidParam = getParameterByName( 'msclkid' );
+	if ( '' !== gclidParam || '' !== msclkidParam ) {
+		const clickIdValue = gclidParam || msclkidParam;
 		const gclidDate = new Date();
-		gclidDate.setTime( gclidDate.getTime() + ( 90 * 24 * 60 * 60 * 1000 ) );
+		gclidDate.setTime( gclidDate.getTime() + ( 90 * 24 * 60 * 60 * 1000 ) ); // 3 months.
 		const gclidExpires = '' + gclidDate.toGMTString();
-		document.cookie = 'gclid=' + gclidParam + '; expires=' + gclidExpires + ';path=/';
+		document.cookie = 'gclid=' + clickIdValue + '; expires=' + gclidExpires + ';path=/';
 	}
 
 	/**
