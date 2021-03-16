@@ -13,7 +13,7 @@ function generateVersion {
 	output=$(npm version ${release} --no-git-tag-version)
 	version=${output:1}
 
-	echo -e "${GREEN}Bumping plugin version to ${version}.${END}"
+	echo -e "${GREEN}Bumping theme version to v${version}.${END}"
 }
 
 function bump {
@@ -66,11 +66,11 @@ elif [ "$1" = "bump" ]; then
 		bump "style.css"
 
 		git add .
-		git commit -m "Bump plugin version to ${version}."
-		git tag -a "${output}" -m "${version}"
+		git commit -m "Bump theme version to v${version}."
+		git tag -a "${output}" -m "v${version}"
 		git push --atomic origin master "${output}"
 		if command -v gh &> /dev/null; then
-			gh release create ${version} -t ${version}
+			gh release create v${version} -t v${version}
 		fi
 	else
 		generateVersion
