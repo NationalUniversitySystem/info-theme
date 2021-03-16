@@ -1,9 +1,8 @@
-import { getParameterByName, getCookie } from './functions';
 /**
  * This file builds a query string to attach to anchor links so that we can track data on our other domains.
  */
 ( function( d ) {
-	const starterQueryString = getStarterString();
+	const starterQueryString = 'start=' + window.location.hostname;
 	const links = d.querySelectorAll( 'a' );
 	const externalLinks = [];
 
@@ -29,50 +28,3 @@ import { getParameterByName, getCookie } from './functions';
 		}
 	} );
 } )( document );
-
-function getStarterString() {
-	let string          = 'start=' + window.location.hostname;
-	const parameters    = [];
-	const trackersToUse = [
-		'utm_source',
-		'utm_medium',
-		'utm_term',
-		'utm_content',
-		'utm_campaign',
-		'track',
-	];
-
-	trackersToUse.forEach( tracker => {
-		parameters.push( {
-			key: tracker,
-			value: getParameterByName( tracker ),
-		} );
-	} );
-
-	const filteredParams = parameters.filter( parameter => parameter.value );
-
-	if ( filteredParams.length ) {
-		filteredParams.forEach( parameterObject => {
-			string += '&' + parameterObject.key + '=' + parameterObject.value;
-		} );
-	} else {
-		const cookies = [];
-
-		trackersToUse.forEach( tracker => {
-			cookies.push( {
-				key: tracker,
-				value: getCookie( tracker + '1' ),
-			} );
-		} );
-
-		const filteredCookies = cookies.filter( parameter => parameter.value );
-
-		if ( filteredCookies.length ) {
-			filteredCookies.forEach( parameterObject => {
-				string += '&' + parameterObject.key + '=' + parameterObject.value;
-			} );
-		}
-	}
-
-	return string;
-}
