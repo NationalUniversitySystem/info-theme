@@ -5899,7 +5899,7 @@ a:focus {
 }
 
 input[type='text'], input[type='email'] {
-  background: #fff;
+  background-color: #fff;
   border: 1px solid #bebebe;
   border-radius: 2px;
   font-size: 13px;
@@ -5915,6 +5915,11 @@ input[type='text'], input[type='email'] {
     border-radius: 3px;
     height: 40px;
   }
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #fff inset;
+  -webkit-text-fill-color: #000;
 }
 
 select {
@@ -8199,6 +8204,10 @@ form .section-title span.optional {
     transition: all .2s ease;
     width: auto;
   }
+}
+
+.page-template-stacked form li label {
+  z-index: 1;
 }
 
 .page-template-stacked form li.input--active label {
