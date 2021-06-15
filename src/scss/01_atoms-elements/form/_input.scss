@@ -3,7 +3,7 @@
 input {
   &[type='text'],
   &[type='email'] {
-    background: $color-white;
+    background-color: $color-white;
     border: 1px solid darken($color-alt, 20%);
     border-radius: 2px;
     font-size: 13px;
@@ -17,5 +17,10 @@ input {
       border-radius: 3px;
       height: 40px;
     }
+  }
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px $color-white inset;
+    -webkit-text-fill-color: $color-black;
   }
 }
