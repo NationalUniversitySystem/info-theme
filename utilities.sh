@@ -62,6 +62,7 @@ elif [ "$1" = "bump" ]; then
 
 		generateVersion
 
+		bump "package.json"
 		bump "composer.json"
 		bump "style.css"
 
@@ -75,6 +76,7 @@ elif [ "$1" = "bump" ]; then
 	else
 		generateVersion
 
+		bump "package.json"
 		bump "composer.json"
 		bump "style.css"
 	fi
