@@ -51,6 +51,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "gulp"
+    "scripts": "gulp scripts",
+    "styles": "gulp styles",
+    "watch": "gulp watchFiles",
+    "build": "gulp build"
   }
 }
