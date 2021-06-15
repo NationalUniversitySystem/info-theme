@@ -23,6 +23,10 @@
         }
       }
 
+      label {
+        z-index: 1;
+      }
+
       &.input--active {
         label {
           font-size: 12px;
