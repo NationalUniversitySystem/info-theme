@@ -63,6 +63,8 @@ elif [ "$1" = "bump" ]; then
 		generateVersion
 
 		bump "composer.json"
+		bump "package.json"
+		bump "package-lock.json"
 		bump "style.css"
 
 		git add .
@@ -76,6 +78,8 @@ elif [ "$1" = "bump" ]; then
 		generateVersion
 
 		bump "composer.json"
+		bump "package.json"
+		bump "package-lock.json"
 		bump "style.css"
 	fi
 fi
