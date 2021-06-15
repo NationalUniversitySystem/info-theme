@@ -20,7 +20,7 @@ function bump {
 	# *.json files
 	search='("version":[[:space:]]*").+(")'
 	replace="\1${version}\2"
-	sed -i ".tmp" -E "s/${search}/${replace}/g" "$1"
+	sed -i ".tmp" -E "0,/${search}/ s/${search}/${replace}/g" "$1"
 
 	# .css theme file
 	search='(Version:[[:space:]]).+'
