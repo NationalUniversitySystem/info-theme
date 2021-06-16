@@ -1,26 +1,26 @@
 {
-	"name": "nationaluniversitysystem/info-theme",
-	"description": "An 'info' subdomain WordPress theme designed and developed specifically for NUSA.",
-	"type": "wordpress-theme",
-	"version": "2.7.2",
-	"require": {
-		"composer/installers": "~1.0"
-	},
-	"authors": [
-		{
-			"name": "Mike Estrada",
-			"email": "mestrada@nu.edu",
-			"role": "Developer"
-		},
-		{
-			"name": "Chris Maust",
-			"email": "cmaust@nu.edu",
-			"role": "Developer"
-		},
-		{
-			"name": "Alex Gamero",
-			"email": "agamero@nu.edu",
-			"role": "Developer"
-		}
-	]
+  "name": "nationaluniversitysystem/info-theme",
+  "description": "An 'info' subdomain WordPress theme designed and developed specifically for NUSA.",
+  "type": "wordpress-theme",
+  "version": "2.7.2",
+  "require": {
+    "composer/installers": "~1.0"
+  },
+  "authors": [
+    {
+      "name": "Mike Estrada",
+      "email": "mestrada@nu.edu",
+      "role": "Developer"
+    },
+    {
+      "name": "Chris Maust",
+      "email": "cmaust@nu.edu",
+      "role": "Developer"
+    },
+    {
+      "name": "Alex Gamero",
+      "email": "agamero@nu.edu",
+      "role": "Developer"
+    }
+  ]
 }
