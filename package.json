@@ -11,7 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-env": "^7.15.0",
     "@babel/register": "^7.14.5",
     "@wordpress/eslint-plugin": "^8.0.2",
     "babel-eslint": "^10.1.0",
