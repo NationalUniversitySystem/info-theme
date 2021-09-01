@@ -40,7 +40,7 @@
     "stylelint-scss": "^3.19.0",
     "terser-webpack-plugin": "^5.1.1",
     "vinyl-named": "^1.1.0",
-    "webpack": "^5.26.1",
+    "webpack": "^5.51.1",
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
