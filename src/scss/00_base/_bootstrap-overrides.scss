@@ -29,3 +29,13 @@ $container-max-widths: (
   lg: 1200px,
   xl: 1210px
 );
+
+// Tooltip
+$tooltip-font-size: 11px;
+$tooltip-max-width: 280px;
+$tooltip-bg: map-get($brand-colors, 'primary');
+$tooltip-border-radius: 5px;
+$tooltip-opacity: 1;
+$tooltip-padding-y: .75rem;
+$tooltip-padding-x: 1.25rem;
+$tooltip-arrow-color: map-get($brand-colors, 'accent');

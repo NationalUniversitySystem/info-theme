@@ -1,36 +1,10 @@
 .tooltip {
-  font-size: 11px;
-  margin-bottom: 5px;
-  margin-top: 10px;
-  max-width: 280px;
-  z-index: 99;
-
-  &::after {
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid $error;
-    bottom: -5px;
-    content: '';
-    height: 0;
-    position: absolute;
-    right: 50%;
-    transform: translateX(-50%);
-    width: 0;
+  &-inner {
+    border: 2px solid $color-accent;
   }
+}
 
-  .tooltip-inner {
-    background-color: $error;
-    border: 1px solid $error;
-    border-radius: 10px;
-    color: $color-white;
-    padding: 10px;
-    text-align: center;
-
-    span {
-      display: block;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-  }
+[data-toggle='tooltip'] {
+  cursor: pointer;
+  margin-left: 10px;
 }

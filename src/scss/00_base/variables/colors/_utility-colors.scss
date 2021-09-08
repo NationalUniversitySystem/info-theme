@@ -12,18 +12,3 @@ $colors: (
   'gray': #f1f1f1,
   'mid-gray': #4d535b
 );
-
-$all-colors: map-merge($colors, $brand-colors);
-
-// Utility Colors
-$success: map-get($colors, 'green');
-$error: map-get($colors, 'red');
-$text-body: map-get($colors, 'black');
-
-$color-white: map-get($colors, 'white');
-$color-black: map-get($colors, 'black');
-$color-green: map-get($colors, 'green-dark');
-$color-blue-19: map-get($colors, 'blue-19');
-
-$color-mid-blue: map-get($colors, 'mid-blue');
-$color-mid-gray: map-get($colors, 'mid-gray');

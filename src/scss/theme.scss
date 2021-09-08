@@ -1,3 +1,6 @@
+@import '00_base/variables/colors/brand-colors';
+@import '00_base/variables/colors/utility-colors';
+
 // ------------------------------
 // Vendor Styles
 // ------------------------------
@@ -13,14 +16,14 @@
 @import 'node_modules/bootstrap/scss/utilities/flex';
 @import 'node_modules/bootstrap/scss/utilities/position';
 @import 'node_modules/bootstrap/scss/utilities/spacing';
+@import 'node_modules/bootstrap/scss/tooltip';
 @import 'node_modules/bootstrap/scss/modal';
 @import 'vendor/wordpress';
 
 // ------------------------------
 // Base
 // ------------------------------
-@import '00_base/variables/colors/brand-colors';
-@import '00_base/variables/colors/utility-colors';
+@import '00_base/variables/colors/all-colors';
 @import '00_base/variables/breakpoints';
 @import '00_base/variables/fonts/font-faces';
 @import '00_base/variables/fonts/font-sizes';
