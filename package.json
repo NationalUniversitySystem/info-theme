@@ -41,7 +41,7 @@
     "terser-webpack-plugin": "^5.2.3",
     "vinyl-named": "^1.1.0",
     "webpack": "^5.26.1",
-    "webpack-stream": "^6.1.2"
+    "webpack-stream": "^7.0.0"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
