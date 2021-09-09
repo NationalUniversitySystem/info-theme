@@ -47,9 +47,9 @@ export const getDomain = function() {
 /**
  * Set the value of an input element
  *
- * @param {string} inputSelector Input you want to set a value for (or parent of input).
- * @param {string} inputValue Value we are setting for the in put.
- * @param {HTMLElement} inputParent The parent of the input in order to narrow the selection (should probably be a form dom element).
+ * @param {string}      inputSelector Input you want to set a value for (or parent of input).
+ * @param {string}      inputValue    Value we are setting for the in put.
+ * @param {HTMLElement} inputParent   The parent of the input in order to narrow the selection (should probably be a form dom element).
  */
 export const setInputValue = function( inputSelector, inputValue, inputParent ) {
 	if ( 'undefined' === typeof inputParent ) {
@@ -104,7 +104,7 @@ export const debounce = function( func, wait, immediate ) {
  * Get a specific class based on a comma separated string
  *
  * @param {string} classPartial Partial class name to search classList for
- * @param {string} classList String of classes
+ * @param {string} classList    String of classes
  */
 export const getClass = function( classPartial, classList ) {
 	// Incase an array is passed in.

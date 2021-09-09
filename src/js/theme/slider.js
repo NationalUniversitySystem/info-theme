@@ -2,7 +2,7 @@
 	/**
 	 * Add span elements to checkbox labels
 	 *
-	 * @param {Object} event The Javascript event object.
+	 * @param {Object} event  The Javascript event object.
 	 * @param {string} formId The ID of the form in use.
 	 */
 
