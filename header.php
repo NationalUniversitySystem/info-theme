@@ -14,7 +14,7 @@ $phone_number      = ! empty( trim( $page_phone_number ) ) ? $page_phone_number 
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<?php do_action( 'head_begin_hook' ); ?>
+	<?php do_action( 'head_begins' ); ?>
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
