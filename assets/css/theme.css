@@ -6441,6 +6441,11 @@ table thead th {
   }
 }
 
+.form__group--military [data-toggle='tooltip'] {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
 .form__group--military .ginput_container {
   display: inline-block;
 }
@@ -7112,11 +7117,6 @@ body.modal-open {
 
 .tooltip-inner {
   border: 2px solid #ffa500;
-}
-
-[data-toggle='tooltip'] {
-  cursor: pointer;
-  margin-left: 10px;
 }
 
 #fixed-cta {
