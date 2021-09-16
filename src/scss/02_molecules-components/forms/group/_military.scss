@@ -10,6 +10,11 @@
         font-size: 12px;
       }
 
+      [data-toggle='tooltip'] {
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
       .ginput_container {
         display: inline-block;
       }
