@@ -18,7 +18,7 @@ class Metadata_Contact_Number {
 	 * Using construct function to add any actions and filters
 	 */
 	public function __construct() {
-		add_action( 'fm_post_page', [ $this, 'register_metabox' ] );
+		add_action( 'cmb2_admin_init', [ $this, 'register_metabox' ] );
 	}
 
 	/**
@@ -35,24 +35,29 @@ class Metadata_Contact_Number {
 	}
 
 	/**
-	 * Register our metabox with all out fields
+	 * Register our metabox with all our fields
 	 *
 	 * @return void
 	 */
 	public function register_metabox() {
-		$fm = new Fieldmanager_TextField( [
-			'name'        => '_page_contact_phone_number', // "name" id deceiving, used as the key/ID.
-			'label'       => 'Phone Number',
-			'description' => 'Override the phone number in the header. Format: 855-355-6288.',
-			'attributes'  => [
+		$cmb = new_cmb2_box( [
+			'id'           => 'header_metabox',
+			'title'        => 'Header',
+			'object_types' => [ 'page' ],
+			'context'      => 'side',
+			'priority'     => 'low',
+			'show_names'   => true,
+		] );
+
+		$cmb->add_field( [
+			'id'         => '_page_contact_phone_number',
+			'name'       => 'Phone Number',
+			'desc'       => 'Override the phone number in the header. Format: 855-355-6288.',
+			'type'       => 'text',
+			'attributes' => [
 				'type'    => 'tel',
 				'pattern' => '[0-9]{3}-[0-9]{3}-[0-9]{4}',
 			],
 		] );
-
-		/**
-		 * Initiate the metabox
-		 */
-		$fm->add_meta_box( 'Header', 'page', 'side', 'low' );
 	}
 }

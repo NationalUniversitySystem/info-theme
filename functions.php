@@ -29,6 +29,7 @@ require get_template_directory() . '/inc/customizer/class-nu-customizer-site-glo
 /**
  * Metadata
  */
+require_once get_template_directory() . '/inc/metadata/class-metadata-conversion.php'; // To be deleted after CMB2 activation.
 require_once get_template_directory() . '/inc/metadata/class-metadata-hero.php';
 require_once get_template_directory() . '/inc/metadata/class-metadata-quote.php';
 require_once get_template_directory() . '/inc/metadata/class-metadata-content.php';
@@ -51,6 +52,7 @@ Nu_Customizer_Global_Column::singleton();
 Nu_Customizer_Site_Globals::singleton();
 
 // Metadata.
+Metadata_Conversion::singleton();
 Metadata_Hero::singleton();
 Metadata_Quote::singleton();
 Metadata_Content::singleton();

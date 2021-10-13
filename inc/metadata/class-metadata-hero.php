@@ -18,7 +18,7 @@ class Metadata_Hero {
 	 * Using construct function to add any actions and filters
 	 */
 	public function __construct() {
-		add_action( 'fm_post', [ $this, 'register_metabox' ] );
+		add_action( 'cmb2_admin_init', [ $this, 'register_metabox' ] );
 	}
 
 	/**
@@ -35,34 +35,35 @@ class Metadata_Hero {
 	}
 
 	/**
-	 * Register our metabox with all out fields
+	 * Register our metabox with all our fields
 	 *
 	 * @return void
 	 */
 	public function register_metabox() {
-		$fm = new Fieldmanager_Group( [
-			'name'           => 'hero_fields', // "name" id deceiving, used as the key/ID.
-			'serialize_data' => false,
-			'add_to_prefix'  => false,
-			'children'       => [
-				'_headline'    => new Fieldmanager_RichTextArea( 'Main Headline', [
-					'buttons_1'       => [ 'bold', 'italic', 'strikethrough' ],
-					'editor_settings' => [
-						'media_buttons' => false,
-					],
-				] ),
-				'_subheadline' => new Fieldmanager_RichTextArea( 'Sub Headline', [
-					'buttons_1'       => [ 'bold', 'italic', 'strikethrough' ],
-					'editor_settings' => [
-						'media_buttons' => false,
-					],
-				] ),
+		$cmb = new_cmb2_box( [
+			'id'           => 'hero_fields',
+			'title'        => 'Hero',
+			'object_types' => [ 'page' ],
+		] );
+
+		$cmb->add_field( [
+			'id'      => '_headline',
+			'name'    => 'Main Headline',
+			'type'    => 'wysiwyg',
+			'options' => [
+				'media_buttons' => false,
+				'textarea_rows' => 5,
 			],
 		] );
 
-		/**
-		 * Initiate the metabox
-		 */
-		$fm->add_meta_box( 'Hero', 'page' );
+		$cmb->add_field( [
+			'id'      => '_subheadline',
+			'name'    => 'Sub Headline',
+			'type'    => 'wysiwyg',
+			'options' => [
+				'media_buttons' => false,
+				'textarea_rows' => 5,
+			],
+		] );
 	}
 }
