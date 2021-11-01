@@ -20,7 +20,7 @@
     "del": "^6.0.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-no-jquery": "^2.6.0",
+    "eslint-plugin-no-jquery": "^2.7.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
