@@ -38,7 +38,7 @@
     "stylelint-media-use-custom-media": "^2.0.0",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.20.1",
-    "terser-webpack-plugin": "^5.2.3",
+    "terser-webpack-plugin": "^5.2.5",
     "vinyl-named": "^1.1.0",
     "webpack": "^5.52.0",
     "webpack-stream": "^7.0.0"
