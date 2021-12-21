@@ -31,7 +31,7 @@
     "gulp-sass": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-stylelint": "^13.0.0",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended-scss": "^4.3.0",
     "stylelint-declaration-use-variable": "^1.7.3",
