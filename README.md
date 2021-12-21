@@ -1,5 +1,5 @@
 # NUS WP Info Theme
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=NationalUniversitySystem/info-theme)](https://dependabot.com) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Overview
 This WordPress theme was created so that all of the National University affiliate info websites would have a standardized codebase to work with.
@@ -23,7 +23,7 @@ For information on how to setup this theme with node and gulp, see [here](https:
 ## Must includes:
 - Gulp file setup
 - Basic theme setup in `./inc/class-nusa-theme-setup`
-- ESLint and SASSLint rules are based on our team and industry standards, do not change these.
+- ESLint and stylelint rules are based on our team and industry standards, do not change these.
 
 ---
 
