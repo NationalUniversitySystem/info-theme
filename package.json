@@ -47,7 +47,7 @@
     "bootstrap": "^4.4.1",
     "mobile-detect": "^1.4.5",
     "siema": "^1.5.1",
-    "vanilla-lazyload": "^17.5.0"
+    "vanilla-lazyload": "^17.6.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
